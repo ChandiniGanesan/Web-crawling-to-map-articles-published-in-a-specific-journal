@@ -1,0 +1,1193 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<title>Identification of potential crucial genes and construction of microRNA-mRNA negative regulatory networks in osteosarcoma | Hereditas | Full Text</title>
+<meta name="citation_abstract" content="This study aimed to identify potential crucial genes and construction of microRNA-mRNA negative regulatory networks in osteosarcoma by comprehensive bioinformatics analysis. Data of gene expression profiles (GSE28424) and miRNA expression profiles (GSE28423) were downloaded from GEO database. The differentially expressed genes (DEGs) and miRNAs (DEMIs) were obtained by R Bioconductor packages. Functional and enrichment analyses of selected genes were performed using DAVID database. Proteinâprotein interaction (PPI) network was constructed by STRING and visualized in Cytoscape. The relationships among the DEGs and module in PPI network were analyzed by plug-in NetworkAnalyzer and MCODE seperately. Through the TargetScan and comparing target genes with DEGs, the miRNA-mRNA regulation network was established. Totally 346 DEGs and 90 DEMIs were found to be differentially expressed. These DEGs were enriched in biological processes and KEGG pathway of inflammatory immune response. 25 genes in the PPI network were selected as hub genes. Top 10 hub genes were TYROBP, HLA-DRA, VWF, PPBP, SERPING1, HLA-DPA1, SERPINA1, KIF20A, FERMT3, HLA-E. PPI network of DEGs followed a pattern of power law network and met the characteristics of small-world network. MCODE analysis identified 4 clusters and the most significant cluster consisted of 11 nodes and 55 edges. SEPP1, CKS2, TCAP, BPI were identified as the seed genes in their own clusters, respectively. The miRNA-mRNA regulation network which was composed of 89 pairs was established. MiR-210 had the highest connectivity with 12 target genes. Among the predicted target of MiR-96, HLA-DPA1 and TYROBP were the hub genes. Our study indicated possible differentially expressed genes and miRNA, and microRNA-mRNA negative regulatory networks in osteosarcoma by bioinformatics analysis, which may provide novel insights for unraveling pathogenesis of osteosarcoma.">
+<meta name="description" content="This study aimed to identify potential crucial genes and construction of microRNA-mRNA negative regulatory networks in osteosarcoma by comprehensive bioinformatics analysis. Data of gene expression profiles (GSE28424) and miRNA expression profiles (GSE28423) were downloaded from GEO database. The differentially expressed genes (DEGs) and miRNAs (DEMIs) were obtained by R Bioconductor packages. Functional and enrichment analyses of selected genes were performed using DAVID database. Proteinâprotein interaction (PPI) network was constructed by STRING and visualized in Cytoscape. The relationships among the DEGs and module in PPI network were analyzed by plug-in NetworkAnalyzer and MCODE seperately. Through the TargetScan and comparing target genes with DEGs, the miRNA-mRNA regulation network was established. Totally 346 DEGs and 90 DEMIs were found to be differentially expressed. These DEGs were enriched in biological processes and KEGG pathway of inflammatory immune response. 25 genes in the PPI network were selected as hub genes. Top 10 hub genes were TYROBP, HLA-DRA, VWF, PPBP, SERPING1, HLA-DPA1, SERPINA1, KIF20A, FERMT3, HLA-E. PPI network of DEGs followed a pattern of power law network and met the characteristics of small-world network. MCODE analysis identified 4 clusters and the most significant cluster consisted of 11 nodes and 55 edges. SEPP1, CKS2, TCAP, BPI were identified as the seed genes in their own clusters, respectively. The miRNA-mRNA regulation network which was composed of 89 pairs was established. MiR-210 had the highest connectivity with 12 target genes. Among the predicted target of MiR-96, HLA-DPA1 and TYROBP were the hub genes. Our study indicated possible differentially expressed genes and miRNA, and microRNA-mRNA negative regulatory networks in osteosarcoma by bioinformatics analysis, which may provide novel insights for unraveling pathogenesis of osteosarcoma.">
+<meta name="journal_id" content="41065">
+<meta name="dc.title" content="Identification of potential crucial genes and construction of microRNA-mRNA negative regulatory networks in osteosarcoma">
+<meta name="dc.source" content="Hereditas 2018 155:1">
+<meta name="dc.format" content="text/html">
+<meta name="dc.publisher" content="BioMed Central">
+<meta name="dc.date" content="2018-05-09">
+<meta name="dc.type" content="OriginalPaper">
+<meta name="dc.language" content="En">
+<meta name="dc.copyright" content="2018 The Author(s)">
+<meta name="dc.rightsAgent" content="reprints@biomedcentral.com">
+<meta name="dc.description" content="This study aimed to identify potential crucial genes and construction of microRNA-mRNA negative regulatory networks in osteosarcoma by comprehensive bioinformatics analysis. Data of gene expression profiles (GSE28424) and miRNA expression profiles (GSE28423) were downloaded from GEO database. The differentially expressed genes (DEGs) and miRNAs (DEMIs) were obtained by R Bioconductor packages. Functional and enrichment analyses of selected genes were performed using DAVID database. Protein–protein interaction (PPI) network was constructed by STRING and visualized in Cytoscape. The relationships among the DEGs and module in PPI network were analyzed by plug-in NetworkAnalyzer and MCODE seperately. Through the TargetScan and comparing target genes with DEGs, the miRNA-mRNA regulation network was established. Totally 346 DEGs and 90 DEMIs were found to be differentially expressed. These DEGs were enriched in biological processes and KEGG pathway of inflammatory immune response. 25 genes in the PPI network were selected as hub genes. Top 10 hub genes were TYROBP, HLA-DRA, VWF, PPBP, SERPING1, HLA-DPA1, SERPINA1, KIF20A, FERMT3, HLA-E. PPI network of DEGs followed a pattern of power law network and met the characteristics of small-world network. MCODE analysis identified 4 clusters and the most significant cluster consisted of 11 nodes and 55 edges. SEPP1, CKS2, TCAP, BPI were identified as the seed genes in their own clusters, respectively. The miRNA-mRNA regulation network which was composed of 89 pairs was established. MiR-210 had the highest connectivity with 12 target genes. Among the predicted target of MiR-96, HLA-DPA1 and TYROBP were the hub genes. Our study indicated possible differentially expressed genes and miRNA, and microRNA-mRNA negative regulatory networks in osteosarcoma by bioinformatics analysis, which may provide novel insights for unraveling pathogenesis of osteosarcoma.">
+<meta name="prism.issn" content="1601-5223">
+<meta name="prism.publicationName" content="Hereditas">
+<meta name="prism.publicationDate" content="2018-05-09">
+<meta name="prism.volume" content="155">
+<meta name="prism.number" content="1">
+<meta name="prism.section" content="OriginalPaper">
+<meta name="prism.startingPage" content="21">
+<meta name="prism.copyright" content="2018 The Author(s)">
+<meta name="prism.rightsAgent" content="reprints@biomedcentral.com">
+<meta name="prism.url" content="https://hereditasjournal.biomedcentral.com/articles/10.1186/s41065-018-0061-9">
+<meta name="prism.doi" content="doi:10.1186/s41065-018-0061-9">
+<meta name="citation_pdf_url" content="https://hereditasjournal.biomedcentral.com/track/pdf/10.1186/s41065-018-0061-9">
+<meta name="citation_fulltext_html_url" content="https://hereditasjournal.biomedcentral.com/articles/10.1186/s41065-018-0061-9">
+<meta name="citation_journal_title" content="Hereditas">
+<meta name="citation_publisher" content="BioMed Central">
+<meta name="citation_issn" content="1601-5223">
+<meta name="citation_title" content="Identification of potential crucial genes and construction of microRNA-mRNA negative regulatory networks in osteosarcoma">
+<meta name="citation_volume" content="155">
+<meta name="citation_issue" content="1">
+<meta name="citation_publication_date" content="2018/12">
+<meta name="citation_online_date" content="2018/05/09">
+<meta name="citation_firstpage" content="21">
+<meta name="citation_article_type" content="Research">
+<meta name="citation_fulltext_world_readable" content="">
+<meta name="dc.identifier" content="doi:10.1186/s41065-018-0061-9">
+<meta name="DOI" content="10.1186/s41065-018-0061-9">
+<meta name="citation_doi" content="10.1186/s41065-018-0061-9">
+<meta name="dc.creator" content="Yue Pan">
+<meta name="dc.creator" content="Lingyun Lu">
+<meta name="dc.creator" content="Junquan Chen">
+<meta name="dc.creator" content="Yong Zhong">
+<meta name="dc.creator" content="Zhehao Dai">
+<meta name="dc.subject" content="Animal Genetics and Genomics">
+<meta name="dc.subject" content="Evolutionary Biology">
+<meta name="citation_reference" content="citation_journal_title=Rheumatol Ther; citation_title=Review of osteosarcoma and current management; citation_author=RA Durfee, M Mohammed, HH Luu; citation_volume=3; citation_publication_date=2016; citation_pages=221-243; citation_doi=10.1007/s40744-016-0046-y; citation_id=CR1">
+<meta name="citation_reference" content="citation_journal_title=Pathology; citation_title=WHO classification of soft tissue tumours: an update based on the 2013 (4th) edition; citation_author=VY Jo, CD Fletcher; citation_volume=46; citation_publication_date=2014; citation_pages=95-104; citation_doi=10.1097/PAT.0000000000000050; citation_id=CR2">
+<meta name="citation_reference" content="citation_journal_title=Orthop Clin North Am; citation_title=Update on survival in osteosarcoma; citation_author=ME Anderson; citation_volume=47; citation_publication_date=2016; citation_pages=283-292; citation_doi=10.1016/j.ocl.2015.08.022; citation_id=CR3">
+<meta name="citation_reference" content="citation_journal_title=J Natl Cancer Inst; citation_title=Improvement in histologic response but not survival in osteosarcoma patients treated with intensified chemotherapy: a randomized phase III trial of the European osteosarcoma intergroup; citation_author=IJ Lewis, MA Nooij, J Whelan, MR Sydes, R Grimer, PC Hogendoorn, MA Memon, S Weeden, BM Uscinska, M van Glabbeke; citation_volume=99; citation_publication_date=2007; citation_pages=112-128; citation_doi=10.1093/jnci/djk015; citation_id=CR4">
+<meta name="citation_reference" content="citation_journal_title=Oncogene; citation_title=SPARCL1 suppresses osteosarcoma metastasis and recruits macrophages by activation of canonical WNT/β-catenin signaling through stabilization of the WNT-receptor complex; citation_author=SJ Zhao, YQ Jiang, NW Xu, Q Li, Q Zhang, SY Wang, J Li, YH Wang, YL Zhang, SH Jiang; citation_volume=37; citation_publication_date=2018; citation_pages=1049-1061; citation_doi=10.1038/onc.2017.403; citation_id=CR5">
+<meta name="citation_reference" content="citation_journal_title=Mol Cancer; citation_title=Neuropilin-2 expression is inhibited by secreted Wnt antagonists and its down-regulation is associated with reduced tumor growth and metastasis in osteosarcoma; citation_author=T Ji, Y Guo, K Kim, P McQueen, S Ghaffar, A Christ, C Lin, R Eskander, X Zi, BH Hoang; citation_volume=14; citation_publication_date=2015; citation_pages=86; citation_doi=10.1186/s12943-015-0359-4; citation_id=CR6">
+<meta name="citation_reference" content="citation_journal_title=Bratisl Lek Listy; citation_title=MicroRNA-497 suppress osteosarcoma by targeting MAPK/Erk pathway; citation_author=ZL Gui, TL Wu, GC Zhao, ZX Lin, HG Xu; citation_volume=118; citation_publication_date=2017; citation_pages=449-452; citation_id=CR7">
+<meta name="citation_reference" content="citation_journal_title=PLoS One; citation_title=Modulation of the osteosarcoma expression phenotype by microRNAs; citation_author=HM Namløs, LA Meza-Zepeda, T Barøy, IH Østensen, SH Kresse, ML Kuijjer, M Serra, H Bürger, AM Cleton-Jansen, O Myklebost; citation_volume=7; citation_issue=10; citation_publication_date=2012; citation_pages=e48086; citation_doi=10.1371/journal.pone.0048086; citation_id=CR8">
+<meta name="citation_reference" content="citation_journal_title=Genome Biol; citation_title=DAVID: database for annotation, visualization, and integrated discovery; citation_author=G Dennis, BT Sherman, DA Hosack, J Yang, W Gao, HC Lane, RA Lempicki; citation_volume=4; citation_publication_date=2003; citation_pages=P3; citation_doi=10.1186/gb-2003-4-5-p3; citation_id=CR9">
+<meta name="citation_reference" content="citation_journal_title=Nucleic Acids Res; citation_title=The gene ontology (GO) project in 2006; citation_author=; citation_volume=34; citation_issue=Database issue; citation_publication_date=2006; citation_pages=D322-D326; citation_doi=10.1093/nar/gkj021; citation_id=CR10">
+<meta name="citation_reference" content="citation_journal_title=Nucleic Acids Res; citation_title=KEGG: Kyoto encyclopedia of genes and genomes; citation_author=M Kanehisa, S Goto; citation_volume=28; citation_publication_date=2000; citation_pages=27-30; citation_doi=10.1093/nar/28.1.27; citation_id=CR11">
+<meta name="citation_reference" content="citation_journal_title=Nucleic Acids Res; citation_title=STRING v10: protein-protein interaction networks, integrated over the tree of life; citation_author=D Szklarczyk, A Franceschini, S Wyder, K Forslund, D Heller, J Huerta-Cepas, M Simonovic, A Roth, A Santos, KP Tsafou, M Kuhn, P Bork, LJ Jensen, C von Mering; citation_volume=43; citation_issue=Database issue; citation_publication_date=2015; citation_pages=D447-D452; citation_doi=10.1093/nar/gku1003; citation_id=CR12">
+<meta name="citation_reference" content="citation_journal_title=Bioinformatics; citation_title=Computing topological parameters of biological networks; citation_author=Y Assenov, F Ramírez, SE Schelhorn, T Lengauer, M Albrecht; citation_volume=24; citation_issue=2; citation_publication_date=2008; citation_pages=282-284; citation_doi=10.1093/bioinformatics/btm554; citation_id=CR13">
+<meta name="citation_reference" content="citation_journal_title=Oncogene; citation_title=Comparison of gene expression profiling between malignant and normal plasma cells with oligonucleotide arrays; citation_author=J De Vos, T Thykjaer, K Tarte, M Ensslen, P Raynaud, G Requirand, F Pellet, V Pantesco, T Rème, M Jourdan; citation_volume=21; citation_publication_date=2002; citation_pages=6848-6857; citation_doi=10.1038/sj.onc.1205868; citation_id=CR14">
+<meta name="citation_reference" content="citation_journal_title=Cancer Res; citation_title=Upregulation of cystathionine-β-synthase in colonic epithelia reprograms metabolism and promotes carcinogenesis; citation_author=CM Phillips, JR Zatarain, ME Nicholls, C Porter, SG Widen, K Thanki, P Johnson, MU Jawad, MP Moyer, JW Randall; citation_volume=77; citation_publication_date=2017; citation_pages=5741-5754; citation_doi=10.1158/0008-5472.CAN-16-3480; citation_id=CR15">
+<meta name="citation_reference" content="citation_journal_title=Urol Oncol; citation_title=Expression profile of hydrogen sulfide and its synthases correlates with tumor stage and grade in urothelial cell carcinoma of bladder; citation_author=JW Gai, W Qin, M Liu, HF Wang, M Zhang, M Li, WH Zhou, QT Ma, GM Liu, WH Song; citation_volume=34; citation_publication_date=2016; citation_pages=166.e15-166.e20; citation_doi=10.1016/j.urolonc.2015.06.020; citation_id=CR16">
+<meta name="citation_reference" content="citation_journal_title=Cell; citation_title=Hallmarks of cancer: the next generation; citation_author=D Hanahan, RA Weinberg; citation_volume=144; citation_publication_date=2011; citation_pages=646-674; citation_doi=10.1016/j.cell.2011.02.013; citation_id=CR17">
+<meta name="citation_reference" content="citation_journal_title=Annu Rev Immunol; citation_title=The three Es of cancer immunoediting; citation_author=GP Dunn, LJ Old, RD Schreiber; citation_volume=22; citation_publication_date=2004; citation_pages=329-360; citation_doi=10.1146/annurev.immunol.22.012703.104803; citation_id=CR18">
+<meta name="citation_reference" content="citation_journal_title=Nature; citation_title=Adaptive immunity maintains occult cancer in an equilibrium state; citation_author=CM Koebel, W Vermi, JB Swann, N Zerafa, SJ Rodig, LJ Old, MJ Smyth, RD Schreiber; citation_volume=450; citation_publication_date=2007; citation_pages=903-907; citation_doi=10.1038/nature06309; citation_id=CR19">
+<meta name="citation_reference" content="citation_journal_title=BMC Cancer; citation_title=Phenotypic and functional analysis of lymphocytes infiltrating osteolytic tumors: use as a possible therapeutic approach of osteosarcoma; citation_author=S Théoleyre, K Mori, B Cherrier, N Passuti, F Gouin, F Rédini; citation_volume=5; citation_publication_date=2005; citation_pages=123; citation_doi=10.1186/1471-2407-5-123; citation_id=CR20">
+<meta name="citation_reference" content="citation_journal_title=Front Immunol; citation_title=Cancer vaccines in the world of immune suppressive monocytes (CD14(+)HLA-DR(lo/neg) cells): the gateway to improved responses; citation_author=RR Laborde, Y Lin, MP Gustafson, PA Bulur, AB Dietz; citation_volume=5; citation_publication_date=2014; citation_pages=147; citation_doi=10.3389/fimmu.2014.00147; citation_id=CR21">
+<meta name="citation_reference" content="citation_journal_title=Oncol Rep; citation_title=Enhancement of antitumor immunity by combining anti-cytotoxic T lymphocyte antigen-4 antibodies and cryotreated tumor lysate-pulsed dendritic cells in murine osteosarcoma; citation_author=M Kawano, I Itonaga, T Iwasaki, H Tsumura; citation_volume=29; citation_publication_date=2013; citation_pages=1001-1006; citation_doi=10.3892/or.2013.2224; citation_id=CR22">
+<meta name="citation_reference" content="citation_journal_title=Cancer; citation_title=Role of tumor microenvironment in tumorigenesis.J; citation_author=M Wang, J Zhao, L Zhang, F Wei, Y Lian, Y Wu, Z Gong, S Zhang, J Zhou, K Cao; citation_volume=8; citation_publication_date=2017; citation_pages=761-773; citation_doi=10.7150/jca.17648; citation_id=CR23">
+<meta name="citation_reference" content="citation_journal_title=Cell Mol Life Sci; citation_title=Selenoproteins and oxidative stress-induced inflammatory tumorigenesis in the gut; citation_author=CW Barrett, SP Short, CS Williams; citation_volume=74; citation_publication_date=2017; citation_pages=607-616; citation_doi=10.1007/s00018-016-2339-2; citation_id=CR24">
+<meta name="citation_reference" content="citation_journal_title=Nutr Cancer; citation_title=Expression profiling and genetic alterations of the selenoproteins GI-GPx and SePP in colorectal carcinogenesis; citation_author=OH Al-Taie, N Uceyler, U Eubner, F Jakob, H Mörk, M Scheurlen, R Brigelius-Flohe, K Schöttker, J Abel, A Thalheimer; citation_volume=48; citation_publication_date=2004; citation_pages=6-14; citation_doi=10.1207/s15327914nc4801_2; citation_id=CR25">
+<meta name="citation_reference" content="citation_journal_title=Cancer Res; citation_title=Alterations in gene expression profiles during prostate cancer progression: functional correlations to tumorigenicity and down-regulation of selenoprotein-P in mouse and human tumors; citation_author=A Calvo, N Xiao, J Kang, CJ Best, I Leiva, MR Emmert-Buck, C Jorcyk, JE Green; citation_volume=62; citation_publication_date=2002; citation_pages=5325-5335; citation_id=CR26">
+<meta name="citation_reference" content="citation_journal_title=Cancer Epidemiol Biomark Prev; citation_title=Effects of selenium status and polymorphisms in selenoprotein genes on prostate cancer risk in a prospective study of European men; citation_author=A Steinbrecher, C Méplan, J Hesketh, L Schomburg, T Endermann, E Jansen, B Akesson, S Rohrmann, J Linseisen; citation_volume=19; citation_publication_date=2010; citation_pages=2958-2968; citation_doi=10.1158/1055-9965.EPI-10-0364; citation_id=CR27">
+<meta name="citation_reference" content="citation_journal_title=Cancer Epidemiol Biomark Prev; citation_title=Variation in the selenoenzyme genes and risk of advanced distal colorectal adenoma; citation_author=U Peters, N Chatterjee, RB Hayes, RE Schoen, Y Wang, SJ Chanock, CB Foster; citation_volume=17; citation_publication_date=2008; citation_pages=1144-1154; citation_doi=10.1158/1055-9965.EPI-07-2947; citation_id=CR28">
+<meta name="citation_reference" content="citation_journal_title=Int J Cancer; citation_title=Aberrant expression of Cks1 and Cks2 contributes to prostate tumorigenesis by promoting proliferation and inhibiting programmed cell death; citation_author=Y Lan, Y Zhang, J Wang, C Lin, MM Ittmann, F Wang; citation_volume=123; citation_publication_date=2008; citation_pages=543-551; citation_doi=10.1002/ijc.23548; citation_id=CR29">
+<meta name="citation_reference" content="citation_journal_title=PLoS One; citation_title=miR-26a and its target CKS2 modulate cell growth and tumorigenesis of papillary thyroid carcinoma; citation_author=M Lv, X Zhang, M Li, Q Chen, M Ye, W Liang, L Ding, H Cai, D Fu, Z Lv; citation_volume=8; citation_publication_date=2013; citation_pages=e67591; citation_doi=10.1371/journal.pone.0067591; citation_id=CR30">
+<meta name="citation_reference" content="citation_journal_title=Int J Oncol; citation_title=MicroRNA-7 inhibits proliferation, migration and invasion of thyroid papillary cancer cells via targeting CKS2; citation_author=K Hua, J Jin, H Zhang, B Zhao, C Wu, H Xu, L Fang; citation_volume=49; citation_publication_date=2016; citation_pages=1531-1540; citation_doi=10.3892/ijo.2016.3660; citation_id=CR31">
+<meta name="citation_reference" content="citation_journal_title=Am J Cancer Res; citation_title=Up-regulated CKS2 promotes tumor progression and predicts a poor prognosis in human colorectal cancer; citation_author=MH Yu, Y Luo, SL Qin, ZS Wang, YF Mu, M Zhong; citation_volume=5; citation_publication_date=2015; citation_pages=2708-2718; citation_id=CR32">
+<meta name="citation_reference" content="citation_journal_title=Med Oncol; citation_title=Prognostic evaluation of microRNA-210 expression in pediatric osteosarcoma; citation_author=H Cai, L Lin, H Cai, M Tang, Z Wang; citation_volume=30; citation_publication_date=2013; citation_pages=499; citation_doi=10.1007/s12032-013-0499-6; citation_id=CR33">
+<meta name="citation_reference" content="citation_journal_title=PLoS One; citation_title=Elevated expression of miR-210 predicts poor survival of cancer patients: a systematic review and meta-analysis; citation_author=J Wang, J Zhao, M Shi, Y Ding, H Sun, F Yuan, Z Zou; citation_volume=9; citation_publication_date=2014; citation_pages=e89223; citation_doi=10.1371/journal.pone.0089223; citation_id=CR34">
+<meta name="citation_reference" content="citation_journal_title=Cell Biol Int; citation_title=MicroRNA-210 is increased and it is required for dedifferentiation of osteosarcoma cell line; citation_author=H Zhang, Q Mai, J Chen; citation_volume=41; citation_publication_date=2017; citation_pages=267-275; citation_doi=10.1002/cbin.10721; citation_id=CR35">
+<meta name="citation_author" content="Yue Pan">
+<meta name="citation_author_institution" content="Department of Spine Surgery, the Second Xiangya Hospital, Central South University, Changsha, China">
+<meta name="citation_author" content="Lingyun Lu">
+<meta name="citation_author_institution" content="Department of Orthopaedics, the Fifth Hospital of Xiamen, Xiamen, China">
+<meta name="citation_author" content="Junquan Chen">
+<meta name="citation_author_institution" content="Department of Spine Surgery, the Second Xiangya Hospital, Central South University, Changsha, China">
+<meta name="citation_author" content="Yong Zhong">
+<meta name="citation_author_institution" content="Department of Nephrology, Xiangya Hospital of Central South University, Changsha, China">
+<meta name="citation_author" content="Zhehao Dai">
+<meta name="citation_author_institution" content="Department of Spine Surgery, the Second Xiangya Hospital, Central South University, Changsha, China">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- For IE 9 and below --><!--[if IE]><link rel="shortcut icon" href=/static/images/favicons//favicon.ico><![endif]--><!-- Touch Icons - iOS and Android 2.1+ --><link rel="apple-touch-icon" href="/static/images/favicons/bmc/favicon-3f5c56eaaa.png">
+<!-- Firefox, Chrome, Safari, IE 11+ and Opera --><link rel="icon" href="/static/images/favicons/bmc/favicon-3f5c56eaaa.png">
+<script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script><link rel="stylesheet" media="screen" href="/static/styles/bmc/basic-0600efa430.css">
+<link rel="stylesheet" media="print" href="/static/styles/bmc/print-7680b1a80b.css">
+<link rel="stylesheet" id="js-mustard" href="/static/styles/bmc/main-4cf21094a7.css" media="only screen and (-webkit-min-device-pixel-ratio:0) and (min-color-index:0), (-ms-high-contrast: none), only all and (min--moz-device-pixel-ratio:0) and (min-resolution: 3e1dpcm)">
+<script>
+            window.airbrakeErrors = [];
+            window.onerror = function(error) {window.airbrakeErrors.push(error);}
+        </script><script type="text/javascript">
+        config = {
+            env: 'live',
+            site: 'hereditasjournal.biomedcentral.com',
+            siteWithPath: 'hereditasjournal.biomedcentral.com' + window.location.pathname,
+            twitterHashtag: '',
+            cmsPrefix: 'https://studio-cms.springernature.com/studio/',
+            
+            doi: '10.1186/s41065-018-0061-9',
+            figshareScriptUrl: 'https://widgets.figshare.com/static/figshare.js',
+            publisherBrand: 'BioMed Central',
+            mustardcut: false
+        };
+    </script><!-- SpringerLink's event tracker, as per: https://github.com/springernature/springerlink-event-tracker --><script type="text/javascript">
+document.addEventListener('dataLayerCreated', function() {
+    var script = document.createElement('script');
+    script.id = 'springerlink-event-tracker';
+    script.src = 'https://event-tracker.springernature.com/dist/eventTracker.js';
+    script.onload = function () {
+        var dL;
+        var doi;
+        var imprint;
+        var bpids;
+        var publisher;
+        var pageType;
+        var eventObject;
+
+        for (var i = 0; i < window.dataLayer.length; i++) {
+            if (window.dataLayer[i].event === "dataLayerCreated") {
+                dL = window.dataLayer[i];
+            }
+        }
+
+        if (!dL || !dL.content.article || !dL.content.article.doi) { return false;}
+
+        doi = dL.content.article.doi;
+        imprint = dL.content.contentInfo.imprint;
+        bpids = dL.session.authentication.authenticationID;
+        pageType = dL.page.category.pageType;
+
+        if (pageType) {
+            pageType = pageType.charAt(0).toUpperCase() + pageType.substring(1);
+        }
+
+        eventObject = {'content_type': pageType, 'doi': doi};
+
+        if (imprint === 'BioMed Central') {
+            publisher = 'BMC';
+        }
+        else if (imprint === 'SpringerOpen') {
+            publisher = 'SpringerOpen';
+        }
+        else {
+            throw new Error('Event Tracker Error: The publisher has an unexpected value');
+        }
+
+        if (bpids.length > 0) {
+            eventObject['business_partner_ids'] = bpids;
+        }
+
+        new EventTracker({'platform': publisher}).sendEvent('display', eventObject);
+    };
+    document.head.appendChild(script);
+});
+</script><!--Polyfills CustomEvent constructor in IE. Allows us to use events to manage race conditions in client side js--><script>
+    (function () {
+        if (typeof window.CustomEvent === "function") { return false; } // If IE polyfill not needed just return
+
+        function CustomEvent ( event, params ) {
+            params = params || { bubbles: false, cancelable: false, detail: undefined };
+            var evt = document.createEvent( 'CustomEvent' );
+            evt.initCustomEvent( event, params.bubbles, params.cancelable, params.detail );
+            return evt;
+        }
+
+        CustomEvent.prototype = window.Event.prototype;
+
+        window.CustomEvent = CustomEvent;
+    })();
+</script><script type="text/javascript">
+        window.dataLayer = [{"content":{"article":{"doi":"10.1186/s41065-018-0061-9","articleType":"Research","peerReviewType":"Closed","supplement":null,"keywords":"Osteosarcoma;Bioinformatics;Functional enrichment analysis;Regulatory network"},"contentInfo":{"imprint":"BioMed Central","title":"Identification of potential crucial genes and construction of microRNA-mRNA negative regulatory networks in osteosarcoma","publishedAt":1525824000000,"publishedAtDate":"2018-05-09","author":["Yue Pan","Lingyun Lu","Junquan Chen","Yong Zhong","Zhehao Dai"],"collection":[]},"attributes":{"deliveryPlatform":"oscar","template":"rebrand","cms":null,"copyright":{"creativeCommonsType":"CC BY + CC0","openAccess":true},"environment":"live"},"journal":{"siteKey":"hereditasjournal.biomedcentral.com","volume":"155","issue":"1","title":"Hereditas","type":"AJs Life","journalID":41065,"gaCode":"UA-62066850-11","section":[]},"category":{"pmc":{"primarySubject":"Life Sciences"},"contentType":"Research","publishingSegment":"Genetics & Heredity (Life)"}},"session":{"authentication":{"authenticationID":[]}},"version":"1.0.0","page":{"category":{"pageType":"article"}},"event":"dataLayerCreated"}];
+        var event = new CustomEvent('dataLayerCreated');
+        document.dispatchEvent(event);
+    </script><script>
+            
+            var mustardcutlink = document.getElementById('js-mustard');
+            if (mustardcutlink && window.matchMedia && window.matchMedia(mustardcutlink.media).matches) {
+                window.config.mustardcut = true;
+            }
+        </script><script>
+            (function(d){
+                var config = window.config;
+                if (config && config.mustardcut && config.publisherBrand && sessionStorage.fontsLoaded === 'true') {
+                    if (window.config.publisherBrand === 'BioMed Central') {
+                        d.style.setProperty('--font-family-sans', 'Europa');
+                        d.style.setProperty('--font-family-serif', 'Noto Serif')
+                    } else if (window.config.publisherBrand === 'SpringerOpen' || window.config.publisherBrand === 'Springer') {
+                        d.style.setProperty('--font-family-sans', 'Source Sans Pro');
+                    }
+                }
+            })(document.documentElement);
+        </script><script src="https://cdn.cookielaw.org/consent/7d6f4b4f-77fb-43b9-b429-eb1e1eeac6aa.js" id="onetrust-bmc-control" charset="UTF-8"></script><!-- Google Tag Manager --><script>
+                    (function (w, d, s, l, i) {
+                    w[l] = w[l] || [];
+                    w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+                    var f = d.getElementsByTagName(s)[0],
+                            j = d.createElement(s),
+                            dl = l != 'dataLayer' ? '&l=' + l : '';
+                    j.async = true;
+                    j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+                    f.parentNode.insertBefore(j, f);
+                })(window, document, 'script', 'dataLayer', 'GTM-TDGJHK');
+                </script><!-- End Google Tag Manager --><link rel="canonical" href="https://hereditasjournal.biomedcentral.com/articles/10.1186/s41065-018-0061-9">
+<meta property="og:url" content="https://hereditasjournal.biomedcentral.com/articles/10.1186/s41065-018-0061-9">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Hereditas">
+<meta property="og:title" content="Identification of potential crucial genes and construction of microRNA-mRNA negative regulatory networks in osteosarcoma">
+<meta property="og:description" content="This study aimed to identify potential crucial genes and construction of microRNA-mRNA negative regulatory networks in osteosarcoma by comprehensive bioinformatics analysis. Data of gene expression profiles (GSE28424) and miRNA expression profiles (GSE28423) were downloaded from GEO database. The differentially expressed genes (DEGs) and miRNAs (DEMIs) were obtained by R Bioconductor packages. Functional and enrichment analyses of selected genes were performed using DAVID database. Proteinâprotein interaction (PPI) network was constructed by STRING and visualized in Cytoscape. The relationships among the DEGs and module in PPI network were analyzed by plug-in NetworkAnalyzer and MCODE seperately. Through the TargetScan and comparing target genes with DEGs, the miRNA-mRNA regulation network was established. Totally 346 DEGs and 90 DEMIs were found to be differentially expressed. These DEGs were enriched in biological processes and KEGG pathway of inflammatory immune response. 25 genes in the PPI network were selected as hub genes. Top 10 hub genes were TYROBP, HLA-DRA, VWF, PPBP, SERPING1, HLA-DPA1, SERPINA1, KIF20A, FERMT3, HLA-E. PPI network of DEGs followed a pattern of power law network and met the characteristics of small-world network. MCODE analysis identified 4 clusters and the most significant cluster consisted of 11 nodes and 55 edges. SEPP1, CKS2, TCAP, BPI were identified as the seed genes in their own clusters, respectively. The miRNA-mRNA regulation network which was composed of 89 pairs was established. MiR-210 had the highest connectivity with 12 target genes. Among the predicted target of MiR-96, HLA-DPA1 and TYROBP were the hub genes. Our study indicated possible differentially expressed genes and miRNA, and microRNA-mRNA negative regulatory networks in osteosarcoma by bioinformatics analysis, which may provide novel insights for unraveling pathogenesis of osteosarcoma.">
+<meta property="og:image" content="https://images.springer.com/sgw/journals/medium/41065.jpg">
+</head>
+<body class="journal journal-fulltext">
+        
+    
+        
+            
+                <!-- Google Tag Manager (noscript) -->
+                <noscript>
+                    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TDGJHK" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+                </noscript>
+                <!-- End Google Tag Manager (noscript) -->
+            
+        
+    
+
+
+        
+
+        
+
+    <div class="u-vh-full">
+        <div class="u-visually-hidden" aria-hidden="true">
+    
+    <?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg"><defs><filter id="a" filterunits="userSpaceOnUse" x="0" y="0" width="60.643" height="31.01"><fecolormatrix values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0"></fecolormatrix></filter></defs><symbol id="icon-arrow-down" viewbox="0 0 16 8"><path d="M8 6l6-6h2L8 8 0 0h2l6 6"></path></symbol><symbol id="icon-arrow-left-bullet" viewbox="0 0 8 16"><path d="M3 8l5 5v3L0 8l8-8v3L3 8z"></path></symbol><symbol id="icon-arrow-right-bullet" viewbox="0 0 8 16"><path d="M5 8L0 3V0l8 8-8 8v-3l5-5z"></path></symbol><symbol id="icon-arrow-right" viewbox="0 0 32 64"><path d="M0 0v64l32-32z"></path></symbol><symbol id="icon-close" viewbox="0 0 23.998 23.999"><path d="M20.998 0l-8.999 9L3 0 0 3l8.999 9L0 20.999l3 3L11.999 15l8.999 8.999 3-3L14.999 12l8.999-9z"></path></symbol><symbol id="icon-community" viewbox="0 0 60.643 31.01"><mask maskunits="userSpaceOnUse" x="0" y="0" width="60.643" height="31.01" id="b"><path fill="#FFF" d="M0 31.01h60.643V0H0z" filter="url(#a)"></path></mask><path mask="url(#b)" d="M60.643 25.497L50.005 14.86a7.925 7.925 0 1 0-7.669 0l-6.847 6.847-1.334-1.334a7.925 7.925 0 0 0-3.834-14.861 7.925 7.925 0 0 0-3.834 14.861l-1.334 1.334-6.847-6.847a7.925 7.925 0 1 0-7.669 0L0 25.497h21.362L15.85 31.01h28.943l-5.514-5.513h21.364z"></path></symbol><symbol id="icon-download" viewbox="-301 390 9 14"><path d="M-301 395.6l4.5 5.1 4.5-5.1h-3V390h-3v5.6h-3zm0 6.5h9v1.9h-9z"></path></symbol><symbol id="icon-ext-link" viewbox="0 0 16 16"><path fill="#676767" d="M12.9 16H3.1C1.4 16 0 14.6 0 12.9V3.2C0 1.4 1.4 0 3.1 0h3.7v1H3.1C2 1 1 2 1 3.2v9.7C1 14 2 15 3.1 15h9.7c1.2 0 2.1-1 2.1-2.1V8.7h1v4.2c.1 1.7-1.3 3.1-3 3.1z"></path><path fill="#676767" d="M12.8 2.5l.7.7-9 8.9-.7-.7 9-8.9z"></path><path fill="#676767" d="M9.7 0L16 6.2V0z"></path></symbol><symbol id="icon-info-bordered" viewbox="470.812 270.868 18 18"><path d="M479.812 270.868c-4.972 0-9 4.029-9 9s4.028 9 9 9c4.971 0 9-4.029 9-9s-4.029-9-9-9zm0 16.875a7.875 7.875 0 0 1-7.875-7.875 7.875 7.875 0 1 1 15.75 0 7.875 7.875 0 0 1-7.875 7.875z"></path><path d="M479.284 279.586c.089-.238-.024-.361-.13-.361-.489 0-1.123 1.16-1.359 1.16-.093 0-.173-.092-.173-.174 0-.238.581-.801.751-.971.526-.506 1.217-.895 1.979-.895.567 0 1.174.346.703 1.639l-.952 2.604c-.079.199-.224.531-.224.746 0 .092.054.186.159.186.395 0 1.121-1.135 1.304-1.135.067 0 .158.086.158.199 0 .385-1.542 2.043-2.874 2.043-.477 0-.804-.225-.804-.732 0-.641.447-1.734.538-1.963l.924-2.346zm.727-3.41c0-.586.498-1.066 1.082-1.066.527 0 .91.357.91.906 0 .615-.501 1.068-1.098 1.068-.541-.002-.894-.361-.894-.908z"></path></symbol><symbol id="icon-opr" viewbox="0 0 18 18"><path d="M.9 2.5c-.2-.2-.4-.3-.6-.2-.3.2-.3.4-.3.6 0 .8 0 1.7.1 2.5 0 .5.3.7.7.6.9 0 1.7-.2 2.5-.3h.2c.5-.2.6-.5.3-.8-.2-.2-.4-.4-.6-.5-.1-.1-.2-.2-.4-.3.5-.6 1-1.1 1.7-1.5 4.6-3 10.9-.5 12 4.9.9 4.4-2.2 8.6-6.7 9.2-3.7.5-7.2-1.6-8.4-5.1 0-.1-.1-.2-.1-.3-.1-.3-.5-.5-.8-.4-.3.1-.5.4-.4.8.4 1.3 1.1 2.4 2 3.4 1.4 1.5 3.1 2.4 5.1 2.8 3 .5 5.6-.2 7.8-2.2 2.1-1.9 3-4.2 3-6.9-.1-4-3.1-7.6-7.1-8.4-3.3-.9-6.2 0-8.6 2.3-.2.1-.3.3-.5.5-.3-.2-.6-.5-.9-.7z"></path><path d="M13 4.7c-2.6 1.6-4.5 3.6-5.3 4.6L5.6 7.7l-.9.7L8.3 12c.6-1.6 2.6-4.6 4.9-6.8l-.2-.5z"></path></symbol><symbol id="icon-quotation" viewbox="0 0.333 55.932 35.619"><path d="M43.738.333L31.545 12.207v23.745h24.387V12.207H43.738zm-31.545 0L0 12.207v23.745h24.386V12.207H12.193z"></path></symbol><symbol id="icon-remove" viewbox="-296 388 18 18"><path d="M-291.7 396.1h9v2h-9z"></path><path d="M-287 405.5c-4.7 0-8.5-3.8-8.5-8.5s3.8-8.5 8.5-8.5 8.5 3.8 8.5 8.5-3.8 8.5-8.5 8.5zm0-16c-4.1 0-7.5 3.4-7.5 7.5s3.4 7.5 7.5 7.5 7.5-3.4 7.5-7.5-3.4-7.5-7.5-7.5z"></path></symbol><symbol id="icon-ribbon" viewbox="0 0 36 72"><path d="M0 0v72h.053L18 54.054 35.945 72H36V0H0zm25.8 11.4l3.001 3L15 28.2l-7.801-7.8 3-3L15 22.201 25.8 11.4z"></path></symbol><symbol id="icon-rss" viewbox="0 0 24 24"><g fill="#F26822"><ellipse cx="3.305" cy="20.702" rx="3.306" ry="3.298"></ellipse><path d="M15.978 24h-4.684c0-6.224-5.057-11.27-11.294-11.27V8.058c8.824 0 15.978 7.137 15.978 15.942z"></path><path d="M19.2 23.95C19.2 13.366 10.604 4.79 0 4.79V0c13.255 0 24 10.723 24 23.95h-4.8z"></path></g></symbol><symbol id="icon-search" viewbox="0 0 16 16"><path d="M6.276 12.257C2.815 12.257 0 9.508 0 6.128 0 2.749 2.815 0 6.276 0c3.462 0 6.277 2.749 6.277 6.128.002 3.38-2.815 6.129-6.277 6.129zm0-10.772c-2.622 0-4.755 2.083-4.755 4.643 0 2.562 2.133 4.644 4.755 4.644 2.623 0 4.756-2.082 4.756-4.644 0-2.56-2.134-4.643-4.756-4.643z"></path><path d="M16 13.751L13.641 16l-4.875-4.82 2.36-2.248L16 13.751z"></path></symbol><symbol id="icon-speech-bubble" viewbox="0 0 40 54"><path d="M0 0v40h6.667v13.334L20 40h20V0z"></path></symbol><symbol id="icon-error" viewbox="2.002 0 14 14"><path d="M16.002 11.949L13.951 14 9.002 9.051 4.053 14l-2.051-2.051L6.951 7 2.002 2.05 4.053 0l4.949 4.95L13.951 0l2.051 2.049L11.053 7l4.949 4.949z"></path></symbol><symbol id="icon-info" viewbox="5.502 0 7 14"><path d="M8.165 5.923c.146-.384-.04-.577-.209-.577-.783 0-1.798 1.856-2.177 1.856-.15 0-.277-.147-.277-.279 0-.383.933-1.282 1.203-1.557.846-.811 1.949-1.434 3.174-1.434.908 0 1.879.555 1.125 2.63l-1.526 4.167c-.126.32-.358.854-.358 1.198 0 .148.088.298.255.298.632 0 1.796-1.818 2.091-1.818.105 0 .252.134.252.321C11.717 11.345 9.245 14 7.11 14c-.763 0-1.289-.361-1.289-1.176 0-1.027.717-2.778.865-3.145l1.479-3.756zm1.144-4.211C9.309.771 10.111 0 11.045 0c.845 0 1.457.577 1.457 1.456 0 .983-.804 1.709-1.757 1.709-.866-.001-1.436-.578-1.436-1.453z"></path></symbol><symbol id="icon-success" viewbox="0 0 16 14"><path d="M15.592 0c-4.867 2.984-8.4 6.751-9.987 8.641L1.717 5.595 0 6.979l6.717 6.832c1.157-2.961 4.817-8.748 9.287-12.86L15.592 0z"></path></symbol><symbol id="icon-warning" viewbox="7.002 0 2.789 14"><path d="M7.002 11.211h2.789V14H7.002v-2.789zM7.002 0v3.436l.741 5.326h1.326l.723-5.326V0h-2.79z"></path></symbol><symbol id="icon-facebook-bordered" viewbox="463.812 263.868 32 32"><path d="M479.812 263.868c-8.837 0-16 7.163-16 16s7.163 16 16 16 16-7.163 16-16-7.163-16-16-16zm0 30c-7.732 0-14-6.269-14-14s6.268-14 14-14 14 6.269 14 14-6.267 14-14 14z"></path><path d="M483.025 280.48l.32-2.477h-2.453v-1.582c0-.715.199-1.207 1.227-1.207h1.311v-2.213a17.753 17.753 0 0 0-1.907-.098c-1.894 0-3.186 1.154-3.186 3.271V278h-2.142v2.477h2.142v6.354h2.557v-6.354l2.131.003z"></path></symbol><symbol id="icon-facebook" viewbox="0 0 24 24"><circle fill="#4D67A4" cx="12" cy="12" r="12"></circle><path fill="#FFF" d="M8.396 10.143h2.137V8.165s-.092-1.292.892-2.274c.979-.979 2.298-.887 4.177-.724v2.21h-1.387s-.586-.013-.861.303c-.271.315-.24.764-.24.875v1.588h2.41l-.311 2.458h-2.116v6.336h-2.56v-6.345H8.396v-2.449z"></path></symbol><symbol id="icon-linkedin" viewbox="0 0 24 24"><circle fill="#0178B5" cx="12" cy="12" r="12"></circle><g fill="#FFF"><circle cx="8.022" cy="8.043" r="1.256"></circle><path d="M6.929 10.246h2.17v6.967h-2.17zm3.533 6.967h2.157v-3.594s-.078-1.627 1.219-1.627c1.301 0 1.211 1.231 1.211 1.635v3.586h2.183v-3.775s.129-2.745-1.472-3.191c-1.605-.445-2.661.071-3.219.985v-.985h-2.079v6.966z"></path></g></symbol><symbol id="icon-reddit" viewbox="0 0 24 24"><circle fill="#BCBCBC" cx="12" cy="12" r="12"></circle><path fill="#FFF" d="M4.661 9.741c.941 0 1.703.761 1.703 1.704 0 .938-.762 1.705-1.703 1.705s-1.704-.767-1.704-1.705c0-.943.763-1.704 1.704-1.704zm13.844 0a1.704 1.704 0 1 1 .001 3.409 1.704 1.704 0 0 1-.001-3.409z"></path><path fill="#FFF" d="M11.736 8.732c4.285 0 7.762 2.283 7.762 5.104 0 2.812-3.477 5.1-7.762 5.1-4.288 0-7.762-2.285-7.762-5.1.001-2.82 3.474-5.104 7.762-5.104z"></path><path fill="#010101" d="M11.736 19.262c-4.461 0-8.088-2.437-8.088-5.426 0-2.994 3.626-5.431 8.088-5.431 4.457 0 8.087 2.437 8.087 5.431 0 2.989-3.63 5.426-8.087 5.426zm0-10.205c-4.104 0-7.438 2.145-7.438 4.779 0 2.633 3.334 4.773 7.438 4.773 4.098 0 7.437-2.142 7.437-4.773 0-2.636-3.339-4.779-7.437-4.779z"></path><circle fill="#FFF" cx="18.014" cy="5.765" r="1.385"></circle><path fill="#010101" d="M18.014 7.456a1.694 1.694 0 0 1-1.695-1.691c0-.934.764-1.694 1.695-1.694s1.693.762 1.693 1.694c0 .934-.762 1.691-1.693 1.691zm0-2.734c-.574 0-1.043.469-1.043 1.043s.469 1.041 1.043 1.041a1.042 1.042 0 0 0 0-2.084zM3.818 13.275a2.068 2.068 0 0 1-1.068-1.811 2.074 2.074 0 0 1 3.538-1.466l-.458.462a1.412 1.412 0 0 0-1.007-.42 1.424 1.424 0 0 0-.688 2.669l-.317.566zm15.866 0l-.316-.566a1.43 1.43 0 0 0 .73-1.245c0-.784-.635-1.424-1.42-1.424-.381 0-.736.149-1.008.42l-.459-.462a2.074 2.074 0 1 1 2.473 3.277z"></path><path fill="#F04B23" d="M9.165 11.604c.704 0 1.272.564 1.272 1.27a1.273 1.273 0 1 1-1.272-1.27zm5.321 0a1.274 1.274 0 1 1-1.275 1.27c0-.704.57-1.27 1.275-1.27z"></path><path fill="#010101" d="M11.79 8.915a.327.327 0 0 1-.307-.44l1.472-4.181 3.616.862c.177.044.283.22.238.395a.32.32 0 0 1-.391.239l-3.045-.729-1.275 3.632a.334.334 0 0 1-.308.222zm-.069 8.376c-2.076 0-2.908-.939-2.943-.982a.332.332 0 0 1 .035-.461.334.334 0 0 1 .459.033c.019.021.713.758 2.449.758 1.766 0 2.539-.763 2.549-.767a.324.324 0 1 1 .469.446c-.04.043-.954.973-3.018.973z"></path></symbol><symbol id="icon-twitter-bordered" viewbox="463.812 263.868 32 32"><path d="M486.416 276.191a5.622 5.622 0 0 1-1.554.429 2.718 2.718 0 0 0 1.19-1.502 5.456 5.456 0 0 1-1.72.657 2.71 2.71 0 0 0-1.979-.854 2.711 2.711 0 0 0-2.642 3.326 7.681 7.681 0 0 1-5.586-2.831 2.714 2.714 0 0 0 .839 3.618 2.748 2.748 0 0 1-1.227-.339v.031a2.71 2.71 0 0 0 2.174 2.656 2.735 2.735 0 0 1-1.229.049 2.726 2.726 0 0 0 2.531 1.883 5.442 5.442 0 0 1-4.01 1.123 7.672 7.672 0 0 0 4.155 1.215c4.983 0 7.71-4.129 7.71-7.711 0-.115-.004-.232-.006-.351a5.41 5.41 0 0 0 1.354-1.399z"></path><path d="M479.812 263.868c-8.837 0-16 7.163-16 16s7.163 16 16 16 16-7.163 16-16-7.163-16-16-16zm0 30c-7.732 0-14-6.269-14-14s6.268-14 14-14 14 6.269 14 14-6.267 14-14 14z"></path></symbol><symbol id="icon-twitter" viewbox="0 0 24 24"><circle fill="#26A7DF" cx="12" cy="12" r="12"></circle><path fill="#FFF" d="M5.903 6.768s2.176 2.883 5.953 3.082c0 0-.51-1.702 1.058-3.004 1.568-1.305 3.508-.2 3.879.292 0 0 1.104-.172 1.875-.691 0 0-.252.995-1.18 1.594 0 0 1.086-.146 1.596-.439 0 0-.533.853-1.447 1.503 0 0 .381 3.595-2.709 6.57-3.09 2.971-8.176 2.352-10.012.797 0 0 2.495.277 4.249-1.219 0 0-2.074-.037-2.671-1.973 0 0 1.036.08 1.215-.119 0 0-2.232-.539-2.254-2.873 0 0 .68.339 1.297.359 0-.001-2.153-1.557-.849-3.879z"></path></symbol><symbol id="icon-weibo-bordered" viewbox="463.812 263.868 32 32"><path d="M479.812 263.868c-8.838 0-16 7.163-16 16s7.162 16 16 16c8.837 0 16-7.163 16-16s-7.163-16-16-16zm0 30c-7.732 0-14-6.269-14-14s6.268-14 14-14c7.731 0 14 6.269 14 14s-6.267 14-14 14z"></path><path d="M478.552 285.348c-2.616.261-4.876-.926-5.044-2.649-.167-1.722 1.814-3.33 4.433-3.588 2.609-.263 4.871.926 5.041 2.647.165 1.721-1.818 3.331-4.43 3.59m5.23-5.718c-.226-.065-.374-.109-.259-.403.25-.639.276-1.188.005-1.581-.515-.734-1.915-.693-3.521-.021 0 0-.508.224-.378-.181.247-.798.209-1.468-.178-1.852-.87-.878-3.194.032-5.183 2.027-1.489 1.494-2.357 3.082-2.357 4.453 0 2.619 3.354 4.213 6.631 4.213 4.297 0 7.154-2.504 7.154-4.493.001-1.198-1.007-1.881-1.914-2.162"></path><path fill="#020202" d="M486.637 274.833a4.176 4.176 0 0 0-3.982-1.291.608.608 0 0 0-.465.72.604.604 0 0 0 .72.466 2.968 2.968 0 0 1 2.827.92 3 3 0 0 1 .625 2.918.602.602 0 0 0 .39.762.603.603 0 0 0 .763-.391v-.001a4.218 4.218 0 0 0-.878-4.103"></path><path fill="#020202" d="M485.041 276.276a2.037 2.037 0 0 0-1.938-.63.518.518 0 0 0-.396.621.517.517 0 0 0 .617.398c.336-.071.702.03.947.307s.312.649.207.979a.52.52 0 0 0 .336.654.523.523 0 0 0 .657-.336 2.038 2.038 0 0 0-.43-1.993m-6.347 5.951c-.09.156-.293.233-.451.166-.151-.062-.204-.235-.115-.389.093-.155.284-.229.44-.168.157.056.214.235.126.391m-.832 1.074c-.253.405-.795.58-1.202.396-.403-.186-.521-.655-.27-1.051.248-.39.771-.566 1.176-.393.413.17.543.636.296 1.048m.95-2.864c-1.244-.326-2.65.294-3.19 1.396-.553 1.119-.021 2.369 1.236 2.775 1.303.42 2.84-.225 3.374-1.436.526-1.183-.132-2.402-1.42-2.735"></path></symbol><symbol id="icon-weibo" viewbox="4 4 24 24"><circle fill="#C8E8F9" cx="16" cy="16" r="12"></circle><path fill="#FFF" d="M9.098 18.194c0 1.981 2.574 3.593 5.757 3.593 3.178 0 5.756-1.611 5.756-3.593 0-1.989-2.578-3.601-5.756-3.601-3.183.001-5.757 1.612-5.757 3.601"></path><path fill="#DF0A21" d="M14.991 21.496c-2.817.278-5.244-.996-5.428-2.85-.183-1.855 1.95-3.586 4.767-3.862 2.813-.278 5.243.996 5.428 2.849.18 1.855-1.957 3.584-4.767 3.863m5.628-6.155c-.24-.067-.404-.116-.279-.432.27-.688.299-1.278.004-1.699-.551-.791-2.062-.748-3.789-.022 0-.001-.548.241-.406-.191.266-.859.224-1.577-.191-1.993-.937-.942-3.437.037-5.577 2.18-1.602 1.61-2.533 3.317-2.533 4.789 0 2.817 3.606 4.533 7.13 4.533 4.626 0 7.701-2.696 7.701-4.834.001-1.292-1.085-2.027-2.06-2.331"></path><path fill="#F4992C" d="M23.689 10.182a4.492 4.492 0 0 0-4.283-1.39.651.651 0 1 0 .269 1.275 3.2 3.2 0 0 1 3.045.99 3.224 3.224 0 0 1 .672 3.138.647.647 0 0 0 .418.823.647.647 0 0 0 .816-.421v-.003a4.51 4.51 0 0 0-.937-4.412"></path><path fill="#F4992C" d="M21.973 11.736a2.183 2.183 0 0 0-2.086-.679.56.56 0 0 0-.428.667.554.554 0 0 0 .662.43v.001c.361-.075.754.034 1.018.33.266.299.34.698.227 1.054a.563.563 0 0 0 .359.706.563.563 0 0 0 .709-.362 2.2 2.2 0 0 0-.461-2.147"></path><path fill="#13110C" d="M15.143 18.139c-.1.17-.315.251-.483.179-.168-.07-.222-.255-.128-.42.097-.167.311-.248.479-.182.165.062.228.252.132.423m-.896 1.155c-.271.434-.854.625-1.295.425-.433-.195-.561-.707-.285-1.128.269-.426.832-.609 1.265-.427.443.183.58.688.315 1.13m1.024-3.084c-1.34-.351-2.852.32-3.434 1.506-.597 1.206-.021 2.546 1.33 2.984 1.402.453 3.055-.243 3.629-1.543.569-1.275-.142-2.587-1.525-2.947"></path></symbol></svg>
+</div>
+
+        <a class="u-visually-hidden u-visually-hidden-focus" href="#main-content">
+    <span class="c-banner c-banner--info">Skip to content</span>
+</a>
+
+        
+            
+    <div class="adsbox c-ad c-ad--LB1">
+        <div class="c-ad__inner">
+            <p class="c-ad__label">Advertisement</p>
+            <div id="div-gpt-ad-LB1" data-gpt-unitpath="/270604982/bmc/hereditasjournal/articles" data-gpt-sizes="728x90,970x90" data-gpt-targeting="pos=LB1;doi=10.1186/s41065-018-0061-9;kwrd=Osteosarcoma,Bioinformatics,Functional enrichment analysis,Regulatory network;pmc=L32030,L21001;">
+                <noscript>
+                    <a href="//pubads.g.doubleclick.net/gampad/jump?iu=/270604982/bmc/hereditasjournal/articles&amp;sz=728x90,970x90&amp;pos=LB1&amp;doi=10.1186/s41065-018-0061-9&amp;kwrd=Osteosarcoma,Bioinformatics,Functional%20enrichment%20analysis,Regulatory%20network&amp;pmc=L32030,L21001&amp;">
+                        <img data-test="gpt-advert-fallback-img" src="//pubads.g.doubleclick.net/gampad/ad?iu=/270604982/bmc/hereditasjournal/articles&amp;sz=728x90,970x90&amp;pos=LB1&amp;doi=10.1186/s41065-018-0061-9&amp;kwrd=Osteosarcoma,Bioinformatics,Functional%20enrichment%20analysis,Regulatory%20network&amp;pmc=L32030,L21001&amp;" alt="Advertisement" width="728" height="90"></a>
+                </noscript>
+            </div>
+        </div>
+    </div>
+
+        
+         
+    <div id="membership-message-loader-desktop" class="placeholder" data-placeholder="/placeholder/v1/membership/message"></div>
+
+
+<header class="c-popup-search" id="top" data-test="publisher-header"><nav class="c-navbar"><div class="u-container">
+            
+            <div class="basic-white-logo c-navbar__logo u-margin-right-xxl" itemscope itemtype="http://schema.org/Organization" data-test="navbar-logo-header">
+                <link itemprop="parentOrganization" href="#parentOrganization">
+<div class="c-logo">
+    <a href="https://www.biomedcentral.com" itemprop="url">
+        <img src="/static/images/bmc/logos/logo-bmc-white-aj-e3a70ae848.svg" alt="BMC" itemprop="logo"><div class="c-logo__strapline">
+            <img src="/static/images/bmc/logos/logo-bmc-white-strapline-sn-e7b1d6e67f.svg" alt="Part of Springer Nature">
+</div>
+    </a>
+</div>
+            </div>
+            <button type="button" class="c-navbar__link c-dropdown js-publisher-menu-button u-hidden-at-lg" id="publisher-header-menu-button" data-toggle="collapse" data-test="publisher-header-menu-toggle" data-toggle-linked="publisher-header" data-target="publisher-header-search publisher-header-menu" aria-controls="publisher-header-menu publisher-header-search" aria-expanded="false">
+                <span class="c-dropdown__toggle">Menu</span>
+            </button>
+            <div class="c-navbar__content c-collapse" id="publisher-header-menu">
+                
+    <ul class="c-navbar__nav" data-test="publisher-navigation">
+<li class="c-navbar__item">
+            <a class="c-navbar__link" href="//www.biomedcentral.com/journals">
+                Explore journals
+            </a>
+        </li>
+        
+        <li class="c-navbar__item">
+            <a class="c-navbar__link" href="//www.biomedcentral.com/getpublished">
+                Get published
+            </a>
+        </li>
+        
+        <li class="c-navbar__item">
+            <a class="c-navbar__link" href="//www.biomedcentral.com/about">
+                About BMC
+            </a>
+        </li>
+        
+    </ul>
+<ul class="c-navbar__nav c-navbar__nav--right">
+<li class="c-navbar__item">
+                        <button type="button" class="c-navbar__link js-publisher-search-button u-hidden-at-lt-lg" data-toggle="collapse" data-test="header-search-button" data-target="publisher-header-search publisher-header-menu publisher-header-menu-button" aria-controls="publisher-header-search publisher-header-menu" aria-expanded="false">
+                            <span class="c-flex c-flex--align-center">
+                                Search
+                                <svg class="c-icon u-margin-left-xs" width="14" height="14" aria-hidden="true"><use xlink:href="#icon-search"></use></svg></span>
+                        </button>
+                    </li>
+                    <li class="c-navbar__item">
+                        <a data-replace="true" data-placeholder="/placeholder/v1/username" class="c-navbar__link" href="https://www.biomedcentral.com/login" data-test="login-link">
+                            <span class="u-js-shown">Login</span>
+                            <span class="u-js-hidden">My Account</span>
+                        </a>
+                    </li>
+                </ul>
+</div>
+        </div>
+    </nav><div class="c-popup-search__content c-collapse js-publisher-search-bar" id="publisher-header-search">
+        <div class="u-container">
+            <div class="c-popup-search__container">
+                <div class="ctx-search">
+    <form role="search" class="c-form-field" method="GET" action="//www.biomedcentral.com/search" data-track="submit" data-track-category="Search and Results" data-track-action="Submit search" data-dynamic-track-label data-track-label="" data-test="global-search">
+        <label for="publisherSearch" class="c-form-field__label">Search all BMC articles</label>
+        <div class="c-flex">
+            <input id="publisherSearch" class="c-form-field__input js-publisher-search-input" autocomplete="off" role="textbox" data-test="search-input" name="query" type="text" value=""><div>
+                <button class="c-button" type="submit" data-test="search-submit-button">
+    <span class="u-visually-hidden">Search</span>
+    <svg class="c-icon" width="16" height="16" aria-hidden="true"><use xlink:href="#icon-search"></use></svg></button>
+
+
+            </div>
+        </div>
+        <input type="hidden" name="searchType" value="publisherSearch">
+</form>
+</div>
+
+            </div>
+        </div>
+    </div>
+</header><header class="c-journal-header c-journal-header--hereditas ctx-journal-header"><div class="u-container">
+                    <div class="c-journal-header__inner ">
+                        
+                        <div class="c-journal-title" id="journalTitle">
+                            <a href="/">
+    
+        
+    
+    <span class="c-journal-title__text ">Hereditas</span>
+    
+</a>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="c-navbar">
+                    <div class="u-container">
+                        
+                            <button type="button" class="c-navbar__link c-dropdown u-hidden-at-lg" data-toggle="collapse" data-test="journal-header-menu" data-toggle-linked="journal-header" data-target="journal-menu" aria-controls="journal-menu" aria-expanded="false">
+                                    <span class="c-dropdown__toggle">Menu</span>
+                            </button>
+                            <div class="c-navbar__content c-collapse" id="journal-menu">
+                                <nav class="c-navbar__nav"><ul class="c-navbar__nav c-navbar__nav--journal" role="menu" data-test="site-navigation">
+<li class="c-navbar__item" role="menuitem">
+                                                <a class="c-navbar__link" href="/">Home</a>
+                                            </li>
+                                        
+                                            <li class="c-navbar__item" role="menuitem">
+                                                <a class="c-navbar__link" href="/about">About</a>
+                                            </li>
+                                        
+                                            <li class="c-navbar__item" role="menuitem">
+                                                <a class="c-navbar__link c-navbar__link--is-shown" href="/articles">Articles</a>
+                                            </li>
+                                        
+                                            <li class="c-navbar__item" role="menuitem">
+                                                <a class="c-navbar__link" href="/submission-guidelines">Submission Guidelines</a>
+                                            </li>
+                                        
+                                    </ul></nav>
+</div>
+                        
+                    </div>
+                </div>
+                <div class="c-journal-header__identity c-journal-header__identity--ocean-light-blue">
+                    
+                </div>
+            </header><div class="u-container u-margin-top-xl u-margin-bottom-xl" id="main-content">
+            <div class="c-content-layout c-content-layout--fulltext" data-component="sticky-container">
+                <div class="c-content-layout__nav u-hidden-at-lt-xl">
+                    <nav xmlns="" xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:meta="http://www.springer.com/app/meta" id="ArticleNavigation" aria-labelledby="toc-menu-title" data-component="sticky"><h3 id="toc-menu-title" class="u-visually-hidden" data-test="toc-title">Table of Contents</h3>
+<ol class="c-nav c-nav--stacked" role="menu" id="tocMenu" aria-expanded="true" data-article-toc="">
+<li role="menuitem" class="c-nav__item"><a class="c-nav__link" href="#Abs1" data-track-category="Table of Contents" data-track="click" data-track-action="Link Clicked" data-track-label="Abstract" data-test="abstract-link">Abstract</a></li>
+<li role="menuitem" class="c-nav__item"><a class="c-nav__link" href="#Sec1" data-track-category="Table of Contents" data-track="click" data-track-action="Link Clicked" data-track-label="Background">Background</a></li>
+<li role="menuitem" class="c-nav__item"><a class="c-nav__link" href="#Sec2" data-track-category="Table of Contents" data-track="click" data-track-action="Link Clicked" data-track-label="Methods">Methods</a></li>
+<li role="menuitem" class="c-nav__item"><a class="c-nav__link" href="#Sec7" data-track-category="Table of Contents" data-track="click" data-track-action="Link Clicked" data-track-label="Results">Results</a></li>
+<li role="menuitem" class="c-nav__item"><a class="c-nav__link" href="#Sec12" data-track-category="Table of Contents" data-track="click" data-track-action="Link Clicked" data-track-label="Discussion">Discussion</a></li>
+<li role="menuitem" class="c-nav__item"><a class="c-nav__link" href="#Sec13" data-track-category="Table of Contents" data-track="click" data-track-action="Link Clicked" data-track-label="Conclusion">Conclusion</a></li>
+<li role="menuitem" class="c-nav__item"><a class="c-nav__link" href="#Decs" data-test="declarations-link" data-track-category="Table of Contents" data-track="click" data-track-action="Link Clicked" data-track-label="Declarations">
+                  Declarations
+                </a></li>
+<li role="menuitem" class="c-nav__item"><a class="c-nav__link" href="#Bib1" data-track-category="Table of Contents" data-track="click" data-track-action="Link Clicked" data-track-label="References">References</a></li>
+</ol></nav>
+</div>
+
+                <main class="c-content-layout__main"><article itemscope itemtype="http://schema.org/ScholarlyArticle"><div class="FulltextWrapper">
+        <ul class="c-article-identifiers u-reset-list">
+<li class="c-article-identifiers__item" data-test="article-category">Research</li>
+            <li class="c-article-identifiers__item" data-test="open-access">
+                <span class="u-text-open-access">Open Access</span>
+            </li>
+            
+            
+        </ul>
+</div>
+
+                        <div class="FulltextWrapper">
+<div xmlns="" xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:meta="http://www.springer.com/app/meta" class="MainTitleSection"><h1 xmlns="http://www.w3.org/1999/xhtml" class="ArticleTitle" itemprop="headline" lang="en">Identification of potential crucial genes and construction of microRNA-mRNA negative regulatory networks in osteosarcoma</h1></div>
+<div xmlns="" xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:meta="http://www.springer.com/app/meta" class="AuthorNames" data-author-affiliations="true"><ul class="u-listReset">
+<li class="Author hasAffil" data-jumpto="Aff" data-test="author-name">
+<span xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" class="AuthorName" itemprop="author" itemscope="" itemtype="http://schema.org/Person">Yue Pan</span><sup><a href="#Aff1" class="AffiliationID">1</a></sup>, </li>
+<li class="Author hasAffil" data-jumpto="Aff" data-test="author-name">
+<span xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" class="AuthorName" itemprop="author" itemscope="" itemtype="http://schema.org/Person">Lingyun Lu</span><sup><a href="#Aff2" class="AffiliationID">2</a></sup>, </li>
+<li class="Author hasAffil" data-jumpto="Aff" data-test="author-name">
+<span xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" class="AuthorName" itemprop="author" itemscope="" itemtype="http://schema.org/Person">Junquan Chen</span><sup><a href="#Aff1" class="AffiliationID">1</a></sup>, </li>
+<li class="Author hasAffil" data-jumpto="Aff" data-test="author-name">
+<span xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" class="AuthorName" itemprop="author" itemscope="" itemtype="http://schema.org/Person">Yong Zhong</span><sup><a href="#Aff3" class="AffiliationID">3</a></sup> and </li>
+<li class="Author hasAffil" data-jumpto="Aff" data-test="author-name">
+<span xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" class="AuthorName" itemprop="author" itemscope="" itemtype="http://schema.org/Person">Zhehao Dai</span><sup><a href="#Aff1" class="AffiliationID">1</a></sup><a href="mailto:f2daizhehao@csu.edu.cn" class="EmailAuthor" title="Email author"><span class="ContactIcon" aria-hidden="true"></span><span class="u-srOnly">Email author</span></a><a class="Orcid" title="View ORCID ID profile" href="http://orcid.org/0000-0001-9285-2494" target="_blank" rel="noopener"><span class="OrcidIcon" aria-hidden="true"></span><span class="u-srOnly">View ORCID ID profile</span></a>
+</li>
+</ul></div>
+<div xmlns="" xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:meta="http://www.springer.com/app/meta" class="ArticleContextInformation"><div class="ContextInformation">
+<div class="ContextInformationJournalTitles"><span class="ArticleCitation"><span itemscope="" itemtype="http://schema.org/Periodical" itemid="#periodical"><span xmlns="http://www.w3.org/1999/xhtml" class="JournalTitle">Hereditas</span></span><span class="ArticleCitation_Year">2018</span><span class="ArticleCitation_Volume"><strong itemprop="isPartOf" itemtype="http://schema.org/PublicationVolume"><link itemprop="isPartOf" href="#periodical">155</strong>:21</span></span></div>
+<p class="ArticleDOI"><a itemprop="sameAs" class="u-text-inherit" href="https://doi.org/10.1186/s41065-018-0061-9">https://doi.org/10.1186/s41065-018-0061-9</a></p>
+<p class="Copyright">Â©  The Author(s) 2018</p>
+</div></div>
+<ul class="ArticleHistory u-reset-list">
+<li class="History HistoryReceived">
+<strong>Received: </strong><span>29 January 2018</span>
+</li>
+<li class="History HistoryAccepted">
+<strong>Accepted: </strong><span>2 May 2018</span>
+</li>
+<li class="History HistoryOnlineDate">
+<strong>Published: </strong><span itemprop="datePublished">9 May 2018</span>
+</li>
+</ul>
+</div>
+                        
+                        
+                        
+    
+
+                        <div class="FulltextWrapper">
+<section xmlns="" xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:meta="http://www.springer.com/app/meta" class="Abstract Section1 RenderAsSection1 c-section" id="Abs1" lang="en"><h2 class="c-section__heading"><a href="#Abstract" data-test="abstract-heading" data-disable-click-event-default="">Abstract</a></h2>
+<div class="c-section__content" id="Abstract">
+<div xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" class="AbstractSection" id="ASec1">
+                <h3 xmlns="" class="Heading">Background</h3>
+                <p id="Par1" class="Para">This study aimed to identify potential crucial genes and construction of microRNA-mRNA negative regulatory networks in osteosarcoma by comprehensive bioinformatics analysis.</p>
+              </div>
+<div xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" class="AbstractSection" id="ASec2">
+                <h3 xmlns="" class="Heading">Methods</h3>
+                <p id="Par2" class="Para">Data of gene expression profiles (GSE28424) and miRNA expression profiles (GSE28423) were downloaded from GEO database. The differentially expressed genes (DEGs) and miRNAs (DEMIs) were obtained by R Bioconductor packages. Functional and enrichment analyses of selected genes were performed using DAVID database. Proteinâprotein interaction (PPI) network was constructed by STRING and visualized in Cytoscape. The relationships among the DEGs and module in PPI network were analyzed by plug-in NetworkAnalyzer and MCODE seperately. Through the TargetScan and comparing target genes with DEGs, the miRNA-mRNA regulation network was established.</p>
+              </div>
+<div xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" class="AbstractSection" id="ASec3">
+                <h3 xmlns="" class="Heading">Results</h3>
+                <p id="Par3" class="Para">Totally 346 <em xmlns="" class="EmphasisTypeItalic">DEGs</em> and 90 DEMIs were found to be differentially expressed. These DEGs were enriched in biological processes and KEGG pathway of inflammatory immune response. 25 genes in the PPI network were selected as hub genes. Top 10 hub genes were TYROBP, HLA-DRA, VWF, PPBP, SERPING1, HLA-DPA1, SERPINA1, KIF20A, FERMT3, HLA-E. PPI network of DEGs followed a pattern of power law network and met the characteristics of small-world network. MCODE analysis identified 4 clusters and the most significant cluster consisted of 11 nodes and 55 edges. SEPP1, CKS2, TCAP, BPI were identified as the seed genes in their own clusters, respectively. The miRNA-mRNA regulation network which was composed of 89 pairs was established. MiR-210 had the highest connectivity with 12 target genes. Among the predicted target of MiR-96, HLA-DPA1 and TYROBP were the hub genes.</p>
+              </div>
+<div xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" class="AbstractSection" id="ASec4">
+                <h3 xmlns="" class="Heading">Conclusion</h3>
+                <p id="Par4" class="Para">Our study indicated possible differentially expressed genes and miRNA, and microRNA-mRNA negative regulatory networks in osteosarcoma by bioinformatics analysis, which may provide novel insights for unraveling pathogenesis of osteosarcoma.</p>
+              </div>
+</div></section><section xmlns:func="http://oscar.fig.bmc.com" class="KeywordGroup Section1 RenderAsSection1 c-section" lang="en"><h2 xmlns="" xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:meta="http://www.springer.com/app/meta" class="Heading js-ToggleCollapseSection c-section__heading" data-sticky-update="true"><a href="#Keywords" data-toggle="collapse" data-toggle-disable-clickoff="" data-target="Keywords">Keywords</a></h2>
+<div class="js-CollapseSection CollapseSection c-section__content" data-test="collapse-section" id="Keywords"><ul class="c-keywords">
+<li class="c-keywords__item" itemprop="about">Osteosarcoma</li>
+<li class="c-keywords__item" itemprop="about">Bioinformatics</li>
+<li class="c-keywords__item" itemprop="about">Functional enrichment analysis</li>
+<li class="c-keywords__item" itemprop="about">Regulatory network</li>
+</ul></div></section><section xmlns="" xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:meta="http://www.springer.com/app/meta" id="Sec1" class="Section1 RenderAsSection1 c-section"><h2 class="Heading js-ToggleCollapseSection c-section__heading" data-sticky-update="true"><a href="#Background" data-toggle="collapse" data-toggle-disable-clickoff="" data-target="Background">Background</a></h2>
+<div class="js-CollapseSection CollapseSection c-section__content" id="Background" data-test="collapse-section">
+<p xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" id="Par15" class="Para">Osteosarcoma is the most common primary malignant bone cancer in children and adolescents, which originates from mesenchymal stem cells and exhibits osteoblastic differentiation [<span class="CitationRef"><a href="#CR1" data-toggle="citation">1</a></span>]. The incidence rate of osteosarcoma is approximately one to three cases per million each year worldwide [<span class="CitationRef"><a href="#CR2" data-toggle="citation">2</a></span>]. With the development of surgery and chemotherapy, the survival rate in osteosarcoma patients without distal metastasis has been largely increased [<span class="CitationRef"><a href="#CR3" data-toggle="citation">3</a></span>]. However, despite improvements in osteosarcoma therapy over the last three decades, the overall survival of patients has reached a plateau and about 30â40% of the patients experience progressive metastasis within 5 years after diagnosis and die [<span class="CitationRef"><a href="#CR4" data-toggle="citation">4</a></span>]. Therefore, it is extremely necessary to explore novel biomarkers and therapeutic targets for osteosarcoma.</p>
+<p xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" id="Par16" class="Para">In recent years, the developments in molecular biology have provided some new insights into potential diagnostic and therapeutic biomarkers for osteosarcoma. For instance, it was found that SPARCL1 was downregulated in osteosarcoma by epigenetic methylation of promoter DNA and activating the expression of SPARCL1 could inhibit the osteosarcoma metastasis in vitro and in vivo [<span class="CitationRef"><a href="#CR5" data-toggle="citation">5</a></span>]. NRP2 was reported to be up-regulated in osteosarcoma cell lines and tissues, and associated with poor survival of osteosarcoma patients [<span class="CitationRef"><a href="#CR6" data-toggle="citation">6</a></span>]. On the other hand, numerous studies shows that microRNAs (miRNAs) may play essential roles in osteosarcoma tumorigenesis by negatively regulating expression level of target gene. MiR-497, for instance, can activate P21 expression by inhibiting the expression of MAPK/Erk signaling pathway, and promote the apoptosis of osteosarcoma cells [<span class="CitationRef"><a href="#CR7" data-toggle="citation">7</a></span>]. However, the miRNA-mRNA negative regulation network in osteosarcoma had been not fully delineated by now.</p>
+<p xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" id="Par17" class="Para">In this study we used bioinformatics methods to integrate miRNA and mRNA expression data, which are available in the GEO database, to identify differentially expressed genes (DEGs) and miRNAs (DEMIs) between osteosarcoma and normal cell, and establish the miRNA-mRNA negative regulation network, aiming to provide valuable information for use in defining the mechanism of pathogenesis in osteosarcoma.</p>
+</div></section><section xmlns="" xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:meta="http://www.springer.com/app/meta" id="Sec2" class="Section1 RenderAsSection1 c-section"><h2 class="Heading js-ToggleCollapseSection c-section__heading" data-sticky-update="true"><a href="#Methods" data-toggle="collapse" data-toggle-disable-clickoff="" data-target="Methods">Methods</a></h2>
+<div class="js-CollapseSection CollapseSection c-section__content" id="Methods" data-test="collapse-section">
+<section id="Sec3" class="Section2 RenderAsSection2"><h3 class="Heading">Identification of differentially expressed genes and miRNAs from public microarray data</h3>
+                <p xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" id="Par18" class="Para">To explore the DEGs and DEMIs in osteosarcoma compared to normal bone, the public gene expression (GSE28424) and miRNA expression (GSE28423) profiles were downloaded from the Gene Expression Omnibus (GEO, <span class="ExternalRef"><a href="http://www.ncbi.nlm.nih.gov/geo" target="_blank" class="ext-link"><span class="RefSource">http://www.ncbi.nlm.nih.gov/geo</span></a></span>). These profiles were deposited by NamlÃ¸s HM et al. in 2011 and composed with the same cell lines: 19 OS cell lines (case group) and 4 normal bone samples (control group) [<span class="CitationRef"><a href="#CR8" data-toggle="citation">8</a></span>]. Then, the dataset was analyzed by R Bioconductor packages and raw datasets were normalized based on the preprocess Core package and the DEGs and DEMIs were screened out via the limma package through the cut-off criteria of adjusted <em xmlns="" class="EmphasisTypeItalic">P</em>-value&lt;â0.01 and |Log<sub>2</sub>(FC)|â&gt;â2.</p>
+              </section><section id="Sec4" class="Section2 RenderAsSection2"><h3 class="Heading">Functional and pathway enrichment analysis</h3>
+                <p xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" id="Par19" class="Para">The Database for Annotation, Visualization and Integrated Discovery (DAVID, <span class="ExternalRef"><a href="https://david.ncifcrf.gov" target="_blank" class="ext-link"><span class="RefSource">https://david.ncifcrf.gov</span></a></span>/) was used to perform functional and pathway enrichment analysis. DAVID is a systematic and integrative functional annotation tools which allows investigators to unravel biological meaning behind large list of genes [<span class="CitationRef"><a href="#CR9" data-toggle="citation">9</a></span>]. Gene ontology (GO) analysis including the cellular component (CC), molecular function (MF), and biological process (BP) [<span class="CitationRef"><a href="#CR10" data-toggle="citation">10</a></span>] and Kyoto Encyclopedia of Genes and Genomes (KEGG) pathway enrichment analysis [<span class="CitationRef"><a href="#CR11" data-toggle="citation">11</a></span>] were carried out for the DEGs. <em xmlns="" class="EmphasisTypeItalic">P</em>â&lt;â0.05 was regarded as statistical significance.</p>
+              </section><section id="Sec5" class="Section2 RenderAsSection2"><h3 class="Heading">Proteinâprotein interaction (PPI) network construction and module analysis</h3>
+                <p xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" id="Par20" class="Para">In order to interpret the molecular mechanisms of key cellular activities in osteosarcoma, The online tool, Search Tool for the Retrieval of Interacting Genes database (STRING), was used to construct PPI network of the DEGs [<span class="CitationRef"><a href="#CR12" data-toggle="citation">12</a></span>]. The interaction score of not &lt;â0.7 (high confidence score) was considered significant and the PPI was visualized.</p>
+                <p xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" id="Par21" class="Para">The relationships among the DEGs were analyzed by plug-in NetworkAnalyzer of Cytoscape software for the characteristics of small-world network through calculating the network properties such as distribution of network node degree, distribution of the shortest path, average aggregation coefficient and proximity to the center [<span class="CitationRef"><a href="#CR13" data-toggle="citation">13</a></span>]. Subsequently, the hub genes were selected according to connection degree. Moreover, Molecular Complex Detection (MCODE) was applied to find clusters of genes in PPI network. âDegree cutoffâ=â2â, ânode score cutoffâ=â0.2â, âk-coreâ=â2â and âmax. depthâ=â100â were set as the cut-off criterion.</p>
+              </section><section id="Sec6" class="Section2 RenderAsSection2"><h3 class="Heading">Prediction of miRNA targets</h3>
+                <p xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" id="Par22" class="Para">The target genes of DEMIs were predicted through the Targetscan (<span class="ExternalRef"><a href="http://www.targetscan.org" target="_blank" class="ext-link"><span class="RefSource">http://www.targetscan.org</span></a></span>/), an online program that predicts targets of miRNAs by seeking the specific sequence complementary to the seed region of each miRNA. According to the predicted efficacy of targeting as calculated using cumulative weighted context++ scores of the sites, predicted targets are ranked. In this study, the genes with the cumulative weighted context++ scores â¤âââ0.4 were selected as target genes of each miRNA. Furthermore, we only selected the reverse pairs that contained the DEMIS and overlapping genes of DEGs. Finally, miRNAâmRNA negative regulatory network depicting interactions between miRNAs and their potential targets in osteosarcoma was visualized using Cytoscape.</p>
+              </section>
+</div></section><section xmlns="" xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:meta="http://www.springer.com/app/meta" id="Sec7" class="Section1 RenderAsSection1 c-section"><h2 class="Heading js-ToggleCollapseSection c-section__heading" data-sticky-update="true"><a href="#Results" data-toggle="collapse" data-toggle-disable-clickoff="" data-target="Results">Results</a></h2>
+<div class="js-CollapseSection CollapseSection c-section__content" id="Results" data-test="collapse-section">
+<section id="Sec8" class="Section2 RenderAsSection2"><h3 class="Heading">Identification of DEGs and DEMIs</h3>
+                <div xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" id="Par23" class="Para">Compared with normal bone samples, a total of 346 <em xmlns="" class="EmphasisTypeItalic">DEGs</em> were identified in the osteosarcoma cells, which contained 43 up-regulated and 303 down-regulated genes. The top ten up-regulated and down-regulated genes are listed in Table <span class="InternalRef"><a href="#Tab1">1</a></span>. In total, 90 DEMIs were found to be differentially expressed. 58 DEMIs were downregulated and 32 DEMIs were upregulated. The top ten significantly differentially expressed miRNAs are showed in Table <span class="InternalRef"><a href="#Tab2">2</a></span>.<figure xmlns="" id="Tab1" class="FigureTable"><figcaption class="Caption" lang="en"><div xmlns="http://www.w3.org/1999/xhtml" class="CaptionContent">
+<span class="CaptionNumber">Table 1</span>
+                        <p xmlns="" class="SimplePara">The most significant up-regulated and down-regulated genes</p>
+                      </div></figcaption><div class="Table"><table xmlns="http://www.w3.org/1999/xhtml" border="1">
+<colgroup>
+<col>
+<col char=".">
+<col>
+</colgroup>
+<thead><tr class="header">
+<th><p xmlns="" class="SimplePara">Gene symbol</p></th>
+<th char="."><p xmlns="" class="SimplePara">Log2(FC)</p></th>
+<th><p xmlns="" class="SimplePara">adj.P.Val</p></th>
+</tr></thead>
+<tbody>
+<tr class="noclass"><td colspan="3"><p xmlns="" class="SimplePara">up-regulated</p></td></tr>
+<tr class="noclass">
+<td><p xmlns="" class="SimplePara">âCBS</p></td>
+<td char="."><p xmlns="" class="SimplePara">3.44</p></td>
+<td><p xmlns="" class="SimplePara">4.06E-05</p></td>
+</tr>
+<tr class="noclass">
+<td><p xmlns="" class="SimplePara">âTMSL8</p></td>
+<td char="."><p xmlns="" class="SimplePara">3.35</p></td>
+<td><p xmlns="" class="SimplePara">0.004377385</p></td>
+</tr>
+<tr class="noclass">
+<td><p xmlns="" class="SimplePara">âPSAT1</p></td>
+<td char="."><p xmlns="" class="SimplePara">3.20</p></td>
+<td><p xmlns="" class="SimplePara">0.002425845</p></td>
+</tr>
+<tr class="noclass">
+<td><p xmlns="" class="SimplePara">âPHGDH</p></td>
+<td char="."><p xmlns="" class="SimplePara">3.07</p></td>
+<td><p xmlns="" class="SimplePara">2.24E-06</p></td>
+</tr>
+<tr class="noclass">
+<td><p xmlns="" class="SimplePara">âASNS</p></td>
+<td char="."><p xmlns="" class="SimplePara">2.91</p></td>
+<td><p xmlns="" class="SimplePara">0.0002163</p></td>
+</tr>
+<tr class="noclass">
+<td><p xmlns="" class="SimplePara">âTUBB3</p></td>
+<td char="."><p xmlns="" class="SimplePara">2.73</p></td>
+<td><p xmlns="" class="SimplePara">0.006893245</p></td>
+</tr>
+<tr class="noclass">
+<td><p xmlns="" class="SimplePara">âMGC39900</p></td>
+<td char="."><p xmlns="" class="SimplePara">2.63</p></td>
+<td><p xmlns="" class="SimplePara">0.003410321</p></td>
+</tr>
+<tr class="noclass">
+<td><p xmlns="" class="SimplePara">âUBE2C</p></td>
+<td char="."><p xmlns="" class="SimplePara">2.62</p></td>
+<td><p xmlns="" class="SimplePara">0.000193362</p></td>
+</tr>
+<tr class="noclass">
+<td><p xmlns="" class="SimplePara">âPBK</p></td>
+<td char="."><p xmlns="" class="SimplePara">2.51</p></td>
+<td><p xmlns="" class="SimplePara">9.68E-05</p></td>
+</tr>
+<tr class="noclass">
+<td><p xmlns="" class="SimplePara">âLARP6</p></td>
+<td char="."><p xmlns="" class="SimplePara">2.48</p></td>
+<td><p xmlns="" class="SimplePara">0.00171183</p></td>
+</tr>
+<tr class="noclass"><td colspan="3"><p xmlns="" class="SimplePara">down-regulated</p></td></tr>
+<tr class="noclass">
+<td><p xmlns="" class="SimplePara">âHBB</p></td>
+<td char="."><p xmlns="" class="SimplePara">â7.79</p></td>
+<td><p xmlns="" class="SimplePara">5.88E-34</p></td>
+</tr>
+<tr class="noclass">
+<td><p xmlns="" class="SimplePara">âHBA1</p></td>
+<td char="."><p xmlns="" class="SimplePara">â7.33</p></td>
+<td><p xmlns="" class="SimplePara">2.86E-23</p></td>
+</tr>
+<tr class="noclass">
+<td><p xmlns="" class="SimplePara">âMMP9</p></td>
+<td char="."><p xmlns="" class="SimplePara">â6.34</p></td>
+<td><p xmlns="" class="SimplePara">1.09E-10</p></td>
+</tr>
+<tr class="noclass">
+<td><p xmlns="" class="SimplePara">âCD74</p></td>
+<td char="."><p xmlns="" class="SimplePara">â5.84</p></td>
+<td><p xmlns="" class="SimplePara">1.03E-16</p></td>
+</tr>
+<tr class="noclass">
+<td><p xmlns="" class="SimplePara">âS100A8</p></td>
+<td char="."><p xmlns="" class="SimplePara">â5.83</p></td>
+<td><p xmlns="" class="SimplePara">1.21E-08</p></td>
+</tr>
+<tr class="noclass">
+<td><p xmlns="" class="SimplePara">âVWF</p></td>
+<td char="."><p xmlns="" class="SimplePara">ââ5.64</p></td>
+<td><p xmlns="" class="SimplePara">1.07E-11</p></td>
+</tr>
+<tr class="noclass">
+<td><p xmlns="" class="SimplePara">âHLA-DRA</p></td>
+<td char="."><p xmlns="" class="SimplePara">â5.54</p></td>
+<td><p xmlns="" class="SimplePara">1.27E-10</p></td>
+</tr>
+<tr class="noclass">
+<td><p xmlns="" class="SimplePara">âLYZ</p></td>
+<td char="."><p xmlns="" class="SimplePara">â5.43</p></td>
+<td><p xmlns="" class="SimplePara">2.53E-12</p></td>
+</tr>
+<tr class="noclass">
+<td><p xmlns="" class="SimplePara">âC1QA</p></td>
+<td char="."><p xmlns="" class="SimplePara">â5.28</p></td>
+<td><p xmlns="" class="SimplePara">6.33E-25</p></td>
+</tr>
+<tr class="noclass">
+<td><p xmlns="" class="SimplePara">âTYROBP</p></td>
+<td char="."><p xmlns="" class="SimplePara">â5.27</p></td>
+<td><p xmlns="" class="SimplePara">1.17E-21</p></td>
+</tr>
+</tbody>
+</table></div></figure><figure xmlns="" id="Tab2" class="FigureTable"><figcaption class="Caption" lang="en"><div xmlns="http://www.w3.org/1999/xhtml" class="CaptionContent">
+<span class="CaptionNumber">Table 2</span>
+                        <p xmlns="" class="SimplePara">The most significantly differentially expressed miRNAs</p>
+                      </div></figcaption><div class="Table"><table xmlns="http://www.w3.org/1999/xhtml" border="1">
+<colgroup>
+<col>
+<col char=".">
+<col>
+</colgroup>
+<thead><tr class="header">
+<th><p xmlns="" class="SimplePara">miRNA</p></th>
+<th char="."><p xmlns="" class="SimplePara">Log2(FC)</p></th>
+<th><p xmlns="" class="SimplePara">adj.P.Val</p></th>
+</tr></thead>
+<tbody>
+<tr class="noclass">
+<td><p xmlns="" class="SimplePara">hsa-miR-451</p></td>
+<td char="."><p xmlns="" class="SimplePara">â15.39</p></td>
+<td><p xmlns="" class="SimplePara">2.80E-07</p></td>
+</tr>
+<tr class="noclass">
+<td><p xmlns="" class="SimplePara">hsa-miR-144</p></td>
+<td char="."><p xmlns="" class="SimplePara">â9.27</p></td>
+<td><p xmlns="" class="SimplePara">9.93E-09</p></td>
+</tr>
+<tr class="noclass">
+<td><p xmlns="" class="SimplePara">hsa-miR-142-3p</p></td>
+<td char="."><p xmlns="" class="SimplePara">â8.33</p></td>
+<td><p xmlns="" class="SimplePara">0.000179008</p></td>
+</tr>
+<tr class="noclass">
+<td><p xmlns="" class="SimplePara">hsa-miR-223</p></td>
+<td char="."><p xmlns="" class="SimplePara">â7.52</p></td>
+<td><p xmlns="" class="SimplePara">3.60E-05</p></td>
+</tr>
+<tr class="noclass">
+<td><p xmlns="" class="SimplePara">hsa-miR-126</p></td>
+<td char="."><p xmlns="" class="SimplePara">â6.35</p></td>
+<td><p xmlns="" class="SimplePara">4.93E-05</p></td>
+</tr>
+<tr class="noclass">
+<td><p xmlns="" class="SimplePara">hsa-miR-142-5p</p></td>
+<td char="."><p xmlns="" class="SimplePara">â6.12</p></td>
+<td><p xmlns="" class="SimplePara">2.81E-07</p></td>
+</tr>
+<tr class="noclass">
+<td><p xmlns="" class="SimplePara">hsa-miR-9</p></td>
+<td char="."><p xmlns="" class="SimplePara">6.04</p></td>
+<td><p xmlns="" class="SimplePara">0.00168538</p></td>
+</tr>
+<tr class="noclass">
+<td><p xmlns="" class="SimplePara">hsa-miR-18a</p></td>
+<td char="."><p xmlns="" class="SimplePara">6.03</p></td>
+<td><p xmlns="" class="SimplePara">0.000307596</p></td>
+</tr>
+<tr class="noclass">
+<td><p xmlns="" class="SimplePara">hsa-miR-150</p></td>
+<td char="."><p xmlns="" class="SimplePara">â5.94</p></td>
+<td><p xmlns="" class="SimplePara">0.000189034</p></td>
+</tr>
+<tr class="noclass">
+<td><p xmlns="" class="SimplePara">hsa-miR-486-5p</p></td>
+<td char="."><p xmlns="" class="SimplePara">â5.20</p></td>
+<td><p xmlns="" class="SimplePara">2.25E-05</p></td>
+</tr>
+</tbody>
+</table></div></figure>
+</div>
+              </section><section id="Sec9" class="Section2 RenderAsSection2"><h3 class="Heading">GO functional annotation and pathway enrichment</h3>
+                <div xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" id="Par24" class="Para">The top 10 significant terms of GO functional annotation and pathway enrichment analysis in DAVID were illustrated as Fig. <span class="InternalRef"><a href="#Fig1">1</a></span>.<figure xmlns="" class="Figure" id="Fig1"><div xmlns="http://www.w3.org/1999/xhtml" class="MediaObject" id="MO1">
+                      <a target="_blank" rel="noopener" href="https://media.springernature.com/full/springer-static/image/art%3A10.1186%2Fs41065-018-0061-9/MediaObjects/41065_2018_61_Fig1_HTML.gif"><img class="c-lazy-image u-js-shown" src="https://media.springernature.com/lw5/springer-static/image/art%3A10.1186%2Fs41065-018-0061-9/MediaObjects/41065_2018_61_Fig1_HTML.gif" alt="Fig. 1" data-lazy-load="true" data-src="https://media.springernature.com/lw785/springer-static/image/art%3A10.1186%2Fs41065-018-0061-9/MediaObjects/41065_2018_61_Fig1_HTML.gif"><noscript><img src="https://media.springernature.com/lw785/springer-static/image/art%3A10.1186%2Fs41065-018-0061-9/MediaObjects/41065_2018_61_Fig1_HTML.gif" alt="Fig. 1"></noscript></a>
+                    </div>
+<figcaption class="Caption" lang="en"><div xmlns="http://www.w3.org/1999/xhtml" class="CaptionContent">
+<span class="CaptionNumber">Fig. 1</span>
+                        <p xmlns="" class="SimplePara">Gene ontology and pathway enrichment analysis of the differentially expressed genes in osteosarcoma</p>
+                      </div></figcaption></figure>
+</div>
+                <p xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" id="Par25" class="Para">In the CC ontology, we found that the majority of enriched categories were relevant to extracellular components, such as extracellular exosome(120 genes), extracellular space (77 genes), extracellular region (72 genes), and extracellular matrix (20 genes). The second majority of enriched categories were associated with cytosol (95 genes). In addition, the other enriched CC GO terms contained cell surface (25 genes), MHC class II protein complex (8 genes) and proteinaceous extracellular complex (18 genes). In the BP ontology, the regulation of inflammatory immune response items constitute the majority of enriched GO categories, including immune response (35 genes), innate immune response (26 genes), inflammatory response (26 genes), defense response to Gram-positive bacterium (12 genes), defense response(11 genes) and antigen processing and presentation (9 genes) and antigen processing and presentation of peptide or polysaccharide antigen via MHC class II (7 genes). The other enriched BP GO terms contained platelet degranulation (12 genes), muscle filament sliding (9 genes)and oxygen transport (6 genes). In the MF ontology, the binding-related items constitute the majority of enriched GO categories, including actin binding (17 genes), heparin binding (13 genes), heme binding (11 genes), protease binding (10 genes), collagen binding (9 genes), peptide antigen binding (7 genes) and oxygen binding (7 genes). Besides, the other enriched categories comprised items related to structural constituent of muscle (10 genes), oxygen transporter activity (6 genes) and MHC class II receptor activity (6 genes).</p>
+                <p xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" id="Par26" class="Para">Furthermore, the KEGG pathways of DEGs mainly involved in inflammatory immune response, which included Phagosome (19 genes), <em xmlns="" class="EmphasisTypeItalic">Staphylococcus aureus</em> infection (15 genes), Cell adhesion molecules (CAMs) (15 genes), Systemic lupus erythematosus (14 genes), Asthma (11 genes) and et al.</p>
+              </section><section id="Sec10" class="Section2 RenderAsSection2"><h3 class="Heading">PPI network construction, module analysis and hub gene selection</h3>
+                <div xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" id="Par27" class="Para">PPI networks were constructed on the basis of STRING database and displayed in Fig. <span class="InternalRef"><a href="#Fig2">2</a></span>. We also analyzed the network properties, as shown in Fig. <span class="InternalRef"><a href="#Fig3">3aâd</a></span>. We could see the distribution of network node degrees followed a pattern of power law network in Fig. <span class="InternalRef"><a href="#Fig3">3a</a></span>, proximity to center in Fig. <span class="InternalRef"><a href="#Fig3">3b</a></span>, the average clustering coefficient in Fig. <span class="InternalRef"><a href="#Fig3">3c</a></span> and fromthe shortest path in Fig. <span class="InternalRef"><a href="#Fig3">3d</a></span> and we could also see that they meet the characteristics of small world network. When âDegreeâ¥10â was set as the cut-off criterion, 25 genes in the PPI network were selected as hub genes in osteosarcoma. Top 10 hub genes were TYROBP, HLA-DRA, VWF, PPBP, SERPING1, HLA-DPA1, SERPINA1, KIF20A, FERMT3, HLA-E, and showed in Fig. <span class="InternalRef"><a href="#Fig2">2</a></span>. These hub genes might play crucial roles in osteosarcoma.<figure xmlns="" class="Figure" id="Fig2"><div xmlns="http://www.w3.org/1999/xhtml" class="MediaObject" id="MO2">
+                      <a target="_blank" rel="noopener" href="https://media.springernature.com/full/springer-static/image/art%3A10.1186%2Fs41065-018-0061-9/MediaObjects/41065_2018_61_Fig2_HTML.gif"><img class="c-lazy-image u-js-shown" src="https://media.springernature.com/lw5/springer-static/image/art%3A10.1186%2Fs41065-018-0061-9/MediaObjects/41065_2018_61_Fig2_HTML.gif" alt="Fig. 2" data-lazy-load="true" data-src="https://media.springernature.com/lw785/springer-static/image/art%3A10.1186%2Fs41065-018-0061-9/MediaObjects/41065_2018_61_Fig2_HTML.gif"><noscript><img src="https://media.springernature.com/lw785/springer-static/image/art%3A10.1186%2Fs41065-018-0061-9/MediaObjects/41065_2018_61_Fig2_HTML.gif" alt="Fig. 2"></noscript></a>
+                    </div>
+<figcaption class="Caption" lang="en"><div xmlns="http://www.w3.org/1999/xhtml" class="CaptionContent">
+<span class="CaptionNumber">Fig. 2</span>
+                        <p xmlns="" class="SimplePara">The protein-protein interaction network for the the differentially expressed genes and miRNA-target gene regulatory network in osteosarcoma. Circular nodes in light blue represent the differentially expressed genes; diamond nodes in yellow represent the hub genes; Circular nodes in red represent the screened out differentially expressed miRNAs and arrows in nodes represent the change trend of miRNAs</p>
+                      </div></figcaption></figure><figure xmlns="" class="Figure" id="Fig3"><div xmlns="http://www.w3.org/1999/xhtml" class="MediaObject" id="MO3">
+                      <a target="_blank" rel="noopener" href="https://media.springernature.com/full/springer-static/image/art%3A10.1186%2Fs41065-018-0061-9/MediaObjects/41065_2018_61_Fig3_HTML.gif"><img class="c-lazy-image u-js-shown" src="https://media.springernature.com/lw5/springer-static/image/art%3A10.1186%2Fs41065-018-0061-9/MediaObjects/41065_2018_61_Fig3_HTML.gif" alt="Fig. 3" data-lazy-load="true" data-src="https://media.springernature.com/lw785/springer-static/image/art%3A10.1186%2Fs41065-018-0061-9/MediaObjects/41065_2018_61_Fig3_HTML.gif"><noscript><img src="https://media.springernature.com/lw785/springer-static/image/art%3A10.1186%2Fs41065-018-0061-9/MediaObjects/41065_2018_61_Fig3_HTML.gif" alt="Fig. 3"></noscript></a>
+                    </div>
+<figcaption class="Caption" lang="en"><div xmlns="http://www.w3.org/1999/xhtml" class="CaptionContent">
+<span class="CaptionNumber">Fig. 3</span>
+                        <p xmlns="" class="SimplePara">PPI network analysis of DEGs for characteristics of small-world network. (<strong class="EmphasisTypeBold">a</strong>) Distribution of degrees (<strong class="EmphasisTypeBold">b</strong>) the proximity to the centre (<strong class="EmphasisTypeBold">c</strong>) average aggregation coefficient (<strong class="EmphasisTypeBold">d</strong>) distribution of the shortest path</p>
+                      </div></figcaption></figure>
+</div>
+                <div xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" id="Par28" class="Para">Subsequently, when âscoreââ¥â5â was defined as the cut-off criterion in MCODE, 4 clusters were identified from PPI network, and the most significant cluster consisted of 11 nodes and 55 edges. Furthermore, MCODE analysis showed that each cluster contained one seed gene. SEPP1 (one of the hub genes), CKS2 (the predicted target of MiR-513c), TCAP (one of the predicted target of MiR-18a), BPI (one of the predicted target of MiR-93) were identified as the seed genes in their own clusters, respectively [Fig. <span class="InternalRef"><a href="#Fig4">4</a></span>].<figure xmlns="" class="Figure" id="Fig4"><div xmlns="http://www.w3.org/1999/xhtml" class="MediaObject" id="MO4">
+                      <a target="_blank" rel="noopener" href="https://media.springernature.com/full/springer-static/image/art%3A10.1186%2Fs41065-018-0061-9/MediaObjects/41065_2018_61_Fig4_HTML.gif"><img class="c-lazy-image u-js-shown" src="https://media.springernature.com/lw5/springer-static/image/art%3A10.1186%2Fs41065-018-0061-9/MediaObjects/41065_2018_61_Fig4_HTML.gif" alt="Fig. 4" data-lazy-load="true" data-src="https://media.springernature.com/lw785/springer-static/image/art%3A10.1186%2Fs41065-018-0061-9/MediaObjects/41065_2018_61_Fig4_HTML.gif"><noscript><img src="https://media.springernature.com/lw785/springer-static/image/art%3A10.1186%2Fs41065-018-0061-9/MediaObjects/41065_2018_61_Fig4_HTML.gif" alt="Fig. 4"></noscript></a>
+                    </div>
+<figcaption class="Caption" lang="en"><div xmlns="http://www.w3.org/1999/xhtml" class="CaptionContent">
+<span class="CaptionNumber">Fig. 4</span>
+                        <p xmlns="" class="SimplePara">Four significant modules selected from protein-protein interaction network</p>
+                      </div></figcaption></figure>
+</div>
+              </section><section id="Sec11" class="Section2 RenderAsSection2"><h3 class="Heading">miRNA-mRNA negative regulation network</h3>
+                <p xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" id="Par29" class="Para">Through the TargetScan, the target genes of 90 DEMIs were predicted. By comparing target genes with DEGs, we screened out 35 DEMIs (25 upregulated and 10 downregulated miRNA) and 78 DEGs (67downregulated and 11 upregulated mRNA), presented an expression trend opposite to each other in osteosarcoma. And then, the miRNA-mRNA regulation network which was composed of 89 pairs was established and shown in Fig. <span class="InternalRef"><a href="#Fig2">2</a></span>. In our study, miR-9, the most significantly upregulated among these screened out DEMIS, was predicted to 2 downregulated target, including CEACAM6 and PDK4. MiR-210 was with the highest connectivity with target genes, targeting 12 differentially expressed genes (ANGPTL4, AQP1, ARHGAP25, BTG2, CD247, DNASE1L3, LYL1, P2RY8, SH2D3C, SRL, STAT5A, TNFRSF1B), that might indicate its important role in osteosarcoma. Among the predicted target of MiR-96, HLA-DPA1 and TYROBP were the hub genes. Moreover, several genes were predicted to the common targets of different miRNA. For instance, CSF1R, one of the hub genes, was predicted as the common target of miR-149 and miR-22.</p>
+              </section>
+</div></section><section xmlns="" xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:meta="http://www.springer.com/app/meta" id="Sec12" class="Section1 RenderAsSection1 c-section"><h2 class="Heading js-ToggleCollapseSection c-section__heading" data-sticky-update="true"><a href="#Discussion" data-toggle="collapse" data-toggle-disable-clickoff="" data-target="Discussion">Discussion</a></h2>
+<div class="js-CollapseSection CollapseSection c-section__content" id="Discussion" data-test="collapse-section">
+<p xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" id="Par30" class="Para">Unraveling the mechanisms of the initiation and development of osteosarcoma would benefit the diagnosis, treatment and prognosis evaluation. In present study, two types of microarray datasets: gene expression profile and miRNA expression profile were downloaded from the GEO and analyzed for their relationship in osteosarcoma. Compared with normal bone samples, a total of 346 <em xmlns="" class="EmphasisTypeItalic">DEGs</em> were identified in the osteosarcoma cells, containing 43 up-regulated and 303 down-regulated genes. CBS (cystathionine-Î²-synthase cancer), the most regulated gene in this study, was found to be upregulated in many types of tumors, such as multiple myeloma [<span class="CitationRef"><a href="#CR14" data-toggle="citation">14</a></span>], colorectal cancers [<span class="CitationRef"><a href="#CR15" data-toggle="citation">15</a></span>], bladder cancer [<span class="CitationRef"><a href="#CR16" data-toggle="citation">16</a></span>] and et al., and downregulation of CBS help inhibit carcinogenesis. However, to our knowledge, there was no report about CBS in osteosarcoma, so it might be a novel target for the diagnosis or treatment of osteosarcoma.</p>
+<p xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" id="Par31" class="Para">As was suggested by DAVID analysis, the DEGs in osteosarcoma were enriched in biological processes and KEGG pathway of inflammatory immune response. Molecular function of GO analysis showed enrichment in binding-related items. It is reasonable because immune system has significant roles in tumorigenesis. At the cancer initiation stage, the immune system can recognize tumors expressing foreign antigens and eradicate tumors via innate and adaptive immune activation [<span class="CitationRef"><a href="#CR17" data-toggle="citation">17</a></span>]. If tumor cells are not eliminated via recognition by the immune system, tumor cells can enter an equilibrium phase and evolve a number of phenotypic changes and dampen immunogenicity to escape the immune surveillance [<span class="CitationRef"><a href="#CR18" data-toggle="citation">18</a></span>, <span class="CitationRef"><a href="#CR19" data-toggle="citation">19</a></span>]. In other words the immune microenvironment helps cancer cells to select the dominant cells so that the tumor can progressively grow unhindered. Therefore, osteosarcoma tumors are infiltrated with immune cells that may have the ability to fight tumor cells [<span class="CitationRef"><a href="#CR20" data-toggle="citation">20</a></span>] but are tolerized due to immune escape of the tumor cells [<span class="CitationRef"><a href="#CR21" data-toggle="citation">21</a></span>, <span class="CitationRef"><a href="#CR22" data-toggle="citation">22</a></span>]. Cellular component of GO analysis showed the majority of enriched categories were relevant to extracellular components, such as extracellular exosome, extracellular space, extracellular region, and extracellular matrix. Tumor microenvironment has complementary effects on the development and metastasis of osteosarcoma through extracellular secretion, alteration of phenotype type of tumor cells, immune escape and providing proper acid-base environment for tumor cells [<span class="CitationRef"><a href="#CR23" data-toggle="citation">23</a></span>].</p>
+<p xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" id="Par32" class="Para">PPI network of DEGs illustrated the overview of their functional connections, which followed a pattern of power law network from the shortest path, average aggregation coefficient, node degree and proximity to the center and met the characteristics of small-world network, and of which 25 hub genes were selected. Most of them were enriched in inflammatory immune response and platelet degranulation. As we known, the activated degranulated platelet accumulated on the surface of tumor cell to protect them from the immune system recognization and eradication. After module analysis of the PPI network, 4 seed genes were selected, such as SEPP1, CKS2, TCAP and BPI genes.</p>
+<p xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" id="Par33" class="Para">SEPP1, a major selenium transport protein, has endogenous antioxidant function through catalyzing the oxidation of glutathione by a hydrogen peroxide or phosphatidylcholine hydroperoxide [<span class="CitationRef"><a href="#CR24" data-toggle="citation">24</a></span>]. It was found that SEPP1 levels and activity are significantly decreased in colon tumors, human prostate tumors, C3(1)/Tag transgenic ouse tumors, and prostate cancer cell lines [<span class="CitationRef"><a href="#CR25" data-toggle="citation">25</a></span>, <span class="CitationRef"><a href="#CR26" data-toggle="citation">26</a></span>]. Furthermore, several single nucleotide polymorphisms (SNPs) have been identified in SEPP1 that may contribute to decreased expression in colorectal adenomas and have been associated with cancer risk [<span class="CitationRef"><a href="#CR27" data-toggle="citation">27</a></span>, <span class="CitationRef"><a href="#CR28" data-toggle="citation">28</a></span>]. CKS2 (Cyclin-dependent kinases regulatory subunit 2), a cyclin-dependent kinase interacting protein, is essential for cell cycle regulation. Elevated expression of CKS2 has been demonstrated in multiple types of human malignancies. In prostate cancer, aberrant expression of CKS2 contributes to tumorigenesis by enhancing cell proliferation and inhibiting programmed cell death [<span class="CitationRef"><a href="#CR29" data-toggle="citation">29</a></span>]. In a papillary thyroid carcinoma, miR-26a [<span class="CitationRef"><a href="#CR30" data-toggle="citation">30</a></span>] and miR-7 [<span class="CitationRef"><a href="#CR31" data-toggle="citation">31</a></span>] modulates tumor growth and tumorigenesis by targeting CKS2. In colorectal cancer cells, attenuation of CKS2 results in decreased cell viability, increased cell apoptosis and cell cycle arrest [<span class="CitationRef"><a href="#CR32" data-toggle="citation">32</a></span>]. In almost the same way, aberrant expression of TCAP and BPI was in relation with multiple types of tumor. However, no study has associated these seed genes with osteosarcoma, which might indicate them as the new targets.</p>
+<p xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" id="Par34" class="Para">It has been shown that miRNAs induce RNA silencing by targeting 3â-UTR of mRNAs, and that miRNA functions as oncogenes or oncosuppressor depending on the function of suppressed targets. In present study, the miRNA-mRNA regulation network which was composed of 89 pairs was established through the TargetScan and comparing target genes with DEGs, in which MiR-210 directly regulated 12 differentially expressed genes and was significantly upregulated in osteosarcoma. Mounting evidence identified MiR-210 as an oncogenic role in generating osteosarcoma; increased expression of MiR-210 is associated with decreased overall survival and progression-free survival, and more frequently occurred in osteosarcoma tissues with large tumor size, poor response to preoperative chemotherapy, and positive metastasis [<span class="CitationRef"><a href="#CR33" data-toggle="citation">33</a></span>, <span class="CitationRef"><a href="#CR34" data-toggle="citation">34</a></span>]. Nonetheless, the defined roles of miR-210 in osteosarcoma malignant progression, especially the target gene of miR-210 in osteosarcoma dedifferentiation, was insufficiently researched. Only NFIC, a validated target of miR-210 from miRBase and a DEG from a gene expression profile GSE38135, had been shown to play important role in TGF-b1-induced osteosarcoma dedifferentiation and can be significantly reduced by miR-210 treatment in human osteosarcoma cell line MNNG/HOS [<span class="CitationRef"><a href="#CR35" data-toggle="citation">35</a></span>]. So far, the role of other miR-210-gene pairs in osteosarcoma was not reported. HLA-DPA1 and TYROBP, the hub genes in PPI network were regulated by MiR-96, but their function were not researched in osteosarcoma too. These might imply that miRNA and their target genes may represent potential novel therapeutic targets or biomarkers for osteosarcoma.</p>
+<p xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" id="Par35" class="Para">The limitation in our work is that the pathogenesis of key miRNA and gene in osteosarcoma need to be elucidated through experiments in vivo and in vitro.</p>
+</div></section><section xmlns="" xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:meta="http://www.springer.com/app/meta" id="Sec13" class="Section1 RenderAsSection1 c-section"><h2 class="Heading js-ToggleCollapseSection c-section__heading" data-sticky-update="true"><a href="#Conclusion" data-toggle="collapse" data-toggle-disable-clickoff="" data-target="Conclusion">Conclusion</a></h2>
+<div class="js-CollapseSection CollapseSection c-section__content" id="Conclusion" data-test="collapse-section">
+<p xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" id="Par36" class="Para">In summary, our study was intended to identify key genes in osteosarcoma and construct regulatory networks between miRNA and mRNA through bioinformatics analysis. 25 hub genes and 4 seed genes were identified according to PPI network.</p>
+<p xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" id="Par37" class="Para">Functional and pathway enrichment analysis indicated immune system played significant roles in osteosarcoma tumorigenesis. Additionally, deregulated miRNAs such as MiR-210 and MiR-96, might exert their biological functions through their targeting mRNAs. Moreover, our results could provide novel sights in the mechanisms of the initiation and development of osteosarcoma, that would become the new diagnostic biomarkers and treatment targets for osteosarcoma.</p>
+</div></section><section xmlns="" xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:meta="http://www.springer.com/app/meta" class="AbbreviationGroup Section1 RenderAsSection1 c-section"><h2 class="Heading js-ToggleCollapseSection c-section__heading" data-sticky-update="true"><a href="#Abbreviations" data-toggle="collapse" data-toggle-disable-clickoff="" data-target="Abbreviations">Abbreviations</a></h2>
+<div class="js-CollapseSection CollapseSection c-section__content" data-test="collapse-section" id="Abbreviations"><div class="DefinitionList">
+                <dl class="DefinitionListEntry">
+<dt class="Term"><dfn>BP: </dfn></dt>
+<dd class="Description">
+                    <p xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" id="Par5" class="Para">Biological processes</p>
+                  </dd>
+</dl>
+<dl class="DefinitionListEntry">
+<dt class="Term"><dfn>CC: </dfn></dt>
+<dd class="Description">
+                    <p xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" id="Par6" class="Para">Cell component</p>
+                  </dd>
+</dl>
+<dl class="DefinitionListEntry">
+<dt class="Term"><dfn>DEG: </dfn></dt>
+<dd class="Description">
+                    <p xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" id="Par7" class="Para">Differentially expressed gene</p>
+                  </dd>
+</dl>
+<dl class="DefinitionListEntry">
+<dt class="Term"><dfn>DEMI: </dfn></dt>
+<dd class="Description">
+                    <p xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" id="Par8" class="Para">Differentially expressed miRNAs</p>
+                  </dd>
+</dl>
+<dl class="DefinitionListEntry">
+<dt class="Term"><dfn>GO: </dfn></dt>
+<dd class="Description">
+                    <p xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" id="Par9" class="Para">Gene ontology</p>
+                  </dd>
+</dl>
+<dl class="DefinitionListEntry">
+<dt class="Term"><dfn>KEGG: </dfn></dt>
+<dd class="Description">
+                    <p xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" id="Par10" class="Para">Kyoto Encyclopedia of Genes and Genomes</p>
+                  </dd>
+</dl>
+<dl class="DefinitionListEntry">
+<dt class="Term"><dfn>MF: </dfn></dt>
+<dd class="Description">
+                    <p xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" id="Par11" class="Para">Molecular function</p>
+                  </dd>
+</dl>
+<dl class="DefinitionListEntry">
+<dt class="Term"><dfn>PPI: </dfn></dt>
+<dd class="Description">
+                    <p xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" id="Par12" class="Para">Proteinâprotein interaction</p>
+                  </dd>
+</dl>
+<dl class="DefinitionListEntry">
+<dt class="Term"><dfn>STRING: </dfn></dt>
+<dd class="Description">
+                    <p xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" id="Par13" class="Para">Search Tool for the Retrieval of Interacting Genes</p>
+                  </dd>
+</dl>
+<dl class="DefinitionListEntry">
+<dt class="Term"><dfn>TCGA: </dfn></dt>
+<dd class="Description">
+                    <p xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" id="Par14" class="Para">The Cancer Genome Atlas</p>
+                  </dd>
+</dl>
+</div></div></section><section xmlns="" xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:meta="http://www.springer.com/app/meta" class="Section1 RenderAsSection1 c-section" data-test="declarations-section" id="Decs"><h2 class="Heading js-ToggleCollapseSection c-section__heading" data-sticky-update="true"><a href="#Declarations" data-toggle="collapse" data-toggle-disable-clickoff="" data-target="Declarations">Declarations</a></h2>
+<div class="js-CollapseSection CollapseSection c-section__content" data-test="collapse-section" id="Declarations">
+<div xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" class="Acknowledgments">
+<div id="FPar1" class="FormalPara FormalParaRenderingStyle1">
+                <h3 xmlns="" class="Heading">Funding</h3>
+                <p id="Par38" class="Para">This research was supported by Science and Technology Plan of Xiamen (3502Z20154067).</p>
+              </div>
+<div id="FPar2" class="FormalPara FormalParaRenderingStyle1">
+                <h3 xmlns="" class="Heading">Availability of data and materials</h3>
+                <p id="Par39" class="Para">The authors declare that the data supporting the findings of this study are available within the article.</p>
+              </div>
+</div>
+<div xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" class="FormalPara FormalParaRenderingStyle1">
+<h3 xmlns="" class="Heading">Authorsâ contributions</h3>
+<p xmlns="" class="SimplePara">YP collected the data; LL and ZY performed the statistical analysis; JC wrote the paper; ZD conceived the study. All authors read and approved the final manuscript.</p>
+</div>
+<div xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" class="Ethics">
+              <div id="FPar3" class="FormalPara FormalParaRenderingStyle1">
+                <h3 xmlns="" class="Heading">Ethics approval and consent to participate</h3>
+                <p id="Par40" class="Para">Not applicable</p>
+              </div>
+              <div id="FPar4" class="FormalPara FormalParaRenderingStyle1">
+                <h3 xmlns="" class="Heading">Competing interests</h3>
+                <p id="Par41" class="Para">The authors declare that they have no competing interests.</p>
+              </div>
+              <div id="FPar5" class="FormalPara FormalParaRenderingStyle1">
+                <h3 xmlns="" class="Heading">Publisherâs Note</h3>
+                <p id="Par42" class="Para">Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations.</p>
+              </div>
+            </div>
+<div xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" class="License">
+                <p xmlns="" class="SimplePara"><strong class="EmphasisTypeBold">Open Access</strong>This article is distributed under the terms of the Creative Commons Attribution 4.0 International License (<span xmlns="http://www.w3.org/1999/xhtml" class="ExternalRef"><a href="http://creativecommons.org/licenses/by/4.0/" target="_blank" class="ext-link"><span class="RefSource">http://creativecommons.org/licenses/by/4.0/</span></a></span>), which permits unrestricted use, distribution, and reproduction in any medium, provided you give appropriate credit to the original author(s) and the source, provide a link to the Creative Commons license, and indicate if changes were made. The Creative Commons Public Domain Dedication waiver (<span xmlns="http://www.w3.org/1999/xhtml" class="ExternalRef"><a href="http://creativecommons.org/publicdomain/zero/1.0/" target="_blank" class="ext-link"><span class="RefSource">http://creativecommons.org/publicdomain/zero/1.0/</span></a></span>) applies to the data made available in this article, unless otherwise stated.</p>
+              </div>
+</div></section>
+</div>
+                        <div class="FulltextWrapper"><section xmlns="" xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:meta="http://www.springer.com/app/meta" class="Section1 RenderAsSection1 c-section Affiliations" id="Aff"><h2 class="Heading js-ToggleCollapseSection c-section__heading" data-sticky-update="true"><a href="#Author-Affiliations" data-toggle="collapse" data-toggle-disable-clickoff="" data-target="Author-Affiliations">Authorsâ Affiliations</a></h2>
+<div class="js-CollapseSection CollapseSection c-section__content c-section__content" data-test="collapse-section" id="Author-Affiliations">
+<div xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" class="Affiliation" id="Aff1">
+<span class="AffiliationNumber">(1)</span><div class="AffiliationText">Department of Spine Surgery, the Second Xiangya Hospital, Central South University, Changsha, 410011, China</div>
+</div>
+<div xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" class="Affiliation" id="Aff2">
+<span class="AffiliationNumber">(2)</span><div class="AffiliationText">Department of Orthopaedics, the Fifth Hospital of Xiamen, Xiamen, 361101, China</div>
+</div>
+<div xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" class="Affiliation" id="Aff3">
+<span class="AffiliationNumber">(3)</span><div class="AffiliationText">Department of Nephrology, Xiangya Hospital of Central South University, Changsha, 410008, China</div>
+</div>
+</div></section></div>
+                        <div class="FulltextWrapper">
+<section xmlns="" xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:meta="http://www.springer.com/app/meta" class="Section1 RenderAsSection1 c-section SectionTypeMaterialsAndMethods" id="Bib1"><h2 class="Heading js-ToggleCollapseSection c-section__heading" data-sticky-update="true"><a href="#References" data-toggle="collapse" data-toggle-disable-clickoff="" data-target="References">References</a></h2>
+<div class="js-CollapseSection CollapseSection c-section__content" data-test="collapse-section" id="References"><ol class="BibliographyWrapper">
+<li class="Citation"><cite class="CitationContent" id="CR1" itemprop="citation" itemscope="" itemtype="http://schema.org/ScholarlyArticle"><span itemprop="headline">Durfee RA, Mohammed M, Luu HH. Review of osteosarcoma and current management. Rheumatol Ther. 2016;3:221â43.</span><span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a target="_blank" rel="noopener" href="https://doi.org/10.1007/s40744-016-0046-y"><span><span>View Article</span></span></a></span><span class="Occurrence OccurrencePID"><a target="_blank" rel="noopener nofollow" href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;dopt=Abstract&amp;list_uids=27761754"><span><span>PubMed</span></span></a></span><span class="Occurrence OccurrencePMCID"><a target="_blank" rel="noopener nofollow" href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC5127970"><span><span>PubMed Central</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" href="http://scholar.google.com/scholar_lookup?title=Review%20of%20osteosarcoma%20and%20current%20management&amp;author=RA.%20Durfee&amp;author=M.%20Mohammed&amp;author=HH.%20Luu&amp;journal=Rheumatol%20Ther&amp;volume=3&amp;pages=221-243&amp;publication_year=2016"><span><span>Google Scholar</span></span></a></span></span></cite></li>
+<li class="Citation"><cite class="CitationContent" id="CR2" itemprop="citation" itemscope="" itemtype="http://schema.org/ScholarlyArticle"><span itemprop="headline">Jo VY, Fletcher CD. WHO classification of soft tissue tumours: an update based on the 2013 (4th) edition. Pathology. 2014;46:95â104.</span><span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a target="_blank" rel="noopener" href="https://doi.org/10.1097/PAT.0000000000000050"><span><span>View Article</span></span></a></span><span class="Occurrence OccurrencePID"><a target="_blank" rel="noopener nofollow" href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;dopt=Abstract&amp;list_uids=24378391"><span><span>PubMed</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" href="http://scholar.google.com/scholar_lookup?title=WHO%20classification%20of%20soft%20tissue%20tumours%3A%20an%20update%20based%20on%20the%202013%20%284th%29%20edition&amp;author=VY.%20Jo&amp;author=CD.%20Fletcher&amp;journal=Pathology&amp;volume=46&amp;pages=95-104&amp;publication_year=2014"><span><span>Google Scholar</span></span></a></span></span></cite></li>
+<li class="Citation"><cite class="CitationContent" id="CR3" itemprop="citation" itemscope="" itemtype="http://schema.org/ScholarlyArticle"><span itemprop="headline">Anderson ME. Update on survival in osteosarcoma. Orthop Clin North Am. 2016;47:283â92.</span><span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a target="_blank" rel="noopener" href="https://doi.org/10.1016/j.ocl.2015.08.022"><span><span>View Article</span></span></a></span><span class="Occurrence OccurrencePID"><a target="_blank" rel="noopener nofollow" href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;dopt=Abstract&amp;list_uids=26614941"><span><span>PubMed</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" href="http://scholar.google.com/scholar_lookup?title=Update%20on%20survival%20in%20osteosarcoma&amp;author=ME.%20Anderson&amp;journal=Orthop%20Clin%20North%20Am&amp;volume=47&amp;pages=283-292&amp;publication_year=2016"><span><span>Google Scholar</span></span></a></span></span></cite></li>
+<li class="Citation"><cite class="CitationContent" id="CR4" itemprop="citation" itemscope="" itemtype="http://schema.org/ScholarlyArticle"><span itemprop="headline">Lewis IJ, Nooij MA, Whelan J, Sydes MR, Grimer R, Hogendoorn PC, Memon MA, Weeden S, Uscinska BM, van Glabbeke M, et al. Improvement in histologic response but not survival in osteosarcoma patients treated with intensified chemotherapy: a randomized phase III trial of the European osteosarcoma intergroup. J Natl Cancer Inst. 2007;99:112â28.</span><span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a target="_blank" rel="noopener" href="https://doi.org/10.1093/jnci/djk015"><span><span>View Article</span></span></a></span><span class="Occurrence OccurrencePID"><a target="_blank" rel="noopener nofollow" href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;dopt=Abstract&amp;list_uids=17227995"><span><span>PubMed</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" href="http://scholar.google.com/scholar_lookup?title=Improvement%20in%20histologic%20response%20but%20not%20survival%20in%20osteosarcoma%20patients%20treated%20with%20intensified%20chemotherapy%3A%20a%20randomized%20phase%20III%20trial%20of%20the%20European%20osteosarcoma%20intergroup&amp;author=IJ.%20Lewis&amp;author=MA.%20Nooij&amp;author=J.%20Whelan&amp;author=MR.%20Sydes&amp;author=R.%20Grimer&amp;author=PC.%20Hogendoorn&amp;author=MA.%20Memon&amp;author=S.%20Weeden&amp;author=BM.%20Uscinska&amp;author=M.%20van%20Glabbeke&amp;journal=J%20Natl%20Cancer%20Inst&amp;volume=99&amp;pages=112-128&amp;publication_year=2007"><span><span>Google Scholar</span></span></a></span></span></cite></li>
+<li class="Citation"><cite class="CitationContent" id="CR5" itemprop="citation" itemscope="" itemtype="http://schema.org/ScholarlyArticle"><span itemprop="headline">Zhao SJ, Jiang YQ, Xu NW, Li Q, Zhang Q, Wang SY, Li J, Wang YH, Zhang YL, Jiang SH, et al. SPARCL1 suppresses osteosarcoma metastasis and recruits macrophages by activation of canonical WNT/Î²-catenin signaling through stabilization of the WNT-receptor complex. Oncogene. 2018;37:1049â61.</span><span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a target="_blank" rel="noopener" href="https://doi.org/10.1038/onc.2017.403"><span><span>View Article</span></span></a></span><span class="Occurrence OccurrencePID"><a target="_blank" rel="noopener nofollow" href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;dopt=Abstract&amp;list_uids=29084211"><span><span>PubMed</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" href="http://scholar.google.com/scholar_lookup?title=SPARCL1%20suppresses%20osteosarcoma%20metastasis%20and%20recruits%20macrophages%20by%20activation%20of%20canonical%20WNT%2F%CE%B2-catenin%20signaling%20through%20stabilization%20of%20the%20WNT-receptor%20complex&amp;author=SJ.%20Zhao&amp;author=YQ.%20Jiang&amp;author=NW.%20Xu&amp;author=Q.%20Li&amp;author=Q.%20Zhang&amp;author=SY.%20Wang&amp;author=J.%20Li&amp;author=YH.%20Wang&amp;author=YL.%20Zhang&amp;author=SH.%20Jiang&amp;journal=Oncogene&amp;volume=37&amp;pages=1049-1061&amp;publication_year=2018"><span><span>Google Scholar</span></span></a></span></span></cite></li>
+<li class="Citation"><cite class="CitationContent" id="CR6" itemprop="citation" itemscope="" itemtype="http://schema.org/ScholarlyArticle"><span itemprop="headline">Ji T, Guo Y, Kim K, McQueen P, Ghaffar S, Christ A, Lin C, Eskander R, Zi X, Hoang BH. Neuropilin-2 expression is inhibited by secreted Wnt antagonists and its down-regulation is associated with reduced tumor growth and metastasis in osteosarcoma. Mol Cancer. 2015;14:86.</span><span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a target="_blank" rel="noopener" href="https://doi.org/10.1186/s12943-015-0359-4"><span><span>View Article</span></span></a></span><span class="Occurrence OccurrencePID"><a target="_blank" rel="noopener nofollow" href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;dopt=Abstract&amp;list_uids=25890345"><span><span>PubMed</span></span></a></span><span class="Occurrence OccurrencePMCID"><a target="_blank" rel="noopener nofollow" href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC4411772"><span><span>PubMed Central</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" href="http://scholar.google.com/scholar_lookup?title=Neuropilin-2%20expression%20is%20inhibited%20by%20secreted%20Wnt%20antagonists%20and%20its%20down-regulation%20is%20associated%20with%20reduced%20tumor%20growth%20and%20metastasis%20in%20osteosarcoma&amp;author=T.%20Ji&amp;author=Y.%20Guo&amp;author=K.%20Kim&amp;author=P.%20McQueen&amp;author=S.%20Ghaffar&amp;author=A.%20Christ&amp;author=C.%20Lin&amp;author=R.%20Eskander&amp;author=X.%20Zi&amp;author=BH.%20Hoang&amp;journal=Mol%20Cancer&amp;volume=14&amp;pages=86&amp;publication_year=2015"><span><span>Google Scholar</span></span></a></span></span></cite></li>
+<li class="Citation"><cite class="CitationContent" id="CR7" itemprop="citation" itemscope="" itemtype="http://schema.org/ScholarlyArticle"><span itemprop="headline">Gui ZL, Wu TL, Zhao GC, Lin ZX, Xu HG. MicroRNA-497 suppress osteosarcoma by targeting MAPK/Erk pathway. Bratisl Lek Listy. 2017;118:449â52.</span><span class="Occurrences"><span class="Occurrence OccurrencePID"><a target="_blank" rel="noopener nofollow" href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;dopt=Abstract&amp;list_uids=29050481"><span><span>PubMed</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" href="http://scholar.google.com/scholar_lookup?title=MicroRNA-497%20suppress%20osteosarcoma%20by%20targeting%20MAPK%2FErk%20pathway&amp;author=ZL.%20Gui&amp;author=TL.%20Wu&amp;author=GC.%20Zhao&amp;author=ZX.%20Lin&amp;author=HG.%20Xu&amp;journal=Bratisl%20Lek%20Listy&amp;volume=118&amp;pages=449-452&amp;publication_year=2017"><span><span>Google Scholar</span></span></a></span></span></cite></li>
+<li class="Citation"><cite class="CitationContent" id="CR8" itemprop="citation" itemscope="" itemtype="http://schema.org/ScholarlyArticle"><span itemprop="headline">NamlÃ¸s HM, Meza-Zepeda LA, BarÃ¸y T, Ãstensen IH, Kresse SH, Kuijjer ML, Serra M, BÃ¼rger H, Cleton-Jansen AM, Myklebost O. Modulation of the osteosarcoma expression phenotype by microRNAs. PLoS One. 2012;7(10):e48086.</span><span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a target="_blank" rel="noopener" href="https://doi.org/10.1371/journal.pone.0048086"><span><span>View Article</span></span></a></span><span class="Occurrence OccurrencePID"><a target="_blank" rel="noopener nofollow" href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;dopt=Abstract&amp;list_uids=23133552"><span><span>PubMed</span></span></a></span><span class="Occurrence OccurrencePMCID"><a target="_blank" rel="noopener nofollow" href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3485010"><span><span>PubMed Central</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" href="http://scholar.google.com/scholar_lookup?title=Modulation%20of%20the%20osteosarcoma%20expression%20phenotype%20by%20microRNAs&amp;author=HM.%20Naml%C3%B8s&amp;author=LA.%20Meza-Zepeda&amp;author=T.%20Bar%C3%B8y&amp;author=IH.%20%C3%98stensen&amp;author=SH.%20Kresse&amp;author=ML.%20Kuijjer&amp;author=M.%20Serra&amp;author=H.%20B%C3%BCrger&amp;author=AM.%20Cleton-Jansen&amp;author=O.%20Myklebost&amp;journal=PLoS%20One&amp;volume=7&amp;issue=10&amp;pages=e48086&amp;publication_year=2012"><span><span>Google Scholar</span></span></a></span></span></cite></li>
+<li class="Citation"><cite class="CitationContent" id="CR9" itemprop="citation" itemscope="" itemtype="http://schema.org/ScholarlyArticle"><span itemprop="headline">Dennis G Jr, Sherman BT, Hosack DA, Yang J, Gao W, Lane HC, Lempicki RA. DAVID: database for annotation, visualization, and integrated discovery. Genome Biol. 2003;4:P3.</span><span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a target="_blank" rel="noopener" href="https://doi.org/10.1186/gb-2003-4-5-p3"><span><span>View Article</span></span></a></span><span class="Occurrence OccurrencePID"><a target="_blank" rel="noopener nofollow" href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;dopt=Abstract&amp;list_uids=12734009"><span><span>PubMed</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" href="http://scholar.google.com/scholar_lookup?title=DAVID%3A%20database%20for%20annotation%2C%20visualization%2C%20and%20integrated%20discovery&amp;author=G.%20Dennis&amp;author=BT.%20Sherman&amp;author=DA.%20Hosack&amp;author=J.%20Yang&amp;author=W.%20Gao&amp;author=HC.%20Lane&amp;author=RA.%20Lempicki&amp;journal=Genome%20Biol&amp;volume=4&amp;pages=P3&amp;publication_year=2003"><span><span>Google Scholar</span></span></a></span></span></cite></li>
+<li class="Citation"><cite class="CitationContent" id="CR10" itemprop="citation" itemscope="" itemtype="http://schema.org/ScholarlyArticle"><span itemprop="headline">Gene Ontology Consortium. The gene ontology (GO) project in 2006. Nucleic Acids Res. 2006;34(Database issue):D322â6.</span><span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a target="_blank" rel="noopener" href="https://doi.org/10.1093/nar/gkj021"><span><span>View Article</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" href="http://scholar.google.com/scholar_lookup?title=The%20gene%20ontology%20%28GO%29%20project%20in%202006&amp;journal=Nucleic%20Acids%20Res&amp;volume=34&amp;issue=Database%20issue&amp;pages=D322-D326&amp;publication_year=2006"><span><span>Google Scholar</span></span></a></span></span></cite></li>
+<li class="Citation"><cite class="CitationContent" id="CR11" itemprop="citation" itemscope="" itemtype="http://schema.org/ScholarlyArticle"><span itemprop="headline">Kanehisa M, Goto S. KEGG: Kyoto encyclopedia of genes and genomes. Nucleic Acids Res. 2000;28:27â30.</span><span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a target="_blank" rel="noopener" href="https://doi.org/10.1093/nar/28.1.27"><span><span>View Article</span></span></a></span><span class="Occurrence OccurrencePID"><a target="_blank" rel="noopener nofollow" href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;dopt=Abstract&amp;list_uids=10592173"><span><span>PubMed</span></span></a></span><span class="Occurrence OccurrencePMCID"><a target="_blank" rel="noopener nofollow" href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC102409"><span><span>PubMed Central</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" href="http://scholar.google.com/scholar_lookup?title=KEGG%3A%20Kyoto%20encyclopedia%20of%20genes%20and%20genomes&amp;author=M.%20Kanehisa&amp;author=S.%20Goto&amp;journal=Nucleic%20Acids%20Res&amp;volume=28&amp;pages=27-30&amp;publication_year=2000"><span><span>Google Scholar</span></span></a></span></span></cite></li>
+<li class="Citation"><cite class="CitationContent" id="CR12" itemprop="citation" itemscope="" itemtype="http://schema.org/ScholarlyArticle"><span itemprop="headline">Szklarczyk D, Franceschini A, Wyder S, Forslund K, Heller D, Huerta-Cepas J, Simonovic M, Roth A, Santos A, Tsafou KP, Kuhn M, Bork P, Jensen LJ, von Mering C. STRING v10: protein-protein interaction networks, integrated over the tree of life. Nucleic Acids Res. 2015;43(Database issue):D447â52.</span><span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a target="_blank" rel="noopener" href="https://doi.org/10.1093/nar/gku1003"><span><span>View Article</span></span></a></span><span class="Occurrence OccurrencePID"><a target="_blank" rel="noopener nofollow" href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;dopt=Abstract&amp;list_uids=25352553"><span><span>PubMed</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" href="http://scholar.google.com/scholar_lookup?title=STRING%20v10%3A%20protein-protein%20interaction%20networks%2C%20integrated%20over%20the%20tree%20of%20life&amp;author=D.%20Szklarczyk&amp;author=A.%20Franceschini&amp;author=S.%20Wyder&amp;author=K.%20Forslund&amp;author=D.%20Heller&amp;author=J.%20Huerta-Cepas&amp;author=M.%20Simonovic&amp;author=A.%20Roth&amp;author=A.%20Santos&amp;author=KP.%20Tsafou&amp;author=M.%20Kuhn&amp;author=P.%20Bork&amp;author=LJ.%20Jensen&amp;author=C.%20von%20Mering&amp;journal=Nucleic%20Acids%20Res&amp;volume=43&amp;issue=Database%20issue&amp;pages=D447-D452&amp;publication_year=2015"><span><span>Google Scholar</span></span></a></span></span></cite></li>
+<li class="Citation"><cite class="CitationContent" id="CR13" itemprop="citation" itemscope="" itemtype="http://schema.org/ScholarlyArticle"><span itemprop="headline">Assenov Y, RamÃ­rez F, Schelhorn SE, Lengauer T, Albrecht M. Computing topological parameters of biological networks. Bioinformatics. 2008;24(2):282â4.</span><span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a target="_blank" rel="noopener" href="https://doi.org/10.1093/bioinformatics/btm554"><span><span>View Article</span></span></a></span><span class="Occurrence OccurrencePID"><a target="_blank" rel="noopener nofollow" href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;dopt=Abstract&amp;list_uids=18006545"><span><span>PubMed</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" href="http://scholar.google.com/scholar_lookup?title=Computing%20topological%20parameters%20of%20biological%20networks&amp;author=Y.%20Assenov&amp;author=F.%20Ram%C3%ADrez&amp;author=SE.%20Schelhorn&amp;author=T.%20Lengauer&amp;author=M.%20Albrecht&amp;journal=Bioinformatics&amp;volume=24&amp;issue=2&amp;pages=282-284&amp;publication_year=2008"><span><span>Google Scholar</span></span></a></span></span></cite></li>
+<li class="Citation"><cite class="CitationContent" id="CR14" itemprop="citation" itemscope="" itemtype="http://schema.org/ScholarlyArticle"><span itemprop="headline">De Vos J, Thykjaer T, Tarte K, Ensslen M, Raynaud P, Requirand G, Pellet F, Pantesco V, RÃ¨me T, Jourdan M, et al. Comparison of gene expression profiling between malignant and normal plasma cells with oligonucleotide arrays. Oncogene. 2002;21:6848â57.</span><span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a target="_blank" rel="noopener" href="https://doi.org/10.1038/sj.onc.1205868"><span><span>View Article</span></span></a></span><span class="Occurrence OccurrencePID"><a target="_blank" rel="noopener nofollow" href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;dopt=Abstract&amp;list_uids=12360412"><span><span>PubMed</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" href="http://scholar.google.com/scholar_lookup?title=Comparison%20of%20gene%20expression%20profiling%20between%20malignant%20and%20normal%20plasma%20cells%20with%20oligonucleotide%20arrays&amp;author=J.%20De%20Vos&amp;author=T.%20Thykjaer&amp;author=K.%20Tarte&amp;author=M.%20Ensslen&amp;author=P.%20Raynaud&amp;author=G.%20Requirand&amp;author=F.%20Pellet&amp;author=V.%20Pantesco&amp;author=T.%20R%C3%A8me&amp;author=M.%20Jourdan&amp;journal=Oncogene&amp;volume=21&amp;pages=6848-6857&amp;publication_year=2002"><span><span>Google Scholar</span></span></a></span></span></cite></li>
+<li class="Citation"><cite class="CitationContent" id="CR15" itemprop="citation" itemscope="" itemtype="http://schema.org/ScholarlyArticle"><span itemprop="headline">Phillips CM, Zatarain JR, Nicholls ME, Porter C, Widen SG, Thanki K, Johnson P, Jawad MU, Moyer MP, Randall JW, et al. Upregulation of cystathionine-Î²-synthase in colonic epithelia reprograms metabolism and promotes carcinogenesis. Cancer Res. 2017;77:5741â54.</span><span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a target="_blank" rel="noopener" href="https://doi.org/10.1158/0008-5472.CAN-16-3480"><span><span>View Article</span></span></a></span><span class="Occurrence OccurrencePID"><a target="_blank" rel="noopener nofollow" href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;dopt=Abstract&amp;list_uids=28923859"><span><span>PubMed</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" href="http://scholar.google.com/scholar_lookup?title=Upregulation%20of%20cystathionine-%CE%B2-synthase%20in%20colonic%20epithelia%20reprograms%20metabolism%20and%20promotes%20carcinogenesis&amp;author=CM.%20Phillips&amp;author=JR.%20Zatarain&amp;author=ME.%20Nicholls&amp;author=C.%20Porter&amp;author=SG.%20Widen&amp;author=K.%20Thanki&amp;author=P.%20Johnson&amp;author=MU.%20Jawad&amp;author=MP.%20Moyer&amp;author=JW.%20Randall&amp;journal=Cancer%20Res&amp;volume=77&amp;pages=5741-5754&amp;publication_year=2017"><span><span>Google Scholar</span></span></a></span></span></cite></li>
+<li class="Citation"><cite class="CitationContent" id="CR16" itemprop="citation" itemscope="" itemtype="http://schema.org/ScholarlyArticle"><span itemprop="headline">Gai JW, Qin W, Liu M, Wang HF, Zhang M, Li M, Zhou WH, Ma QT, Liu GM, Song WH, et al. Expression profile of hydrogen sulfide and its synthases correlates with tumor stage and grade in urothelial cell carcinoma of bladder. Urol Oncol. 2016;34:166.e15â20.</span><span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a target="_blank" rel="noopener" href="https://doi.org/10.1016/j.urolonc.2015.06.020"><span><span>View Article</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" href="http://scholar.google.com/scholar_lookup?title=Expression%20profile%20of%20hydrogen%20sulfide%20and%20its%20synthases%20correlates%20with%20tumor%20stage%20and%20grade%20in%20urothelial%20cell%20carcinoma%20of%20bladder&amp;author=JW.%20Gai&amp;author=W.%20Qin&amp;author=M.%20Liu&amp;author=HF.%20Wang&amp;author=M.%20Zhang&amp;author=M.%20Li&amp;author=WH.%20Zhou&amp;author=QT.%20Ma&amp;author=GM.%20Liu&amp;author=WH.%20Song&amp;journal=Urol%20Oncol&amp;volume=34&amp;pages=166.e15-166.e20&amp;publication_year=2016"><span><span>Google Scholar</span></span></a></span></span></cite></li>
+<li class="Citation"><cite class="CitationContent" id="CR17" itemprop="citation" itemscope="" itemtype="http://schema.org/ScholarlyArticle"><span itemprop="headline">Hanahan D, Weinberg RA. Hallmarks of cancer: the next generation. Cell. 2011;144:646â74.</span><span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a target="_blank" rel="noopener" href="https://doi.org/10.1016/j.cell.2011.02.013"><span><span>View Article</span></span></a></span><span class="Occurrence OccurrencePID"><a target="_blank" rel="noopener nofollow" href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;dopt=Abstract&amp;list_uids=21376230"><span><span>PubMed</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" href="http://scholar.google.com/scholar_lookup?title=Hallmarks%20of%20cancer%3A%20the%20next%20generation&amp;author=D.%20Hanahan&amp;author=RA.%20Weinberg&amp;journal=Cell&amp;volume=144&amp;pages=646-674&amp;publication_year=2011"><span><span>Google Scholar</span></span></a></span></span></cite></li>
+<li class="Citation"><cite class="CitationContent" id="CR18" itemprop="citation" itemscope="" itemtype="http://schema.org/ScholarlyArticle"><span itemprop="headline">Dunn GP, Old LJ, Schreiber RD. The three Es of cancer immunoediting. Annu Rev Immunol. 2004;22:329â60.</span><span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a target="_blank" rel="noopener" href="https://doi.org/10.1146/annurev.immunol.22.012703.104803"><span><span>View Article</span></span></a></span><span class="Occurrence OccurrencePID"><a target="_blank" rel="noopener nofollow" href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;dopt=Abstract&amp;list_uids=15032581"><span><span>PubMed</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" href="http://scholar.google.com/scholar_lookup?title=The%20three%20Es%20of%20cancer%20immunoediting&amp;author=GP.%20Dunn&amp;author=LJ.%20Old&amp;author=RD.%20Schreiber&amp;journal=Annu%20Rev%20Immunol&amp;volume=22&amp;pages=329-360&amp;publication_year=2004"><span><span>Google Scholar</span></span></a></span></span></cite></li>
+<li class="Citation"><cite class="CitationContent" id="CR19" itemprop="citation" itemscope="" itemtype="http://schema.org/ScholarlyArticle"><span itemprop="headline">Koebel CM, Vermi W, Swann JB, Zerafa N, Rodig SJ, Old LJ, Smyth MJ, Schreiber RD. Adaptive immunity maintains occult cancer in an equilibrium state. Nature. 2007;450:903â7.</span><span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a target="_blank" rel="noopener" href="https://doi.org/10.1038/nature06309"><span><span>View Article</span></span></a></span><span class="Occurrence OccurrencePID"><a target="_blank" rel="noopener nofollow" href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;dopt=Abstract&amp;list_uids=18026089"><span><span>PubMed</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" href="http://scholar.google.com/scholar_lookup?title=Adaptive%20immunity%20maintains%20occult%20cancer%20in%20an%20equilibrium%20state&amp;author=CM.%20Koebel&amp;author=W.%20Vermi&amp;author=JB.%20Swann&amp;author=N.%20Zerafa&amp;author=SJ.%20Rodig&amp;author=LJ.%20Old&amp;author=MJ.%20Smyth&amp;author=RD.%20Schreiber&amp;journal=Nature&amp;volume=450&amp;pages=903-907&amp;publication_year=2007"><span><span>Google Scholar</span></span></a></span></span></cite></li>
+<li class="Citation"><cite class="CitationContent" id="CR20" itemprop="citation" itemscope="" itemtype="http://schema.org/ScholarlyArticle"><span itemprop="headline">ThÃ©oleyre S, Mori K, Cherrier B, Passuti N, Gouin F, RÃ©dini F. Phenotypic and functional analysis of lymphocytes infiltrating osteolytic tumors: use as a possible therapeutic approach of osteosarcoma. BMC Cancer. 2005;5:123.</span><span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a target="_blank" rel="noopener" href="https://doi.org/10.1186/1471-2407-5-123"><span><span>View Article</span></span></a></span><span class="Occurrence OccurrencePID"><a target="_blank" rel="noopener nofollow" href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;dopt=Abstract&amp;list_uids=16188028"><span><span>PubMed</span></span></a></span><span class="Occurrence OccurrencePMCID"><a target="_blank" rel="noopener nofollow" href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC1262697"><span><span>PubMed Central</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" href="http://scholar.google.com/scholar_lookup?title=Phenotypic%20and%20functional%20analysis%20of%20lymphocytes%20infiltrating%20osteolytic%20tumors%3A%20use%20as%20a%20possible%20therapeutic%20approach%20of%20osteosarcoma&amp;author=S.%20Th%C3%A9oleyre&amp;author=K.%20Mori&amp;author=B.%20Cherrier&amp;author=N.%20Passuti&amp;author=F.%20Gouin&amp;author=F.%20R%C3%A9dini&amp;journal=BMC%20Cancer&amp;volume=5&amp;pages=123&amp;publication_year=2005"><span><span>Google Scholar</span></span></a></span></span></cite></li>
+<li class="Citation"><cite class="CitationContent" id="CR21" itemprop="citation" itemscope="" itemtype="http://schema.org/ScholarlyArticle"><span itemprop="headline">Laborde RR, Lin Y, Gustafson MP, Bulur PA, Dietz AB. Cancer vaccines in the world of immune suppressive monocytes (CD14(+)HLA-DR(lo/neg) cells): the gateway to improved responses. Front Immunol. 2014;5:147.</span><span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a target="_blank" rel="noopener" href="https://doi.org/10.3389/fimmu.2014.00147"><span><span>View Article</span></span></a></span><span class="Occurrence OccurrencePID"><a target="_blank" rel="noopener nofollow" href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;dopt=Abstract&amp;list_uids=24772111"><span><span>PubMed</span></span></a></span><span class="Occurrence OccurrencePMCID"><a target="_blank" rel="noopener nofollow" href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3983500"><span><span>PubMed Central</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" href="http://scholar.google.com/scholar_lookup?title=Cancer%20vaccines%20in%20the%20world%20of%20immune%20suppressive%20monocytes%20%28CD14%28%2B%29HLA-DR%28lo%2Fneg%29%20cells%29%3A%20the%20gateway%20to%20improved%20responses&amp;author=RR.%20Laborde&amp;author=Y.%20Lin&amp;author=MP.%20Gustafson&amp;author=PA.%20Bulur&amp;author=AB.%20Dietz&amp;journal=Front%20Immunol&amp;volume=5&amp;pages=147&amp;publication_year=2014"><span><span>Google Scholar</span></span></a></span></span></cite></li>
+<li class="Citation"><cite class="CitationContent" id="CR22" itemprop="citation" itemscope="" itemtype="http://schema.org/ScholarlyArticle"><span itemprop="headline">Kawano M, Itonaga I, Iwasaki T, Tsumura H. Enhancement of antitumor immunity by combining anti-cytotoxic T lymphocyte antigen-4 antibodies and cryotreated tumor lysate-pulsed dendritic cells in murine osteosarcoma. Oncol Rep. 2013;29:1001â6.</span><span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a target="_blank" rel="noopener" href="https://doi.org/10.3892/or.2013.2224"><span><span>View Article</span></span></a></span><span class="Occurrence OccurrencePID"><a target="_blank" rel="noopener nofollow" href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;dopt=Abstract&amp;list_uids=23291864"><span><span>PubMed</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" href="http://scholar.google.com/scholar_lookup?title=Enhancement%20of%20antitumor%20immunity%20by%20combining%20anti-cytotoxic%20T%20lymphocyte%20antigen-4%20antibodies%20and%20cryotreated%20tumor%20lysate-pulsed%20dendritic%20cells%20in%20murine%20osteosarcoma&amp;author=M.%20Kawano&amp;author=I.%20Itonaga&amp;author=T.%20Iwasaki&amp;author=H.%20Tsumura&amp;journal=Oncol%20Rep&amp;volume=29&amp;pages=1001-1006&amp;publication_year=2013"><span><span>Google Scholar</span></span></a></span></span></cite></li>
+<li class="Citation"><cite class="CitationContent" id="CR23" itemprop="citation" itemscope="" itemtype="http://schema.org/ScholarlyArticle"><span itemprop="headline">Wang M, Zhao J, Zhang L, Wei F, Lian Y, Wu Y, Gong Z, Zhang S, Zhou J, Cao K, et al. Role of tumor microenvironment in tumorigenesis.J. Cancer. 2017;8:761â73.</span><span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a target="_blank" rel="noopener" href="https://doi.org/10.7150/jca.17648"><span><span>View Article</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" href="http://scholar.google.com/scholar_lookup?title=Role%20of%20tumor%20microenvironment%20in%20tumorigenesis.J&amp;author=M.%20Wang&amp;author=J.%20Zhao&amp;author=L.%20Zhang&amp;author=F.%20Wei&amp;author=Y.%20Lian&amp;author=Y.%20Wu&amp;author=Z.%20Gong&amp;author=S.%20Zhang&amp;author=J.%20Zhou&amp;author=K.%20Cao&amp;journal=Cancer&amp;volume=8&amp;pages=761-773&amp;publication_year=2017"><span><span>Google Scholar</span></span></a></span></span></cite></li>
+<li class="Citation"><cite class="CitationContent" id="CR24" itemprop="citation" itemscope="" itemtype="http://schema.org/ScholarlyArticle"><span itemprop="headline">Barrett CW, Short SP, Williams CS. Selenoproteins and oxidative stress-induced inflammatory tumorigenesis in the gut. Cell Mol Life Sci. 2017;74:607â16.</span><span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a target="_blank" rel="noopener" href="https://doi.org/10.1007/s00018-016-2339-2"><span><span>View Article</span></span></a></span><span class="Occurrence OccurrencePID"><a target="_blank" rel="noopener nofollow" href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;dopt=Abstract&amp;list_uids=27563706"><span><span>PubMed</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" href="http://scholar.google.com/scholar_lookup?title=Selenoproteins%20and%20oxidative%20stress-induced%20inflammatory%20tumorigenesis%20in%20the%20gut&amp;author=CW.%20Barrett&amp;author=SP.%20Short&amp;author=CS.%20Williams&amp;journal=Cell%20Mol%20Life%20Sci&amp;volume=74&amp;pages=607-616&amp;publication_year=2017"><span><span>Google Scholar</span></span></a></span></span></cite></li>
+<li class="Citation"><cite class="CitationContent" id="CR25" itemprop="citation" itemscope="" itemtype="http://schema.org/ScholarlyArticle"><span itemprop="headline">Al-Taie OH, Uceyler N, Eubner U, Jakob F, MÃ¶rk H, Scheurlen M, Brigelius-Flohe R, SchÃ¶ttker K, Abel J, Thalheimer A, et al. Expression profiling and genetic alterations of the selenoproteins GI-GPx and SePP in colorectal carcinogenesis. Nutr Cancer. 2004;48:6â14.</span><span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a target="_blank" rel="noopener" href="https://doi.org/10.1207/s15327914nc4801_2"><span><span>View Article</span></span></a></span><span class="Occurrence OccurrencePID"><a target="_blank" rel="noopener nofollow" href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;dopt=Abstract&amp;list_uids=15203372"><span><span>PubMed</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" href="http://scholar.google.com/scholar_lookup?title=Expression%20profiling%20and%20genetic%20alterations%20of%20the%20selenoproteins%20GI-GPx%20and%20SePP%20in%20colorectal%20carcinogenesis&amp;author=OH.%20Al-Taie&amp;author=N.%20Uceyler&amp;author=U.%20Eubner&amp;author=F.%20Jakob&amp;author=H.%20M%C3%B6rk&amp;author=M.%20Scheurlen&amp;author=R.%20Brigelius-Flohe&amp;author=K.%20Sch%C3%B6ttker&amp;author=J.%20Abel&amp;author=A.%20Thalheimer&amp;journal=Nutr%20Cancer&amp;volume=48&amp;pages=6-14&amp;publication_year=2004"><span><span>Google Scholar</span></span></a></span></span></cite></li>
+<li class="Citation"><cite class="CitationContent" id="CR26" itemprop="citation" itemscope="" itemtype="http://schema.org/ScholarlyArticle"><span itemprop="headline">Calvo A, Xiao N, Kang J, Best CJ, Leiva I, Emmert-Buck MR, Jorcyk C, Green JE. Alterations in gene expression profiles during prostate cancer progression: functional correlations to tumorigenicity and down-regulation of selenoprotein-P in mouse and human tumors. Cancer Res. 2002;62:5325â35.</span><span class="Occurrences"><span class="Occurrence OccurrencePID"><a target="_blank" rel="noopener nofollow" href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;dopt=Abstract&amp;list_uids=12235003"><span><span>PubMed</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" href="http://scholar.google.com/scholar_lookup?title=Alterations%20in%20gene%20expression%20profiles%20during%20prostate%20cancer%20progression%3A%20functional%20correlations%20to%20tumorigenicity%20and%20down-regulation%20of%20selenoprotein-P%20in%20mouse%20and%20human%20tumors&amp;author=A.%20Calvo&amp;author=N.%20Xiao&amp;author=J.%20Kang&amp;author=CJ.%20Best&amp;author=I.%20Leiva&amp;author=MR.%20Emmert-Buck&amp;author=C.%20Jorcyk&amp;author=JE.%20Green&amp;journal=Cancer%20Res&amp;volume=62&amp;pages=5325-5335&amp;publication_year=2002"><span><span>Google Scholar</span></span></a></span></span></cite></li>
+<li class="Citation"><cite class="CitationContent" id="CR27" itemprop="citation" itemscope="" itemtype="http://schema.org/ScholarlyArticle"><span itemprop="headline">Steinbrecher A, MÃ©plan C, Hesketh J, Schomburg L, Endermann T, Jansen E, Akesson B, Rohrmann S, Linseisen J. Effects of selenium status and polymorphisms in selenoprotein genes on prostate cancer risk in a prospective study of European men. Cancer Epidemiol Biomark Prev. 2010;19:2958â68.</span><span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a target="_blank" rel="noopener" href="https://doi.org/10.1158/1055-9965.EPI-10-0364"><span><span>View Article</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" href="http://scholar.google.com/scholar_lookup?title=Effects%20of%20selenium%20status%20and%20polymorphisms%20in%20selenoprotein%20genes%20on%20prostate%20cancer%20risk%20in%20a%20prospective%20study%20of%20European%20men&amp;author=A.%20Steinbrecher&amp;author=C.%20M%C3%A9plan&amp;author=J.%20Hesketh&amp;author=L.%20Schomburg&amp;author=T.%20Endermann&amp;author=E.%20Jansen&amp;author=B.%20Akesson&amp;author=S.%20Rohrmann&amp;author=J.%20Linseisen&amp;journal=Cancer%20Epidemiol%20Biomark%20Prev&amp;volume=19&amp;pages=2958-2968&amp;publication_year=2010"><span><span>Google Scholar</span></span></a></span></span></cite></li>
+<li class="Citation"><cite class="CitationContent" id="CR28" itemprop="citation" itemscope="" itemtype="http://schema.org/ScholarlyArticle"><span itemprop="headline">Peters U, Chatterjee N, Hayes RB, Schoen RE, Wang Y, Chanock SJ, Foster CB. Variation in the selenoenzyme genes and risk of advanced distal colorectal adenoma. Cancer Epidemiol Biomark Prev. 2008;17:1144â54.</span><span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a target="_blank" rel="noopener" href="https://doi.org/10.1158/1055-9965.EPI-07-2947"><span><span>View Article</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" href="http://scholar.google.com/scholar_lookup?title=Variation%20in%20the%20selenoenzyme%20genes%20and%20risk%20of%20advanced%20distal%20colorectal%20adenoma&amp;author=U.%20Peters&amp;author=N.%20Chatterjee&amp;author=RB.%20Hayes&amp;author=RE.%20Schoen&amp;author=Y.%20Wang&amp;author=SJ.%20Chanock&amp;author=CB.%20Foster&amp;journal=Cancer%20Epidemiol%20Biomark%20Prev&amp;volume=17&amp;pages=1144-1154&amp;publication_year=2008"><span><span>Google Scholar</span></span></a></span></span></cite></li>
+<li class="Citation"><cite class="CitationContent" id="CR29" itemprop="citation" itemscope="" itemtype="http://schema.org/ScholarlyArticle"><span itemprop="headline">Lan Y, Zhang Y, Wang J, Lin C, Ittmann MM, Wang F. Aberrant expression of Cks1 and Cks2 contributes to prostate tumorigenesis by promoting proliferation and inhibiting programmed cell death. Int J Cancer. 2008;123:543â51.</span><span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a target="_blank" rel="noopener" href="https://doi.org/10.1002/ijc.23548"><span><span>View Article</span></span></a></span><span class="Occurrence OccurrencePID"><a target="_blank" rel="noopener nofollow" href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;dopt=Abstract&amp;list_uids=18498131"><span><span>PubMed</span></span></a></span><span class="Occurrence OccurrencePMCID"><a target="_blank" rel="noopener nofollow" href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3262990"><span><span>PubMed Central</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" href="http://scholar.google.com/scholar_lookup?title=Aberrant%20expression%20of%20Cks1%20and%20Cks2%20contributes%20to%20prostate%20tumorigenesis%20by%20promoting%20proliferation%20and%20inhibiting%20programmed%20cell%20death&amp;author=Y.%20Lan&amp;author=Y.%20Zhang&amp;author=J.%20Wang&amp;author=C.%20Lin&amp;author=MM.%20Ittmann&amp;author=F.%20Wang&amp;journal=Int%20J%20Cancer&amp;volume=123&amp;pages=543-551&amp;publication_year=2008"><span><span>Google Scholar</span></span></a></span></span></cite></li>
+<li class="Citation"><cite class="CitationContent" id="CR30" itemprop="citation" itemscope="" itemtype="http://schema.org/ScholarlyArticle"><span itemprop="headline">Lv M, Zhang X, Li M, Chen Q, Ye M, Liang W, Ding L, Cai H, Fu D, Lv Z. miR-26a and its target CKS2 modulate cell growth and tumorigenesis of papillary thyroid carcinoma. PLoS One. 2013;8:e67591.</span><span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a target="_blank" rel="noopener" href="https://doi.org/10.1371/journal.pone.0067591"><span><span>View Article</span></span></a></span><span class="Occurrence OccurrencePID"><a target="_blank" rel="noopener nofollow" href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;dopt=Abstract&amp;list_uids=23861775"><span><span>PubMed</span></span></a></span><span class="Occurrence OccurrencePMCID"><a target="_blank" rel="noopener nofollow" href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3702500"><span><span>PubMed Central</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" href="http://scholar.google.com/scholar_lookup?title=miR-26a%20and%20its%20target%20CKS2%20modulate%20cell%20growth%20and%20tumorigenesis%20of%20papillary%20thyroid%20carcinoma&amp;author=M.%20Lv&amp;author=X.%20Zhang&amp;author=M.%20Li&amp;author=Q.%20Chen&amp;author=M.%20Ye&amp;author=W.%20Liang&amp;author=L.%20Ding&amp;author=H.%20Cai&amp;author=D.%20Fu&amp;author=Z.%20Lv&amp;journal=PLoS%20One&amp;volume=8&amp;pages=e67591&amp;publication_year=2013"><span><span>Google Scholar</span></span></a></span></span></cite></li>
+<li class="Citation"><cite class="CitationContent" id="CR31" itemprop="citation" itemscope="" itemtype="http://schema.org/ScholarlyArticle"><span itemprop="headline">Hua K, Jin J, Zhang H, Zhao B, Wu C, Xu H, Fang L. MicroRNA-7 inhibits proliferation, migration and invasion of thyroid papillary cancer cells via targeting CKS2. Int J Oncol. 2016;49:1531â40.</span><span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a target="_blank" rel="noopener" href="https://doi.org/10.3892/ijo.2016.3660"><span><span>View Article</span></span></a></span><span class="Occurrence OccurrencePID"><a target="_blank" rel="noopener nofollow" href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;dopt=Abstract&amp;list_uids=27633373"><span><span>PubMed</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" href="http://scholar.google.com/scholar_lookup?title=MicroRNA-7%20inhibits%20proliferation%2C%20migration%20and%20invasion%20of%20thyroid%20papillary%20cancer%20cells%20via%20targeting%20CKS2&amp;author=K.%20Hua&amp;author=J.%20Jin&amp;author=H.%20Zhang&amp;author=B.%20Zhao&amp;author=C.%20Wu&amp;author=H.%20Xu&amp;author=L.%20Fang&amp;journal=Int%20J%20Oncol&amp;volume=49&amp;pages=1531-1540&amp;publication_year=2016"><span><span>Google Scholar</span></span></a></span></span></cite></li>
+<li class="Citation"><cite class="CitationContent" id="CR32" itemprop="citation" itemscope="" itemtype="http://schema.org/ScholarlyArticle"><span itemprop="headline">Yu MH, Luo Y, Qin SL, Wang ZS, Mu YF, Zhong M. Up-regulated CKS2 promotes tumor progression and predicts a poor prognosis in human colorectal cancer. Am J Cancer Res. 2015;5:2708â18.</span><span class="Occurrences"><span class="Occurrence OccurrencePID"><a target="_blank" rel="noopener nofollow" href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;dopt=Abstract&amp;list_uids=26609478"><span><span>PubMed</span></span></a></span><span class="Occurrence OccurrencePMCID"><a target="_blank" rel="noopener nofollow" href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC4633900"><span><span>PubMed Central</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" href="http://scholar.google.com/scholar_lookup?title=Up-regulated%20CKS2%20promotes%20tumor%20progression%20and%20predicts%20a%20poor%20prognosis%20in%20human%20colorectal%20cancer&amp;author=MH.%20Yu&amp;author=Y.%20Luo&amp;author=SL.%20Qin&amp;author=ZS.%20Wang&amp;author=YF.%20Mu&amp;author=M.%20Zhong&amp;journal=Am%20J%20Cancer%20Res&amp;volume=5&amp;pages=2708-2718&amp;publication_year=2015"><span><span>Google Scholar</span></span></a></span></span></cite></li>
+<li class="Citation"><cite class="CitationContent" id="CR33" itemprop="citation" itemscope="" itemtype="http://schema.org/ScholarlyArticle"><span itemprop="headline">Cai H, Lin L, Cai H, Tang M, Wang Z. Prognostic evaluation of microRNA-210 expression in pediatric osteosarcoma. Med Oncol. 2013;30:499.</span><span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a target="_blank" rel="noopener" href="https://doi.org/10.1007/s12032-013-0499-6"><span><span>View Article</span></span></a></span><span class="Occurrence OccurrencePID"><a target="_blank" rel="noopener nofollow" href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;dopt=Abstract&amp;list_uids=23430441"><span><span>PubMed</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" href="http://scholar.google.com/scholar_lookup?title=Prognostic%20evaluation%20of%20microRNA-210%20expression%20in%20pediatric%20osteosarcoma&amp;author=H.%20Cai&amp;author=L.%20Lin&amp;author=H.%20Cai&amp;author=M.%20Tang&amp;author=Z.%20Wang&amp;journal=Med%20Oncol&amp;volume=30&amp;pages=499&amp;publication_year=2013"><span><span>Google Scholar</span></span></a></span></span></cite></li>
+<li class="Citation"><cite class="CitationContent" id="CR34" itemprop="citation" itemscope="" itemtype="http://schema.org/ScholarlyArticle"><span itemprop="headline">Wang J, Zhao J, Shi M, Ding Y, Sun H, Yuan F, Zou Z. Elevated expression of miR-210 predicts poor survival of cancer patients: a systematic review and meta-analysis. PLoS One. 2014;9:e89223.</span><span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a target="_blank" rel="noopener" href="https://doi.org/10.1371/journal.pone.0089223"><span><span>View Article</span></span></a></span><span class="Occurrence OccurrencePID"><a target="_blank" rel="noopener nofollow" href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;dopt=Abstract&amp;list_uids=24586608"><span><span>PubMed</span></span></a></span><span class="Occurrence OccurrencePMCID"><a target="_blank" rel="noopener nofollow" href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3930667"><span><span>PubMed Central</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" href="http://scholar.google.com/scholar_lookup?title=Elevated%20expression%20of%20miR-210%20predicts%20poor%20survival%20of%20cancer%20patients%3A%20a%20systematic%20review%20and%20meta-analysis&amp;author=J.%20Wang&amp;author=J.%20Zhao&amp;author=M.%20Shi&amp;author=Y.%20Ding&amp;author=H.%20Sun&amp;author=F.%20Yuan&amp;author=Z.%20Zou&amp;journal=PLoS%20One&amp;volume=9&amp;pages=e89223&amp;publication_year=2014"><span><span>Google Scholar</span></span></a></span></span></cite></li>
+<li class="Citation"><cite class="CitationContent" id="CR35" itemprop="citation" itemscope="" itemtype="http://schema.org/ScholarlyArticle"><span itemprop="headline">Zhang H, Mai Q, Chen J. MicroRNA-210 is increased and it is required for dedifferentiation of osteosarcoma cell line. Cell Biol Int. 2017;41:267â75.</span><span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a target="_blank" rel="noopener" href="https://doi.org/10.1002/cbin.10721"><span><span>View Article</span></span></a></span><span class="Occurrence OccurrencePID"><a target="_blank" rel="noopener nofollow" href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;dopt=Abstract&amp;list_uids=28032372"><span><span>PubMed</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" href="http://scholar.google.com/scholar_lookup?title=MicroRNA-210%20is%20increased%20and%20it%20is%20required%20for%20dedifferentiation%20of%20osteosarcoma%20cell%20line&amp;author=H.%20Zhang&amp;author=Q.%20Mai&amp;author=J.%20Chen&amp;journal=Cell%20Biol%20Int&amp;volume=41&amp;pages=267-275&amp;publication_year=2017"><span><span>Google Scholar</span></span></a></span></span></cite></li>
+</ol></div></section><section xmlns="" xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:meta="http://www.springer.com/app/meta" class="Section1 RenderAsSection1 c-section" id="CopyrightMessage"><h2 class="Heading js-ToggleCollapseSection c-section__heading" data-sticky-update="true"><a href="#TheAuthors" data-toggle="collapse" data-toggle-disable-clickoff="" data-target="TheAuthors">Copyright</a></h2>
+<div class="js-CollapseSection CollapseSection c-section__content" data-test="collapse-section" id="TheAuthors"><div xmlns="http://www.w3.org/1999/xhtml" class="ArticleCopyright">Â© The Author(s) 2018</div></div></section>
+</div>
+                        
+
+
+                    </article></main><div class="c-content-layout__side u-text-sm">
+                    <aside><div class="p-separator">
+                            
+        <p class="u-margin-bottom-sm">
+            <a id="articlePdf" data-test="download-pdf" class="c-button c-button--primary c-button--full-width" target="_blank" rel="noopener" href="//hereditasjournal.biomedcentral.com/track/pdf/10.1186/s41065-018-0061-9" data-track="click" data-track-category="PDF Download" data-track-action="Click download article PDF" data-track-label="10.1186/s41065-018-0061-9">Download PDF</a>
+        </p>
+    
+                            
+                            
+    <button type="button" class="c-button c-button--expandable" data-toggle="collapse" data-target="export-citations" data-test="export-citations-button" data-sticky-update="true" aria-controls="export-citations" aria-expanded="false">
+        <span class="c-dropdown__toggle">Export citations</span>
+    </button>
+    <div id="export-citations" class="c-export-citations" data-test="export-citations-content">
+        <div class="c-export-citations__section">
+            <h4 class="c-export-citations__title">Papers, Zotero, Reference Manager, RefWorks (<strong>.RIS</strong>)</h4>
+            <ul class="c-export-citations__list" id="articleReferences">
+<li><a data-track="click" data-track-category="Article Page" data-track-action="Download Papers, Zotero, Reference Manager, RefWorks article citations" data-track-label="10.1186/s41065-018-0061-9" href="http://citation-needed.springer.com/v2/references/10.1186/s41065-018-0061-9?format=refman&amp;flavour=citation">
+                    <svg class="c-export-citations__icon" width="12" height="12" aria-hidden="true"><use xlink:href="#icon-download"></use></svg><span class="u-visually-hidden">Download </span>Citations
+                </a></li>
+                <li><a data-track="click" data-track-category="Article Page" data-track-action="Download Papers, Zotero, Reference Manager, RefWorks references" data-track-label="10.1186/s41065-018-0061-9" href="http://citation-needed.springer.com/v2/references/10.1186/s41065-018-0061-9?format=refman&amp;flavour=references">
+                    <svg class="c-export-citations__icon" width="12" height="12" aria-hidden="true"><use xlink:href="#icon-download"></use></svg><span class="u-visually-hidden">Download </span>References
+                </a></li>
+                <li><a data-track="click" data-track-category="Article Page" data-track-action="Download Papers, Zotero, Reference Manager, RefWorks citations and references" data-track-label="10.1186/s41065-018-0061-9" href="http://citation-needed.springer.com/v2/references/10.1186/s41065-018-0061-9?format=refman&amp;flavour=full">
+                    <svg class="c-export-citations__icon" width="12" height="12" aria-hidden="true"><use xlink:href="#icon-download"></use></svg><span class="u-visually-hidden">Download </span>Both
+                </a></li>
+            </ul>
+</div>
+        <div class="c-export-citations__section">
+            <h4 class="c-export-citations__title">EndNote (<strong>.ENW</strong>)</h4>
+            <ul class="c-export-citations__list">
+<li><a data-track="click" data-track-category="Article Page" data-track-action="Download EndNote article citations" data-track-label="10.1186/s41065-018-0061-9" href="http://citation-needed.springer.com/v2/references/10.1186/s41065-018-0061-9?format=endnote&amp;flavour=citation">
+                    <svg class="c-export-citations__icon" width="12" height="12" aria-hidden="true"><use xlink:href="#icon-download"></use></svg><span class="u-visually-hidden">Download </span>Citations
+                </a></li>
+                <li><a data-track="click" data-track-category="Article Page" data-track-action="Download EndNote references" data-track-label="10.1186/s41065-018-0061-9" href="http://citation-needed.springer.com/v2/references/10.1186/s41065-018-0061-9?format=endnote&amp;flavour=references">
+                    <svg class="c-export-citations__icon" width="12" height="12" aria-hidden="true"><use xlink:href="#icon-download"></use></svg><span class="u-visually-hidden">Download </span>References
+                </a></li>
+                <li><a data-track="click" data-track-category="Article Page" data-track-action="Download EndNote citations and references" data-track-label="10.1186/s41065-018-0061-9" href="http://citation-needed.springer.com/v2/references/10.1186/s41065-018-0061-9?format=endnote&amp;flavour=full">
+                    <svg class="c-export-citations__icon" width="12" height="12" aria-hidden="true"><use xlink:href="#icon-download"></use></svg><span class="u-visually-hidden">Download </span>Both
+                </a></li>
+            </ul>
+</div>
+        <div class="c-export-citations__section">
+            <h4 class="c-export-citations__title">Mendeley, JabRef (<strong>.BIB</strong>)</h4>
+            <ul class="c-export-citations__list">
+<li><a data-track="click" data-track-category="Article Page" data-track-action="Download Mendeley, JabRef article citations" data-track-label="10.1186/s41065-018-0061-9" href="http://citation-needed.springer.com/v2/references/10.1186/s41065-018-0061-9?format=bibtex&amp;flavour=citation">
+                    <svg class="c-export-citations__icon" width="12" height="12" aria-hidden="true"><use xlink:href="#icon-download"></use></svg><span class="u-visually-hidden">Download </span>Citations
+                </a></li>
+                <li><a data-track="click" data-track-category="Article Page" data-track-action="Download Mendeley, JabRef references" data-track-label="10.1186/s41065-018-0061-9" href="http://citation-needed.springer.com/v2/references/10.1186/s41065-018-0061-9?format=bibtex&amp;flavour=references">
+                    <svg class="c-export-citations__icon" width="12" height="12" aria-hidden="true"><use xlink:href="#icon-download"></use></svg><span class="u-visually-hidden">Download </span>References
+                </a></li>
+                <li><a data-track="click" data-track-category="Article Page" data-track-action="Download Mendeley, JabRef citations and references" data-track-label="10.1186/s41065-018-0061-9" href="http://citation-needed.springer.com/v2/references/10.1186/s41065-018-0061-9?format=bibtex&amp;flavour=full">
+                    <svg class="c-export-citations__icon" width="12" height="12" aria-hidden="true"><use xlink:href="#icon-download"></use></svg><span class="u-visually-hidden">Download </span>Both
+                </a></li>
+            </ul>
+</div>
+    </div>
+
+                        </div>
+                        
+    
+ 
+                        
+    
+ 
+                        <div class="p-separator">
+                            <h3 class="p-section-title">Metrics</h3>
+                            <ul class="c-list-group c-list-group--md">
+<div id="article-access-count-loader" class="placeholder" data-replace="true" data-placeholder="/placeholder/v1/article/access-count/10.1186/s41065-018-0061-9 #accessCount-container"></div>
+                                <div id="citation-count-loader" class="placeholder" data-replace="true" data-placeholder="/placeholder/v1/article/citation-count/10.1186/s41065-018-0061-9 #count-container"></div>
+                                <div id="altmetric-loader" class="placeholder" data-replace="true" data-placeholder="/placeholder/v1/article/altmetric/10.1186/s41065-018-0061-9 #altmetric-container"></div>
+                            </ul>
+</div>
+                        
+    <div class="c-separator">
+        <div class="js-shown">
+            <h3 class="p-section-title">Share this article</h3>
+            <ul data-test="social-media-share-buttons" class="c-social-links">
+<li class="c-social-links__item">
+                    <button id="shareOnTwitter" class="js-btnShareOnTwitter" data-track="click" data-track-category="Article Page" data-track-action="Share Twitter" data-track-label="10.1186/s41065-018-0061-9">
+                        <span class="u-visually-hidden" data-track="click" data-track-category="Article Page" data-track-action="Share Twitter" data-track-label="10.1186/s41065-018-0061-9">Share on Twitter</span>
+                        <svg class="c-icon c-social-links__icon" width="24" height="24" aria-hidden="true" data-track="click" data-track-category="Article Page" data-track-action="Share Twitter" data-track-label="10.1186/s41065-018-0061-9"><use xlink:href="#icon-twitter"></use></svg></button>
+                </li>
+                <li class="c-social-links__item">
+                    <button id="shareOnFacebook" class="js-btnShareOnFacebook" data-track="click" data-track-category="Article Page" data-track-action="Share Facebook" data-track-label="10.1186/s41065-018-0061-9">
+                        <span class="u-visually-hidden" data-track="click" data-track-category="Article Page" data-track-action="Share Facebook" data-track-label="10.1186/s41065-018-0061-9">Share on Facebook</span>
+                        <svg class="c-icon c-social-links__icon" width="24" height="24" aria-hidden="true" data-track="click" data-track-category="Article Page" data-track-action="Share Facebook" data-track-label="10.1186/s41065-018-0061-9"><use xlink:href="#icon-facebook"></use></svg></button>
+                </li>
+                <li class="c-social-links__item">
+                    <button id="shareOnLinkedIn" class="js-btnShareOnLinkedIn" data-track="click" data-track-category="Article Page" data-track-action="Share LinkedIn" data-track-label="10.1186/s41065-018-0061-9">
+                        <span class="u-visually-hidden" data-track="click" data-track-category="Article Page" data-track-action="Share LinkedIn" data-track-label="10.1186/s41065-018-0061-9">Share on LinkedIn</span>
+                        <svg class="c-icon c-social-links__icon" width="24" height="24" aria-hidden="true" data-track="click" data-track-category="Article Page" data-track-action="Share LinkedIn" data-track-label="10.1186/s41065-018-0061-9"><use xlink:href="#icon-linkedin"></use></svg></button>
+                </li>
+                <li class="c-social-links__item">
+                    <button id="shareOnWeibo" class="js-btnShareOnWeibo" data-track="click" data-track-category="Article Page" data-track-action="Share Weibo" data-track-label="10.1186/s41065-018-0061-9">
+                        <span class="u-visually-hidden" data-track="click" data-track-category="Article Page" data-track-action="Share Weibo" data-track-label="10.1186/s41065-018-0061-9">Share on Weibo</span>
+                        <svg class="c-icon c-social-links__icon" width="24" height="24" aria-hidden="true" data-track="click" data-track-category="Article Page" data-track-action="Share Weibo" data-track-label="10.1186/s41065-018-0061-9"><use xlink:href="#icon-weibo"></use></svg></button>
+                </li>
+                <li class="c-social-links__item">
+                    <button id="shareOnReddit" class="js-btnShareOnReddit" data-track="click" data-track-category="Article Page" data-track-action="Share Reddit" data-track-label="10.1186/s41065-018-0061-9">
+                        <span class="u-visually-hidden" data-track="click" data-track-category="Article Page" data-track-action="Share Reddit" data-track-label="10.1186/s41065-018-0061-9">Share on Reddit</span>
+                        <svg class="c-icon c-social-links__icon" width="24" height="24" aria-hidden="true" data-track="click" data-track-category="Article Page" data-track-action="Share Reddit" data-track-label="10.1186/s41065-018-0061-9"><use xlink:href="#icon-reddit"></use></svg></button>
+                </li>
+            </ul>
+</div>
+        
+            <div data-sharedit="container">
+                <a class="c-button u-margin-top-sm" href="/articles/10.1186/s41065-018-0061-9/sharedit" rel="nofollow" data-sharedit="button" data-track="click" data-track-category="sharedit" data-track-action="click article sharedit button" data-track-label="10.1186/s41065-018-0061-9">Get shareable link</a>
+            </div>
+        
+    </div>
+ 
+                        
+    
+        <div class="c-separator u-js-shown">
+            <h3 class="p-section-title">See updates</h3>
+            <button class="c-crossmark-button" data-target="crossmark" data-test="crossmark" data-track="click" data-track-category="Article Page" data-track-action="Click CrossMark" data-track-label="10.1186/s41065-018-0061-9">
+                <img id="crossmark-icon" src="https://crossmark-cdn.crossref.org/widget/v2.0/logos/CROSSMARK_Color_horizontal.svg" alt="Crossmark logo"></button>
+        </div>
+    
+ 
+                        <div class="p-separator">
+                            <h3 class="p-section-title">Other Actions</h3>
+                            <ul class="c-list-group c-list-group--bordered c-list-group c-list-group--md">
+<li class="c-list-group__item">
+                                    
+    <a data-track="click" data-track-category="Article Page" data-track-action="Order article reprints" data-track-label="10.1186/s41065-018-0061-9" href="https://www.odysseypress.com/onlinehost/reprint_order.php?type=A&amp;page=0&amp;journal=738&amp;doi=10.1186%2Fs41065-018-0061-9&amp;volume=155&amp;issue=1&amp;title=Identification+of+potential+crucial+genes+and+construction+of+microRNA-mRNA+negative+regulatory+networks+in+osteosarcoma&amp;author_name=Yue+Pan&amp;start_page=1&amp;end_page=8">Order reprint</a>
+
+                                </li>
+                            </ul>
+</div>
+                    </aside><div id="FulltextAd" class="adsbox c-ad c-ad--skyscraper">
+        <div class="c-ad__inner" data-component="sticky" data-test="fulltext-ad">
+            <p class="c-ad__label">Advertisement</p>
+            <div class="c-ad__content">
+                <span id="pbgrd-43415139"></span>
+            </div>
+        </div>
+    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        
+            <div class="c-journal-footer">
+                <div class="c-journal-footer__inner">
+                    <div class="c-journal-footer__summary">
+                        <h4 class="c-journal-title c-journal-title--footer">
+                            
+                            <span class="c-journal-title__text">Hereditas</span>
+                        </h4>
+                         <p class="c-journal-footer__issn">ISSN: 1601-5223</p>
+                    </div>
+                    
+                        <div class="c-journal-footer__contact">
+                            <h4 class="c-journal-footer__contact-title ">Contact us</h4>
+                            <ul class="c-journal-footer__contact-list">
+<li class="c-journal-footer__contact-item">Submission enquiries: <a href="https://www.editorialmanager.com/here/" target="_blank">Access here and click Contact Us</a>
+</li>
+                                
+                                
+                                    <li class="c-journal-footer__contact-item">General enquiries: <a href="mailto:info@biomedcentral.com">info@biomedcentral.com</a>
+</li>
+                                
+                            </ul>
+</div>
+                    
+                </div>
+            </div>
+        
+        
+    <img rel="nofollow" class="tracker" style="display:none" src="/track/article/10.1186/s41065-018-0061-9" alt=""><footer><div class="c-publisher-footer" data-test="publisher-footer">
+    <div class="u-container">
+        
+        <div class="c-flex c-flex--wrap c-flex--space-between" role="navigation" data-test="publisher-footer-menu">
+            <div class="c-flex" aria-label="Publisher footer links">
+                
+                    
+                        <ul class="c-list-group c-list-group--sm u-margin-right-lg u-margin-bottom-md">
+<li class="c-list-group__item">
+                                    <a class="u-gray-link" href="http://blogs.biomedcentral.com/">Read more on our blogs</a>
+                                </li>
+                            
+                                <li class="c-list-group__item">
+                                    <a class="u-gray-link" href="//www.biomedcentral.com/login">Receive BMC newsletters</a>
+                                </li>
+                            
+                                <li class="c-list-group__item">
+                                    <a class="u-gray-link" href="//www.biomedcentral.com/account">Manage article alerts</a>
+                                </li>
+                            
+                                <li class="c-list-group__item">
+                                    <a class="u-gray-link" href="https://authorservices.springernature.com/go/10BMC">Language editing for authors</a>
+                                </li>
+                            
+                                <li class="c-list-group__item">
+                                    <a class="u-gray-link" href="http://authorservices.springernature.com/scientific-editing/">Scientific editing for authors</a>
+                                </li>
+                            
+                        </ul>
+<ul class="c-list-group c-list-group--sm u-margin-right-lg u-margin-bottom-md">
+<li class="c-list-group__item">
+                                    <a class="u-gray-link" href="//www.biomedcentral.com/about/policies">Policies</a>
+                                </li>
+                            
+                                <li class="c-list-group__item">
+                                    <a class="u-gray-link" href="//www.biomedcentral.com/accessibility">Accessibility</a>
+                                </li>
+                            
+                                <li class="c-list-group__item">
+                                    <a class="u-gray-link" href="//www.biomedcentral.com/about/press-centre">Press center</a>
+                                </li>
+                            
+                        </ul>
+<ul class="c-list-group c-list-group--sm u-margin-right-lg u-margin-bottom-md">
+<li class="c-list-group__item">
+                                    <a class="u-gray-link" href="//www.biomedcentral.com/about/contact-us">Support and Contact</a>
+                                </li>
+                            
+                                <li class="c-list-group__item">
+                                    <a class="u-gray-link" href="https://biomedcentral.typeform.com/to/VLXboo">Leave feedback</a>
+                                </li>
+                            
+                                <li class="c-list-group__item">
+                                    <a class="u-gray-link" href="//www.biomedcentral.com/about/jobs">Careers</a>
+                                </li>
+                            
+                        </ul>
+</div>
+            <div class="u-margin-bottom-lg">
+                <h3 id="social-menu" class="u-text-sm u-reset-margin u-text-normal">Follow BMC</h3>
+                <ul class="c-flex u-reset-list" data-test="footer-social-links">
+<li class="u-margin-top-xs u-margin-right-xs">
+                            <a href="https://twitter.com/biomedcentral" class="u-gray-link">
+                                <span class="u-visually-hidden">BMC Twitter page</span>
+                                <svg class="c-icon" width="24" height="24" aria-hidden="true"><use xlink:href="#icon-twitter-bordered"></use></svg></a>
+                        </li>
+                    
+                        <li class="u-margin-top-xs u-margin-right-xs">
+                            <a href="https://www.facebook.com/BioMedCentral" class="u-gray-link">
+                                <span class="u-visually-hidden">BMC Facebook page</span>
+                                <svg class="c-icon" width="24" height="24" aria-hidden="true"><use xlink:href="#icon-facebook-bordered"></use></svg></a>
+                        </li>
+                    
+                        <li class="u-margin-top-xs u-margin-right-xs">
+                            <a href="http://www.weibo.com/biomedcentral" class="u-gray-link">
+                                <span class="u-visually-hidden">BMC Weibo page</span>
+                                <svg class="c-icon" width="24" height="24" aria-hidden="true"><use xlink:href="#icon-weibo-bordered"></use></svg></a>
+                        </li>
+                    
+                </ul>
+</div>
+        </div>
+        <p class="u-reset-margin">
+            By using this website, you agree to our
+            <a class="u-gray-link" href="//www.biomedcentral.com/terms-and-conditions">Terms and Conditions</a>,
+            <a class="u-gray-link" href="//www.biomedcentral.com/privacy-statement">Privacy
+                statement</a> and
+            <a class="u-gray-link" href="//www.biomedcentral.com/cookies" data-test="cookie-link">Cookies</a> policy.
+            
+                <a class="optanon-toggle-display u-gray-link" href="javascript:void(0);">Manage the cookies</a> we use in the preference centre.
+            
+        </p>
+    </div>
+</div>
+
+        <div class="c-sn-footer c-sn-footer--neutral">
+    <div class="u-container">
+        <img src="/static/images/bmc/logos/logo-springernature-8bd4e8d82f.svg" class="c-sn-footer__logo" alt="Springer Nature Logo" itemprop="logo"><p data-test="copyright">© 2019 BioMed Central Ltd unless otherwise stated. Part of
+            <a href="http://www.springernature.com" itemscope itemtype="http://schema.org/Organization" itemid="#parentOrganization">Springer Nature</a>.
+        </p>
+    </div>
+</div>
+
+    </footer>
+</div>
+
+    
+    <script type="text/javascript" src="//cdn.pbgrd.com/bmc.js" async="async"></script><noscript>
+	<img hidden src="https://verify.nature.com/verify/nature.png" border="0" width="0" height="0" style="display: none">
+</noscript>
+
+        
+<script>
+    (function() {
+        if (window.config && window.config.mustardcut) {
+            var appScript = document.createElement('script');
+            appScript.src = '/static/js/app-bundle-9819d71f7a.js';
+            appScript.async = false;
+            document.body.appendChild(appScript);
+        }
+    })();
+</script>
+</body>
+</html>

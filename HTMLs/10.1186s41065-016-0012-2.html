@@ -1,0 +1,1370 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<title>eRFSVM: a hybrid classifier to predict enhancers-integrating random forests with support vector machines | Hereditas | Full Text</title>
+<meta name="citation_abstract" content="Enhancers are tissue specific distal regulation elements, playing vital roles in gene regulation and expression. The prediction and identification of enhancers are important but challenging issues for bioinformatics studies. Existing computational methods, mostly single classifiers, can only predict the transcriptional coactivator EP300 based enhancers and show low generalization performance. We built a hybrid classifier called eRFSVM in this study, using random forests as a base classifier, and support vector machines as a main classifier. eRFSVM integrated two components as eRFSVM-ENCODE and eRFSVM-FANTOM5 with diverse features and labels. The base classifier trained datasets from a single tissue or cell with random forests. The main classifier made the final decision by support vector machines algorithm, with the predicting results of base classifiers as inputs. For eRFSVM-ENCODE, we trained datasets from cell lines including Gm12878, Hep, H1-hesc and Huvec, using ChIP-Seq datasets as features and EP300 based enhancers as labels. We tested eRFSVM-ENCODE on K562 dataset, and resulted in a predicting precision of 83.69 %, which was much better than existing classifiers. For eRFSVM-FANTOM5, with enhancers identified by RNA in FANTOM5 project as labels, the precision, recall, F-score and accuracy were 86.17 %, 36.06 %, 50.84 % and 93.38 % using eRFSVM, increasing 23.24 % (69.92 %), 97.05 % (18.30 %), 76.90 % (28.74 %), 4.69 % (89.20 %) than the existing algorithm, respectively. All these results demonstrated that eRFSVM was a better classifier in predicting both EP300 based and FAMTOM5 RNAs based enhancers.">
+<meta name="description" content="Enhancers are tissue specific distal regulation elements, playing vital roles in gene regulation and expression. The prediction and identification of enhancers are important but challenging issues for bioinformatics studies. Existing computational methods, mostly single classifiers, can only predict the transcriptional coactivator EP300 based enhancers and show low generalization performance. We built a hybrid classifier called eRFSVM in this study, using random forests as a base classifier, and support vector machines as a main classifier. eRFSVM integrated two components as eRFSVM-ENCODE and eRFSVM-FANTOM5 with diverse features and labels. The base classifier trained datasets from a single tissue or cell with random forests. The main classifier made the final decision by support vector machines algorithm, with the predicting results of base classifiers as inputs. For eRFSVM-ENCODE, we trained datasets from cell lines including Gm12878, Hep, H1-hesc and Huvec, using ChIP-Seq datasets as features and EP300 based enhancers as labels. We tested eRFSVM-ENCODE on K562 dataset, and resulted in a predicting precision of 83.69 %, which was much better than existing classifiers. For eRFSVM-FANTOM5, with enhancers identified by RNA in FANTOM5 project as labels, the precision, recall, F-score and accuracy were 86.17 %, 36.06 %, 50.84 % and 93.38 % using eRFSVM, increasing 23.24 % (69.92 %), 97.05 % (18.30 %), 76.90 % (28.74 %), 4.69 % (89.20 %) than the existing algorithm, respectively. All these results demonstrated that eRFSVM was a better classifier in predicting both EP300 based and FAMTOM5 RNAs based enhancers.">
+<meta name="journal_id" content="41065">
+<meta name="dc.title" content="eRFSVM: a hybrid classifier to predict enhancers-integrating random forests with support vector machines">
+<meta name="dc.source" content="Hereditas 2016 153:1">
+<meta name="dc.format" content="text/html">
+<meta name="dc.publisher" content="BioMed Central">
+<meta name="dc.date" content="2016-06-30">
+<meta name="dc.type" content="OriginalPaper">
+<meta name="dc.language" content="En">
+<meta name="dc.copyright" content="2016 The Author(s)">
+<meta name="dc.rightsAgent" content="reprints@biomedcentral.com">
+<meta name="dc.description" content="Enhancers are tissue specific distal regulation elements, playing vital roles in gene regulation and expression. The prediction and identification of enhancers are important but challenging issues for bioinformatics studies. Existing computational methods, mostly single classifiers, can only predict the transcriptional coactivator EP300 based enhancers and show low generalization performance. We built a hybrid classifier called eRFSVM in this study, using random forests as a base classifier, and support vector machines as a main classifier. eRFSVM integrated two components as eRFSVM-ENCODE and eRFSVM-FANTOM5 with diverse features and labels. The base classifier trained datasets from a single tissue or cell with random forests. The main classifier made the final decision by support vector machines algorithm, with the predicting results of base classifiers as inputs. For eRFSVM-ENCODE, we trained datasets from cell lines including Gm12878, Hep, H1-hesc and Huvec, using ChIP-Seq datasets as features and EP300 based enhancers as labels. We tested eRFSVM-ENCODE on K562 dataset, and resulted in a predicting precision of 83.69 %, which was much better than existing classifiers. For eRFSVM-FANTOM5, with enhancers identified by RNA in FANTOM5 project as labels, the precision, recall, F-score and accuracy were 86.17 %, 36.06 %, 50.84 % and 93.38 % using eRFSVM, increasing 23.24 % (69.92 %), 97.05 % (18.30 %), 76.90 % (28.74 %), 4.69 % (89.20 %) than the existing algorithm, respectively. All these results demonstrated that eRFSVM was a better classifier in predicting both EP300 based and FAMTOM5 RNAs based enhancers.">
+<meta name="prism.issn" content="1601-5223">
+<meta name="prism.publicationName" content="Hereditas">
+<meta name="prism.publicationDate" content="2016-06-30">
+<meta name="prism.volume" content="153">
+<meta name="prism.number" content="1">
+<meta name="prism.section" content="OriginalPaper">
+<meta name="prism.startingPage" content="6">
+<meta name="prism.copyright" content="2016 The Author(s)">
+<meta name="prism.rightsAgent" content="reprints@biomedcentral.com">
+<meta name="prism.url" content="https://hereditasjournal.biomedcentral.com/articles/10.1186/s41065-016-0012-2">
+<meta name="prism.doi" content="doi:10.1186/s41065-016-0012-2">
+<meta name="citation_pdf_url" content="https://hereditasjournal.biomedcentral.com/track/pdf/10.1186/s41065-016-0012-2">
+<meta name="citation_fulltext_html_url" content="https://hereditasjournal.biomedcentral.com/articles/10.1186/s41065-016-0012-2">
+<meta name="citation_journal_title" content="Hereditas">
+<meta name="citation_publisher" content="BioMed Central">
+<meta name="citation_issn" content="1601-5223">
+<meta name="citation_title" content="eRFSVM: a hybrid classifier to predict enhancers-integrating random forests with support vector machines">
+<meta name="citation_volume" content="153">
+<meta name="citation_issue" content="1">
+<meta name="citation_publication_date" content="2016/12">
+<meta name="citation_online_date" content="2016/06/30">
+<meta name="citation_firstpage" content="6">
+<meta name="citation_article_type" content="Research">
+<meta name="citation_fulltext_world_readable" content="">
+<meta name="dc.identifier" content="doi:10.1186/s41065-016-0012-2">
+<meta name="DOI" content="10.1186/s41065-016-0012-2">
+<meta name="citation_doi" content="10.1186/s41065-016-0012-2">
+<meta name="dc.creator" content="Fang Huang">
+<meta name="dc.creator" content="Jiawei Shen">
+<meta name="dc.creator" content="Qingli Guo">
+<meta name="dc.creator" content="Yongyong Shi">
+<meta name="dc.subject" content="Animal Genetics and Genomics">
+<meta name="dc.subject" content="Evolutionary Biology">
+<meta name="citation_reference" content="citation_journal_title=Nature; citation_title=An atlas of active enhancers across human cell types and tissues; citation_author=R Andersson, C Gebhard, I Miguel-Escalada, I Hoof, J Bornholdt, M Boyd, Y Chen, X Zhao, C Schmidl, T Suzuki; citation_volume=507; citation_publication_date=2014; citation_pages=455-61; citation_doi=10.1038/nature12787; citation_id=CR1">
+<meta name="citation_reference" content="citation_journal_title=Nat Biotechnol; citation_title=The NIH Roadmap Epigenomics Mapping Consortium; citation_author=BE Bernstein, JA Stamatoyannopoulos, JF Costello, B Ren, A Milosavljevic, A Meissner, M Kellis, MA Marra, AL Beaudet, JR Ecker; citation_volume=28; citation_publication_date=2010; citation_pages=1045-8; citation_doi=10.1038/nbt1010-1045; citation_id=CR2">
+<meta name="citation_reference" content="citation_journal_title=Mach Learn; citation_title=Random Forests; citation_author=L Breiman; citation_volume=45; citation_publication_date=2001; citation_pages=5-32; citation_doi=10.1023/A:1010933404324; citation_id=CR3">
+<meta name="citation_reference" content="citation_journal_title=Mach Learn; citation_title=Estimating generalization error on two-class datasets using out-of-bag estimates; citation_author=T Bylander; citation_volume=48; citation_publication_date=2002; citation_pages=287-97; citation_doi=10.1023/A:1013964023376; citation_id=CR4">
+<meta name="citation_reference" content="citation_journal_title=Comput Ind Eng; citation_title=Robust design modeling and optimization with unbalanced data; citation_author=BR Cho, C Park; citation_volume=48; citation_publication_date=2005; citation_pages=173-80; citation_doi=10.1016/j.cie.2005.01.004; citation_id=CR5">
+<meta name="citation_reference" content="citation_journal_title=Nature; citation_title=An integrated encyclopedia of DNA elements in the human genome; citation_author=EP Consortium; citation_volume=489; citation_publication_date=2012; citation_pages=57-74; citation_doi=10.1038/nature11247; citation_id=CR6">
+<meta name="citation_reference" content="citation_journal_title=Nature; citation_title=A promoter-level mammalian expression atlas; citation_author=AR Forrest, H Kawaji, M Rehli, JK Baillie, MJ Hoon, V Haberle, T Lassman; citation_volume=507; citation_publication_date=2014; citation_pages=462-70; citation_doi=10.1038/nature13182; citation_id=CR7">
+<meta name="citation_reference" content="citation_journal_title=Mach Learn; citation_title=Support-vector networks; citation_author=C Cortes, V Vapnik; citation_volume=20; citation_publication_date=1995; citation_pages=273-97; citation_id=CR8">
+<meta name="citation_reference" content="citation_journal_title=Cell; citation_title=Cancer epigenetics: from mechanism to therapy; citation_author=MA Dawson, T Kouzarides; citation_volume=150; citation_publication_date=2012; citation_pages=12-27; citation_doi=10.1016/j.cell.2012.06.013; citation_id=CR9">
+<meta name="citation_reference" content="citation_journal_title=Nat Biotechnol; citation_title=Large-scale imputation of epigenomic datasets for systematic annotation of diverse human tissues; citation_author=J Ernst, M Kellis; citation_volume=33; citation_publication_date=2015; citation_pages=364-76; citation_doi=10.1038/nbt.3157; citation_id=CR10">
+<meta name="citation_reference" content="citation_journal_title=PLoS Comput Biol; citation_title=Integrating diverse datasets improves developmental enhancer prediction; citation_author=GD Erwin, N Oksenberg, RM Truty, D Kostka, KK Murphy, N Ahituv, KS Pollard, JA Capra; citation_volume=10; citation_publication_date=2014; citation_pages=e1003677; citation_doi=10.1371/journal.pcbi.1003677; citation_id=CR11">
+<meta name="citation_reference" content="citation_journal_title=Nucleic Acids Res; citation_title=Genome-wide enhancer prediction from epigenetic signatures using genetic algorithm-optimized support vector machines; citation_author=M Fernandez, D Miranda-Saavedra; citation_volume=40; citation_publication_date=2012; citation_pages=e77; citation_doi=10.1093/nar/gks149; citation_id=CR12">
+<meta name="citation_reference" content="citation_journal_title=Bioinformatics; citation_title=Discover regulatory DNA elements using chromatin signatures and artificial neural network; citation_author=HA Firpi, D Ucar, K Tan; citation_volume=26; citation_publication_date=2010; citation_pages=1579-86; citation_doi=10.1093/bioinformatics/btq248; citation_id=CR13">
+<meta name="citation_reference" content="citation_journal_title=Nat Methods; citation_title=Discovering enhancers directly by activity; citation_author=RC Hardison; citation_volume=11; citation_publication_date=2014; citation_pages=491-2; citation_doi=10.1038/nmeth.2933; citation_id=CR14">
+<meta name="citation_reference" content="citation_journal_title=Mol Cell; citation_title=Enhancer malfunction in cancer; citation_author=HM Herz, D Hu, A Shilatifard; citation_volume=53; citation_publication_date=2014; citation_pages=859-66; citation_doi=10.1016/j.molcel.2014.02.033; citation_id=CR15">
+<meta name="citation_reference" content="citation_journal_title=Bioinformatics; citation_title=The Genomedata format for storing large-scale functional genomics data; citation_author=MM Hoffman, OJ Buske, WS Noble; citation_volume=26; citation_publication_date=2010; citation_pages=1458-9; citation_doi=10.1093/bioinformatics/btq164; citation_id=CR16">
+<meta name="citation_reference" content="citation_journal_title=Bioinformatics; citation_title=HIPPIE: a high-throughput identification pipeline for promoter interacting enhancer elements; citation_author=Y Hwang, C Lin, O Valladares, J Malamon, PP Kuksa, Q Zheng, BD Gregory, L Wang; citation_volume=29; citation_publication_date=2014; citation_pages=233-42; citation_id=CR17">
+<meta name="citation_reference" content="citation_journal_title=Nucleic Acids Res; citation_title=DEEP: a general computational framework for predicting enhancers; citation_author=D Kleftogiannis, P Kalnis, VB Bajic; citation_volume=43; citation_publication_date=2015; citation_pages=e6; citation_doi=10.1093/nar/gku1058; citation_id=CR18">
+<meta name="citation_reference" content="citation_journal_title=Brief Bioinform; citation_title=Progress and challenges in bioinformatics approaches for enhancer identification; citation_author=D Kleftogiannis, P Kalnis, VB Bajic; citation_volume=1; citation_publication_date=2015; citation_pages=1-13; citation_id=CR19">
+<meta name="citation_reference" content="citation_journal_title=Genome Res; citation_title=Discriminative prediction of mammalian enhancers from DNA sequence; citation_author=D Lee, R Karchin, MA Beer; citation_volume=21; citation_publication_date=2011; citation_pages=2167-80; citation_doi=10.1101/gr.121905.111; citation_id=CR20">
+<meta name="citation_reference" content="citation_journal_title=Biochim Biophys Acta; citation_title=Super-enhancer lncs to cardiovascular development and disease; citation_author=S Ounzain, T Pedrazzini; citation_volume=19; citation_publication_date=2015; citation_pages=103-12; citation_id=CR21">
+<meta name="citation_reference" content="citation_journal_title=Genetics; citation_title=ChIP-seq: advantages and challenges of a maturing technology. -Nature reviews; citation_author=PJ Park; citation_volume=10; citation_publication_date=2009; citation_pages=669-80; citation_id=CR22">
+<meta name="citation_reference" content="citation_journal_title=Genome Res; citation_title=Predicting tissue-specific enhancers in the human genome; citation_author=LA Pennacchio, GG Loots, MA Nobrega, I Ovcharenko; citation_volume=17; citation_publication_date=2007; citation_pages=201-11; citation_doi=10.1101/gr.5972507; citation_id=CR23">
+<meta name="citation_reference" content="citation_journal_title=Nucleic Acids Res; citation_title=Inference of interactions between chromatin modifiers and histone modifications: from ChIP-Seq data to chromatin-signaling; citation_author=J Perner, J Lasserre, S Kinkley, M Vingron, HR Chung; citation_volume=42; citation_publication_date=2014; citation_pages=13689-95; citation_doi=10.1093/nar/gku1234; citation_id=CR24">
+<meta name="citation_reference" content="citation_journal_title=PLoS Comput Biol; citation_title=RFECS: a random-forest based algorithm for enhancer identification from chromatin state; citation_author=N Rajagopal, W Xie, Y Li, U Wagner, W Wang, J Stamatoyannopoulos, J Ernst, M Kellis, B Ren; citation_volume=9; citation_publication_date=2013; citation_pages=e1002968; citation_doi=10.1371/journal.pcbi.1002968; citation_id=CR25">
+<meta name="citation_reference" content="citation_journal_title=Neural Netw; citation_title=Deep learning in neural networks: an overview; citation_author=J Schmidhuber; citation_volume=61; citation_publication_date=2015; citation_pages=85-117; citation_doi=10.1016/j.neunet.2014.09.003; citation_id=CR26">
+<meta name="citation_reference" content="citation_journal_title=Hepatology; citation_title=Thymalfasin: an immune system enhancer for the treatment of liver disease. - Journal of Gastroenterology and; citation_author=MH Sjogren; citation_volume=30; citation_publication_date=2004; citation_pages=103-11; citation_id=CR27">
+<meta name="citation_reference" content="citation_journal_title=Brief Bioinform; citation_title=A comprehensive comparison of tools for differential ChIP-seq analysis; citation_author=S Steinhauser, N Kurzawa, R Eils, C Herrmann; citation_volume=1; citation_publication_date=2016; citation_pages=1-13; citation_id=CR28">
+<meta name="citation_reference" content="citation_journal_title=Technology; citation_title=A-hybrid-Random-Forest-based-Support-Vector. - Global Journal of Computer Science and; citation_author=TVR Tarun Rao; citation_volume=14; citation_publication_date=2014; citation_pages=43-54; citation_id=CR29">
+<meta name="citation_reference" content="citation_journal_title=Nucleic Acids Res; citation_title=Transcription factor and chromatin features predict genes associated with eQTLs; citation_author=D Wang, A Rendon, L Wernisch; citation_volume=41; citation_publication_date=2013; citation_pages=1450-63; citation_doi=10.1093/nar/gks1339; citation_id=CR30">
+<meta name="citation_reference" content="citation_journal_title=Nat Commun; citation_title=Systematic chromatin state comparison of epigenomes associated with diverse properties including sex and tissue type; citation_author=A Yen, M Kellis; citation_volume=6; citation_publication_date=2015; citation_pages=73-83; citation_doi=10.1038/ncomms8973; citation_id=CR31">
+<meta name="citation_reference" content="citation_journal_title=Genome Biol; citation_title=Model-based analysis of ChIP-Seq (MACS); citation_author=Y Zhang, T Liu, CA Meyer, J Eeckhoute, DS Johnson, BE Bernstein, C Nusbaum, RM Myers, M Brown, W Li; citation_volume=9; citation_publication_date=2008; citation_pages=R137; citation_doi=10.1186/gb-2008-9-9-r137; citation_id=CR32">
+<meta name="citation_author" content="Fang Huang">
+<meta name="citation_author_institution" content="Bio-X Institutes, Key Laboratory for the Genetics of Developmental and Neuropsychiatric Disorders (Ministry of Education) and the Collaborative Innovation Center for Brain Science, Shanghai Jiao Tong University, Shanghai, People’s Republic of China">
+<meta name="citation_author" content="Jiawei Shen">
+<meta name="citation_author_institution" content="Bio-X Institutes, Key Laboratory for the Genetics of Developmental and Neuropsychiatric Disorders (Ministry of Education) and the Collaborative Innovation Center for Brain Science, Shanghai Jiao Tong University, Shanghai, People’s Republic of China">
+<meta name="citation_author" content="Qingli Guo">
+<meta name="citation_author_institution" content="Bio-X Institutes, Key Laboratory for the Genetics of Developmental and Neuropsychiatric Disorders (Ministry of Education) and the Collaborative Innovation Center for Brain Science, Shanghai Jiao Tong University, Shanghai, People’s Republic of China">
+<meta name="citation_author" content="Yongyong Shi">
+<meta name="citation_author_institution" content="Bio-X Institutes, Key Laboratory for the Genetics of Developmental and Neuropsychiatric Disorders (Ministry of Education) and the Collaborative Innovation Center for Brain Science, Shanghai Jiao Tong University, Shanghai, People’s Republic of China">
+<meta name="citation_author_institution" content="Shanghai Changning Mental Health Center, Shanghai, People’s Republic of China">
+<meta name="citation_author_institution" content="Department of Psychiatry, The First Teaching Hospital of Xinjiang Medical University, Urumqi, People’s Republic of China">
+<meta name="citation_author_institution" content="The Bio-X Little White Building, Shanghai Jiao Tong University, Shanghai, China">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- For IE 9 and below --><!--[if IE]><link rel="shortcut icon" href=/static/images/favicons//favicon.ico><![endif]--><!-- Touch Icons - iOS and Android 2.1+ --><link rel="apple-touch-icon" href="/static/images/favicons/bmc/favicon-3f5c56eaaa.png">
+<!-- Firefox, Chrome, Safari, IE 11+ and Opera --><link rel="icon" href="/static/images/favicons/bmc/favicon-3f5c56eaaa.png">
+<script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script><link rel="stylesheet" media="screen" href="/static/styles/bmc/basic-0600efa430.css">
+<link rel="stylesheet" media="print" href="/static/styles/bmc/print-7680b1a80b.css">
+<link rel="stylesheet" id="js-mustard" href="/static/styles/bmc/main-4cf21094a7.css" media="only screen and (-webkit-min-device-pixel-ratio:0) and (min-color-index:0), (-ms-high-contrast: none), only all and (min--moz-device-pixel-ratio:0) and (min-resolution: 3e1dpcm)">
+<script>
+            window.airbrakeErrors = [];
+            window.onerror = function(error) {window.airbrakeErrors.push(error);}
+        </script><script type="text/javascript">
+        config = {
+            env: 'live',
+            site: 'hereditasjournal.biomedcentral.com',
+            siteWithPath: 'hereditasjournal.biomedcentral.com' + window.location.pathname,
+            twitterHashtag: '',
+            cmsPrefix: 'https://studio-cms.springernature.com/studio/',
+            
+            doi: '10.1186/s41065-016-0012-2',
+            figshareScriptUrl: 'https://widgets.figshare.com/static/figshare.js',
+            publisherBrand: 'BioMed Central',
+            mustardcut: false
+        };
+    </script><!-- SpringerLink's event tracker, as per: https://github.com/springernature/springerlink-event-tracker --><script type="text/javascript">
+document.addEventListener('dataLayerCreated', function() {
+    var script = document.createElement('script');
+    script.id = 'springerlink-event-tracker';
+    script.src = 'https://event-tracker.springernature.com/dist/eventTracker.js';
+    script.onload = function () {
+        var dL;
+        var doi;
+        var imprint;
+        var bpids;
+        var publisher;
+        var pageType;
+        var eventObject;
+
+        for (var i = 0; i < window.dataLayer.length; i++) {
+            if (window.dataLayer[i].event === "dataLayerCreated") {
+                dL = window.dataLayer[i];
+            }
+        }
+
+        if (!dL || !dL.content.article || !dL.content.article.doi) { return false;}
+
+        doi = dL.content.article.doi;
+        imprint = dL.content.contentInfo.imprint;
+        bpids = dL.session.authentication.authenticationID;
+        pageType = dL.page.category.pageType;
+
+        if (pageType) {
+            pageType = pageType.charAt(0).toUpperCase() + pageType.substring(1);
+        }
+
+        eventObject = {'content_type': pageType, 'doi': doi};
+
+        if (imprint === 'BioMed Central') {
+            publisher = 'BMC';
+        }
+        else if (imprint === 'SpringerOpen') {
+            publisher = 'SpringerOpen';
+        }
+        else {
+            throw new Error('Event Tracker Error: The publisher has an unexpected value');
+        }
+
+        if (bpids.length > 0) {
+            eventObject['business_partner_ids'] = bpids;
+        }
+
+        new EventTracker({'platform': publisher}).sendEvent('display', eventObject);
+    };
+    document.head.appendChild(script);
+});
+</script><!--Polyfills CustomEvent constructor in IE. Allows us to use events to manage race conditions in client side js--><script>
+    (function () {
+        if (typeof window.CustomEvent === "function") { return false; } // If IE polyfill not needed just return
+
+        function CustomEvent ( event, params ) {
+            params = params || { bubbles: false, cancelable: false, detail: undefined };
+            var evt = document.createEvent( 'CustomEvent' );
+            evt.initCustomEvent( event, params.bubbles, params.cancelable, params.detail );
+            return evt;
+        }
+
+        CustomEvent.prototype = window.Event.prototype;
+
+        window.CustomEvent = CustomEvent;
+    })();
+</script><script type="text/javascript">
+        window.dataLayer = [{"content":{"article":{"doi":"10.1186/s41065-016-0012-2","articleType":"Research","peerReviewType":"Closed","supplement":null,"keywords":"Enhancer;Hybrid classifier;Algorithm"},"contentInfo":{"imprint":"BioMed Central","title":"eRFSVM: a hybrid classifier to predict enhancers-integrating random forests with support vector machines","publishedAt":1467244800000,"publishedAtDate":"2016-06-30","author":["Fang Huang","Jiawei Shen","Qingli Guo","Yongyong Shi"],"collection":[]},"attributes":{"deliveryPlatform":"oscar","template":"rebrand","cms":null,"copyright":{"creativeCommonsType":"CC BY + CC0","openAccess":true},"environment":"live"},"journal":{"siteKey":"hereditasjournal.biomedcentral.com","volume":"153","issue":"1","title":"Hereditas","type":"AJs Life","journalID":41065,"gaCode":"UA-62066850-11","section":[]},"category":{"pmc":{"primarySubject":"Life Sciences"},"contentType":"Research","publishingSegment":"Genetics & Heredity (Life)"}},"session":{"authentication":{"authenticationID":[]}},"version":"1.0.0","page":{"category":{"pageType":"article"}},"event":"dataLayerCreated"}];
+        var event = new CustomEvent('dataLayerCreated');
+        document.dispatchEvent(event);
+    </script><script>
+            
+            var mustardcutlink = document.getElementById('js-mustard');
+            if (mustardcutlink && window.matchMedia && window.matchMedia(mustardcutlink.media).matches) {
+                window.config.mustardcut = true;
+            }
+        </script><script>
+            (function(d){
+                var config = window.config;
+                if (config && config.mustardcut && config.publisherBrand && sessionStorage.fontsLoaded === 'true') {
+                    if (window.config.publisherBrand === 'BioMed Central') {
+                        d.style.setProperty('--font-family-sans', 'Europa');
+                        d.style.setProperty('--font-family-serif', 'Noto Serif')
+                    } else if (window.config.publisherBrand === 'SpringerOpen' || window.config.publisherBrand === 'Springer') {
+                        d.style.setProperty('--font-family-sans', 'Source Sans Pro');
+                    }
+                }
+            })(document.documentElement);
+        </script><script src="https://cdn.cookielaw.org/consent/7d6f4b4f-77fb-43b9-b429-eb1e1eeac6aa.js" id="onetrust-bmc-control" charset="UTF-8"></script><!-- Google Tag Manager --><script>
+                    (function (w, d, s, l, i) {
+                    w[l] = w[l] || [];
+                    w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+                    var f = d.getElementsByTagName(s)[0],
+                            j = d.createElement(s),
+                            dl = l != 'dataLayer' ? '&l=' + l : '';
+                    j.async = true;
+                    j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+                    f.parentNode.insertBefore(j, f);
+                })(window, document, 'script', 'dataLayer', 'GTM-TDGJHK');
+                </script><!-- End Google Tag Manager --><link rel="canonical" href="https://hereditasjournal.biomedcentral.com/articles/10.1186/s41065-016-0012-2">
+<meta property="og:url" content="https://hereditasjournal.biomedcentral.com/articles/10.1186/s41065-016-0012-2">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Hereditas">
+<meta property="og:title" content="eRFSVM: a hybrid classifier to predict enhancers-integrating random forests with support vector machines">
+<meta property="og:description" content="Enhancers are tissue specific distal regulation elements, playing vital roles in gene regulation and expression. The prediction and identification of enhancers are important but challenging issues for bioinformatics studies. Existing computational methods, mostly single classifiers, can only predict the transcriptional coactivator EP300 based enhancers and show low generalization performance. We built a hybrid classifier called eRFSVM in this study, using random forests as a base classifier, and support vector machines as a main classifier. eRFSVM integrated two components as eRFSVM-ENCODE and eRFSVM-FANTOM5 with diverse features and labels. The base classifier trained datasets from a single tissue or cell with random forests. The main classifier made the final decision by support vector machines algorithm, with the predicting results of base classifiers as inputs. For eRFSVM-ENCODE, we trained datasets from cell lines including Gm12878, Hep, H1-hesc and Huvec, using ChIP-Seq datasets as features and EP300 based enhancers as labels. We tested eRFSVM-ENCODE on K562 dataset, and resulted in a predicting precision of 83.69 %, which was much better than existing classifiers. For eRFSVM-FANTOM5, with enhancers identified by RNA in FANTOM5 project as labels, the precision, recall, F-score and accuracy were 86.17 %, 36.06 %, 50.84 % and 93.38 % using eRFSVM, increasing 23.24 % (69.92 %), 97.05 % (18.30 %), 76.90 % (28.74 %), 4.69 % (89.20 %) than the existing algorithm, respectively. All these results demonstrated that eRFSVM was a better classifier in predicting both EP300 based and FAMTOM5 RNAs based enhancers.">
+<meta property="og:image" content="https://images.springer.com/sgw/journals/medium/41065.jpg">
+</head>
+<body class="journal journal-fulltext">
+        
+    
+        
+            
+                <!-- Google Tag Manager (noscript) -->
+                <noscript>
+                    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TDGJHK" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+                </noscript>
+                <!-- End Google Tag Manager (noscript) -->
+            
+        
+    
+
+
+        
+
+        
+
+    <div class="u-vh-full">
+        <div class="u-visually-hidden" aria-hidden="true">
+    
+    <?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg"><defs><filter id="a" filterunits="userSpaceOnUse" x="0" y="0" width="60.643" height="31.01"><fecolormatrix values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0"></fecolormatrix></filter></defs><symbol id="icon-arrow-down" viewbox="0 0 16 8"><path d="M8 6l6-6h2L8 8 0 0h2l6 6"></path></symbol><symbol id="icon-arrow-left-bullet" viewbox="0 0 8 16"><path d="M3 8l5 5v3L0 8l8-8v3L3 8z"></path></symbol><symbol id="icon-arrow-right-bullet" viewbox="0 0 8 16"><path d="M5 8L0 3V0l8 8-8 8v-3l5-5z"></path></symbol><symbol id="icon-arrow-right" viewbox="0 0 32 64"><path d="M0 0v64l32-32z"></path></symbol><symbol id="icon-close" viewbox="0 0 23.998 23.999"><path d="M20.998 0l-8.999 9L3 0 0 3l8.999 9L0 20.999l3 3L11.999 15l8.999 8.999 3-3L14.999 12l8.999-9z"></path></symbol><symbol id="icon-community" viewbox="0 0 60.643 31.01"><mask maskunits="userSpaceOnUse" x="0" y="0" width="60.643" height="31.01" id="b"><path fill="#FFF" d="M0 31.01h60.643V0H0z" filter="url(#a)"></path></mask><path mask="url(#b)" d="M60.643 25.497L50.005 14.86a7.925 7.925 0 1 0-7.669 0l-6.847 6.847-1.334-1.334a7.925 7.925 0 0 0-3.834-14.861 7.925 7.925 0 0 0-3.834 14.861l-1.334 1.334-6.847-6.847a7.925 7.925 0 1 0-7.669 0L0 25.497h21.362L15.85 31.01h28.943l-5.514-5.513h21.364z"></path></symbol><symbol id="icon-download" viewbox="-301 390 9 14"><path d="M-301 395.6l4.5 5.1 4.5-5.1h-3V390h-3v5.6h-3zm0 6.5h9v1.9h-9z"></path></symbol><symbol id="icon-ext-link" viewbox="0 0 16 16"><path fill="#676767" d="M12.9 16H3.1C1.4 16 0 14.6 0 12.9V3.2C0 1.4 1.4 0 3.1 0h3.7v1H3.1C2 1 1 2 1 3.2v9.7C1 14 2 15 3.1 15h9.7c1.2 0 2.1-1 2.1-2.1V8.7h1v4.2c.1 1.7-1.3 3.1-3 3.1z"></path><path fill="#676767" d="M12.8 2.5l.7.7-9 8.9-.7-.7 9-8.9z"></path><path fill="#676767" d="M9.7 0L16 6.2V0z"></path></symbol><symbol id="icon-info-bordered" viewbox="470.812 270.868 18 18"><path d="M479.812 270.868c-4.972 0-9 4.029-9 9s4.028 9 9 9c4.971 0 9-4.029 9-9s-4.029-9-9-9zm0 16.875a7.875 7.875 0 0 1-7.875-7.875 7.875 7.875 0 1 1 15.75 0 7.875 7.875 0 0 1-7.875 7.875z"></path><path d="M479.284 279.586c.089-.238-.024-.361-.13-.361-.489 0-1.123 1.16-1.359 1.16-.093 0-.173-.092-.173-.174 0-.238.581-.801.751-.971.526-.506 1.217-.895 1.979-.895.567 0 1.174.346.703 1.639l-.952 2.604c-.079.199-.224.531-.224.746 0 .092.054.186.159.186.395 0 1.121-1.135 1.304-1.135.067 0 .158.086.158.199 0 .385-1.542 2.043-2.874 2.043-.477 0-.804-.225-.804-.732 0-.641.447-1.734.538-1.963l.924-2.346zm.727-3.41c0-.586.498-1.066 1.082-1.066.527 0 .91.357.91.906 0 .615-.501 1.068-1.098 1.068-.541-.002-.894-.361-.894-.908z"></path></symbol><symbol id="icon-opr" viewbox="0 0 18 18"><path d="M.9 2.5c-.2-.2-.4-.3-.6-.2-.3.2-.3.4-.3.6 0 .8 0 1.7.1 2.5 0 .5.3.7.7.6.9 0 1.7-.2 2.5-.3h.2c.5-.2.6-.5.3-.8-.2-.2-.4-.4-.6-.5-.1-.1-.2-.2-.4-.3.5-.6 1-1.1 1.7-1.5 4.6-3 10.9-.5 12 4.9.9 4.4-2.2 8.6-6.7 9.2-3.7.5-7.2-1.6-8.4-5.1 0-.1-.1-.2-.1-.3-.1-.3-.5-.5-.8-.4-.3.1-.5.4-.4.8.4 1.3 1.1 2.4 2 3.4 1.4 1.5 3.1 2.4 5.1 2.8 3 .5 5.6-.2 7.8-2.2 2.1-1.9 3-4.2 3-6.9-.1-4-3.1-7.6-7.1-8.4-3.3-.9-6.2 0-8.6 2.3-.2.1-.3.3-.5.5-.3-.2-.6-.5-.9-.7z"></path><path d="M13 4.7c-2.6 1.6-4.5 3.6-5.3 4.6L5.6 7.7l-.9.7L8.3 12c.6-1.6 2.6-4.6 4.9-6.8l-.2-.5z"></path></symbol><symbol id="icon-quotation" viewbox="0 0.333 55.932 35.619"><path d="M43.738.333L31.545 12.207v23.745h24.387V12.207H43.738zm-31.545 0L0 12.207v23.745h24.386V12.207H12.193z"></path></symbol><symbol id="icon-remove" viewbox="-296 388 18 18"><path d="M-291.7 396.1h9v2h-9z"></path><path d="M-287 405.5c-4.7 0-8.5-3.8-8.5-8.5s3.8-8.5 8.5-8.5 8.5 3.8 8.5 8.5-3.8 8.5-8.5 8.5zm0-16c-4.1 0-7.5 3.4-7.5 7.5s3.4 7.5 7.5 7.5 7.5-3.4 7.5-7.5-3.4-7.5-7.5-7.5z"></path></symbol><symbol id="icon-ribbon" viewbox="0 0 36 72"><path d="M0 0v72h.053L18 54.054 35.945 72H36V0H0zm25.8 11.4l3.001 3L15 28.2l-7.801-7.8 3-3L15 22.201 25.8 11.4z"></path></symbol><symbol id="icon-rss" viewbox="0 0 24 24"><g fill="#F26822"><ellipse cx="3.305" cy="20.702" rx="3.306" ry="3.298"></ellipse><path d="M15.978 24h-4.684c0-6.224-5.057-11.27-11.294-11.27V8.058c8.824 0 15.978 7.137 15.978 15.942z"></path><path d="M19.2 23.95C19.2 13.366 10.604 4.79 0 4.79V0c13.255 0 24 10.723 24 23.95h-4.8z"></path></g></symbol><symbol id="icon-search" viewbox="0 0 16 16"><path d="M6.276 12.257C2.815 12.257 0 9.508 0 6.128 0 2.749 2.815 0 6.276 0c3.462 0 6.277 2.749 6.277 6.128.002 3.38-2.815 6.129-6.277 6.129zm0-10.772c-2.622 0-4.755 2.083-4.755 4.643 0 2.562 2.133 4.644 4.755 4.644 2.623 0 4.756-2.082 4.756-4.644 0-2.56-2.134-4.643-4.756-4.643z"></path><path d="M16 13.751L13.641 16l-4.875-4.82 2.36-2.248L16 13.751z"></path></symbol><symbol id="icon-speech-bubble" viewbox="0 0 40 54"><path d="M0 0v40h6.667v13.334L20 40h20V0z"></path></symbol><symbol id="icon-error" viewbox="2.002 0 14 14"><path d="M16.002 11.949L13.951 14 9.002 9.051 4.053 14l-2.051-2.051L6.951 7 2.002 2.05 4.053 0l4.949 4.95L13.951 0l2.051 2.049L11.053 7l4.949 4.949z"></path></symbol><symbol id="icon-info" viewbox="5.502 0 7 14"><path d="M8.165 5.923c.146-.384-.04-.577-.209-.577-.783 0-1.798 1.856-2.177 1.856-.15 0-.277-.147-.277-.279 0-.383.933-1.282 1.203-1.557.846-.811 1.949-1.434 3.174-1.434.908 0 1.879.555 1.125 2.63l-1.526 4.167c-.126.32-.358.854-.358 1.198 0 .148.088.298.255.298.632 0 1.796-1.818 2.091-1.818.105 0 .252.134.252.321C11.717 11.345 9.245 14 7.11 14c-.763 0-1.289-.361-1.289-1.176 0-1.027.717-2.778.865-3.145l1.479-3.756zm1.144-4.211C9.309.771 10.111 0 11.045 0c.845 0 1.457.577 1.457 1.456 0 .983-.804 1.709-1.757 1.709-.866-.001-1.436-.578-1.436-1.453z"></path></symbol><symbol id="icon-success" viewbox="0 0 16 14"><path d="M15.592 0c-4.867 2.984-8.4 6.751-9.987 8.641L1.717 5.595 0 6.979l6.717 6.832c1.157-2.961 4.817-8.748 9.287-12.86L15.592 0z"></path></symbol><symbol id="icon-warning" viewbox="7.002 0 2.789 14"><path d="M7.002 11.211h2.789V14H7.002v-2.789zM7.002 0v3.436l.741 5.326h1.326l.723-5.326V0h-2.79z"></path></symbol><symbol id="icon-facebook-bordered" viewbox="463.812 263.868 32 32"><path d="M479.812 263.868c-8.837 0-16 7.163-16 16s7.163 16 16 16 16-7.163 16-16-7.163-16-16-16zm0 30c-7.732 0-14-6.269-14-14s6.268-14 14-14 14 6.269 14 14-6.267 14-14 14z"></path><path d="M483.025 280.48l.32-2.477h-2.453v-1.582c0-.715.199-1.207 1.227-1.207h1.311v-2.213a17.753 17.753 0 0 0-1.907-.098c-1.894 0-3.186 1.154-3.186 3.271V278h-2.142v2.477h2.142v6.354h2.557v-6.354l2.131.003z"></path></symbol><symbol id="icon-facebook" viewbox="0 0 24 24"><circle fill="#4D67A4" cx="12" cy="12" r="12"></circle><path fill="#FFF" d="M8.396 10.143h2.137V8.165s-.092-1.292.892-2.274c.979-.979 2.298-.887 4.177-.724v2.21h-1.387s-.586-.013-.861.303c-.271.315-.24.764-.24.875v1.588h2.41l-.311 2.458h-2.116v6.336h-2.56v-6.345H8.396v-2.449z"></path></symbol><symbol id="icon-linkedin" viewbox="0 0 24 24"><circle fill="#0178B5" cx="12" cy="12" r="12"></circle><g fill="#FFF"><circle cx="8.022" cy="8.043" r="1.256"></circle><path d="M6.929 10.246h2.17v6.967h-2.17zm3.533 6.967h2.157v-3.594s-.078-1.627 1.219-1.627c1.301 0 1.211 1.231 1.211 1.635v3.586h2.183v-3.775s.129-2.745-1.472-3.191c-1.605-.445-2.661.071-3.219.985v-.985h-2.079v6.966z"></path></g></symbol><symbol id="icon-reddit" viewbox="0 0 24 24"><circle fill="#BCBCBC" cx="12" cy="12" r="12"></circle><path fill="#FFF" d="M4.661 9.741c.941 0 1.703.761 1.703 1.704 0 .938-.762 1.705-1.703 1.705s-1.704-.767-1.704-1.705c0-.943.763-1.704 1.704-1.704zm13.844 0a1.704 1.704 0 1 1 .001 3.409 1.704 1.704 0 0 1-.001-3.409z"></path><path fill="#FFF" d="M11.736 8.732c4.285 0 7.762 2.283 7.762 5.104 0 2.812-3.477 5.1-7.762 5.1-4.288 0-7.762-2.285-7.762-5.1.001-2.82 3.474-5.104 7.762-5.104z"></path><path fill="#010101" d="M11.736 19.262c-4.461 0-8.088-2.437-8.088-5.426 0-2.994 3.626-5.431 8.088-5.431 4.457 0 8.087 2.437 8.087 5.431 0 2.989-3.63 5.426-8.087 5.426zm0-10.205c-4.104 0-7.438 2.145-7.438 4.779 0 2.633 3.334 4.773 7.438 4.773 4.098 0 7.437-2.142 7.437-4.773 0-2.636-3.339-4.779-7.437-4.779z"></path><circle fill="#FFF" cx="18.014" cy="5.765" r="1.385"></circle><path fill="#010101" d="M18.014 7.456a1.694 1.694 0 0 1-1.695-1.691c0-.934.764-1.694 1.695-1.694s1.693.762 1.693 1.694c0 .934-.762 1.691-1.693 1.691zm0-2.734c-.574 0-1.043.469-1.043 1.043s.469 1.041 1.043 1.041a1.042 1.042 0 0 0 0-2.084zM3.818 13.275a2.068 2.068 0 0 1-1.068-1.811 2.074 2.074 0 0 1 3.538-1.466l-.458.462a1.412 1.412 0 0 0-1.007-.42 1.424 1.424 0 0 0-.688 2.669l-.317.566zm15.866 0l-.316-.566a1.43 1.43 0 0 0 .73-1.245c0-.784-.635-1.424-1.42-1.424-.381 0-.736.149-1.008.42l-.459-.462a2.074 2.074 0 1 1 2.473 3.277z"></path><path fill="#F04B23" d="M9.165 11.604c.704 0 1.272.564 1.272 1.27a1.273 1.273 0 1 1-1.272-1.27zm5.321 0a1.274 1.274 0 1 1-1.275 1.27c0-.704.57-1.27 1.275-1.27z"></path><path fill="#010101" d="M11.79 8.915a.327.327 0 0 1-.307-.44l1.472-4.181 3.616.862c.177.044.283.22.238.395a.32.32 0 0 1-.391.239l-3.045-.729-1.275 3.632a.334.334 0 0 1-.308.222zm-.069 8.376c-2.076 0-2.908-.939-2.943-.982a.332.332 0 0 1 .035-.461.334.334 0 0 1 .459.033c.019.021.713.758 2.449.758 1.766 0 2.539-.763 2.549-.767a.324.324 0 1 1 .469.446c-.04.043-.954.973-3.018.973z"></path></symbol><symbol id="icon-twitter-bordered" viewbox="463.812 263.868 32 32"><path d="M486.416 276.191a5.622 5.622 0 0 1-1.554.429 2.718 2.718 0 0 0 1.19-1.502 5.456 5.456 0 0 1-1.72.657 2.71 2.71 0 0 0-1.979-.854 2.711 2.711 0 0 0-2.642 3.326 7.681 7.681 0 0 1-5.586-2.831 2.714 2.714 0 0 0 .839 3.618 2.748 2.748 0 0 1-1.227-.339v.031a2.71 2.71 0 0 0 2.174 2.656 2.735 2.735 0 0 1-1.229.049 2.726 2.726 0 0 0 2.531 1.883 5.442 5.442 0 0 1-4.01 1.123 7.672 7.672 0 0 0 4.155 1.215c4.983 0 7.71-4.129 7.71-7.711 0-.115-.004-.232-.006-.351a5.41 5.41 0 0 0 1.354-1.399z"></path><path d="M479.812 263.868c-8.837 0-16 7.163-16 16s7.163 16 16 16 16-7.163 16-16-7.163-16-16-16zm0 30c-7.732 0-14-6.269-14-14s6.268-14 14-14 14 6.269 14 14-6.267 14-14 14z"></path></symbol><symbol id="icon-twitter" viewbox="0 0 24 24"><circle fill="#26A7DF" cx="12" cy="12" r="12"></circle><path fill="#FFF" d="M5.903 6.768s2.176 2.883 5.953 3.082c0 0-.51-1.702 1.058-3.004 1.568-1.305 3.508-.2 3.879.292 0 0 1.104-.172 1.875-.691 0 0-.252.995-1.18 1.594 0 0 1.086-.146 1.596-.439 0 0-.533.853-1.447 1.503 0 0 .381 3.595-2.709 6.57-3.09 2.971-8.176 2.352-10.012.797 0 0 2.495.277 4.249-1.219 0 0-2.074-.037-2.671-1.973 0 0 1.036.08 1.215-.119 0 0-2.232-.539-2.254-2.873 0 0 .68.339 1.297.359 0-.001-2.153-1.557-.849-3.879z"></path></symbol><symbol id="icon-weibo-bordered" viewbox="463.812 263.868 32 32"><path d="M479.812 263.868c-8.838 0-16 7.163-16 16s7.162 16 16 16c8.837 0 16-7.163 16-16s-7.163-16-16-16zm0 30c-7.732 0-14-6.269-14-14s6.268-14 14-14c7.731 0 14 6.269 14 14s-6.267 14-14 14z"></path><path d="M478.552 285.348c-2.616.261-4.876-.926-5.044-2.649-.167-1.722 1.814-3.33 4.433-3.588 2.609-.263 4.871.926 5.041 2.647.165 1.721-1.818 3.331-4.43 3.59m5.23-5.718c-.226-.065-.374-.109-.259-.403.25-.639.276-1.188.005-1.581-.515-.734-1.915-.693-3.521-.021 0 0-.508.224-.378-.181.247-.798.209-1.468-.178-1.852-.87-.878-3.194.032-5.183 2.027-1.489 1.494-2.357 3.082-2.357 4.453 0 2.619 3.354 4.213 6.631 4.213 4.297 0 7.154-2.504 7.154-4.493.001-1.198-1.007-1.881-1.914-2.162"></path><path fill="#020202" d="M486.637 274.833a4.176 4.176 0 0 0-3.982-1.291.608.608 0 0 0-.465.72.604.604 0 0 0 .72.466 2.968 2.968 0 0 1 2.827.92 3 3 0 0 1 .625 2.918.602.602 0 0 0 .39.762.603.603 0 0 0 .763-.391v-.001a4.218 4.218 0 0 0-.878-4.103"></path><path fill="#020202" d="M485.041 276.276a2.037 2.037 0 0 0-1.938-.63.518.518 0 0 0-.396.621.517.517 0 0 0 .617.398c.336-.071.702.03.947.307s.312.649.207.979a.52.52 0 0 0 .336.654.523.523 0 0 0 .657-.336 2.038 2.038 0 0 0-.43-1.993m-6.347 5.951c-.09.156-.293.233-.451.166-.151-.062-.204-.235-.115-.389.093-.155.284-.229.44-.168.157.056.214.235.126.391m-.832 1.074c-.253.405-.795.58-1.202.396-.403-.186-.521-.655-.27-1.051.248-.39.771-.566 1.176-.393.413.17.543.636.296 1.048m.95-2.864c-1.244-.326-2.65.294-3.19 1.396-.553 1.119-.021 2.369 1.236 2.775 1.303.42 2.84-.225 3.374-1.436.526-1.183-.132-2.402-1.42-2.735"></path></symbol><symbol id="icon-weibo" viewbox="4 4 24 24"><circle fill="#C8E8F9" cx="16" cy="16" r="12"></circle><path fill="#FFF" d="M9.098 18.194c0 1.981 2.574 3.593 5.757 3.593 3.178 0 5.756-1.611 5.756-3.593 0-1.989-2.578-3.601-5.756-3.601-3.183.001-5.757 1.612-5.757 3.601"></path><path fill="#DF0A21" d="M14.991 21.496c-2.817.278-5.244-.996-5.428-2.85-.183-1.855 1.95-3.586 4.767-3.862 2.813-.278 5.243.996 5.428 2.849.18 1.855-1.957 3.584-4.767 3.863m5.628-6.155c-.24-.067-.404-.116-.279-.432.27-.688.299-1.278.004-1.699-.551-.791-2.062-.748-3.789-.022 0-.001-.548.241-.406-.191.266-.859.224-1.577-.191-1.993-.937-.942-3.437.037-5.577 2.18-1.602 1.61-2.533 3.317-2.533 4.789 0 2.817 3.606 4.533 7.13 4.533 4.626 0 7.701-2.696 7.701-4.834.001-1.292-1.085-2.027-2.06-2.331"></path><path fill="#F4992C" d="M23.689 10.182a4.492 4.492 0 0 0-4.283-1.39.651.651 0 1 0 .269 1.275 3.2 3.2 0 0 1 3.045.99 3.224 3.224 0 0 1 .672 3.138.647.647 0 0 0 .418.823.647.647 0 0 0 .816-.421v-.003a4.51 4.51 0 0 0-.937-4.412"></path><path fill="#F4992C" d="M21.973 11.736a2.183 2.183 0 0 0-2.086-.679.56.56 0 0 0-.428.667.554.554 0 0 0 .662.43v.001c.361-.075.754.034 1.018.33.266.299.34.698.227 1.054a.563.563 0 0 0 .359.706.563.563 0 0 0 .709-.362 2.2 2.2 0 0 0-.461-2.147"></path><path fill="#13110C" d="M15.143 18.139c-.1.17-.315.251-.483.179-.168-.07-.222-.255-.128-.42.097-.167.311-.248.479-.182.165.062.228.252.132.423m-.896 1.155c-.271.434-.854.625-1.295.425-.433-.195-.561-.707-.285-1.128.269-.426.832-.609 1.265-.427.443.183.58.688.315 1.13m1.024-3.084c-1.34-.351-2.852.32-3.434 1.506-.597 1.206-.021 2.546 1.33 2.984 1.402.453 3.055-.243 3.629-1.543.569-1.275-.142-2.587-1.525-2.947"></path></symbol></svg>
+</div>
+
+        <a class="u-visually-hidden u-visually-hidden-focus" href="#main-content">
+    <span class="c-banner c-banner--info">Skip to content</span>
+</a>
+
+        
+            
+    <div class="adsbox c-ad c-ad--LB1">
+        <div class="c-ad__inner">
+            <p class="c-ad__label">Advertisement</p>
+            <div id="div-gpt-ad-LB1" data-gpt-unitpath="/270604982/bmc/hereditasjournal/articles" data-gpt-sizes="728x90,970x90" data-gpt-targeting="pos=LB1;doi=10.1186/s41065-016-0012-2;kwrd=Enhancer,Hybrid classifier,Algorithm;pmc=L32030,L21001;">
+                <noscript>
+                    <a href="//pubads.g.doubleclick.net/gampad/jump?iu=/270604982/bmc/hereditasjournal/articles&amp;sz=728x90,970x90&amp;pos=LB1&amp;doi=10.1186/s41065-016-0012-2&amp;kwrd=Enhancer,Hybrid%20classifier,Algorithm&amp;pmc=L32030,L21001&amp;">
+                        <img data-test="gpt-advert-fallback-img" src="//pubads.g.doubleclick.net/gampad/ad?iu=/270604982/bmc/hereditasjournal/articles&amp;sz=728x90,970x90&amp;pos=LB1&amp;doi=10.1186/s41065-016-0012-2&amp;kwrd=Enhancer,Hybrid%20classifier,Algorithm&amp;pmc=L32030,L21001&amp;" alt="Advertisement" width="728" height="90"></a>
+                </noscript>
+            </div>
+        </div>
+    </div>
+
+        
+         
+    <div id="membership-message-loader-desktop" class="placeholder" data-placeholder="/placeholder/v1/membership/message"></div>
+
+
+<header class="c-popup-search" id="top" data-test="publisher-header"><nav class="c-navbar"><div class="u-container">
+            
+            <div class="basic-white-logo c-navbar__logo u-margin-right-xxl" itemscope itemtype="http://schema.org/Organization" data-test="navbar-logo-header">
+                <link itemprop="parentOrganization" href="#parentOrganization">
+<div class="c-logo">
+    <a href="https://www.biomedcentral.com" itemprop="url">
+        <img src="/static/images/bmc/logos/logo-bmc-white-aj-e3a70ae848.svg" alt="BMC" itemprop="logo"><div class="c-logo__strapline">
+            <img src="/static/images/bmc/logos/logo-bmc-white-strapline-sn-e7b1d6e67f.svg" alt="Part of Springer Nature">
+</div>
+    </a>
+</div>
+            </div>
+            <button type="button" class="c-navbar__link c-dropdown js-publisher-menu-button u-hidden-at-lg" id="publisher-header-menu-button" data-toggle="collapse" data-test="publisher-header-menu-toggle" data-toggle-linked="publisher-header" data-target="publisher-header-search publisher-header-menu" aria-controls="publisher-header-menu publisher-header-search" aria-expanded="false">
+                <span class="c-dropdown__toggle">Menu</span>
+            </button>
+            <div class="c-navbar__content c-collapse" id="publisher-header-menu">
+                
+    <ul class="c-navbar__nav" data-test="publisher-navigation">
+<li class="c-navbar__item">
+            <a class="c-navbar__link" href="//www.biomedcentral.com/journals">
+                Explore journals
+            </a>
+        </li>
+        
+        <li class="c-navbar__item">
+            <a class="c-navbar__link" href="//www.biomedcentral.com/getpublished">
+                Get published
+            </a>
+        </li>
+        
+        <li class="c-navbar__item">
+            <a class="c-navbar__link" href="//www.biomedcentral.com/about">
+                About BMC
+            </a>
+        </li>
+        
+    </ul>
+<ul class="c-navbar__nav c-navbar__nav--right">
+<li class="c-navbar__item">
+                        <button type="button" class="c-navbar__link js-publisher-search-button u-hidden-at-lt-lg" data-toggle="collapse" data-test="header-search-button" data-target="publisher-header-search publisher-header-menu publisher-header-menu-button" aria-controls="publisher-header-search publisher-header-menu" aria-expanded="false">
+                            <span class="c-flex c-flex--align-center">
+                                Search
+                                <svg class="c-icon u-margin-left-xs" width="14" height="14" aria-hidden="true"><use xlink:href="#icon-search"></use></svg></span>
+                        </button>
+                    </li>
+                    <li class="c-navbar__item">
+                        <a data-replace="true" data-placeholder="/placeholder/v1/username" class="c-navbar__link" href="https://www.biomedcentral.com/login" data-test="login-link">
+                            <span class="u-js-shown">Login</span>
+                            <span class="u-js-hidden">My Account</span>
+                        </a>
+                    </li>
+                </ul>
+</div>
+        </div>
+    </nav><div class="c-popup-search__content c-collapse js-publisher-search-bar" id="publisher-header-search">
+        <div class="u-container">
+            <div class="c-popup-search__container">
+                <div class="ctx-search">
+    <form role="search" class="c-form-field" method="GET" action="//www.biomedcentral.com/search" data-track="submit" data-track-category="Search and Results" data-track-action="Submit search" data-dynamic-track-label data-track-label="" data-test="global-search">
+        <label for="publisherSearch" class="c-form-field__label">Search all BMC articles</label>
+        <div class="c-flex">
+            <input id="publisherSearch" class="c-form-field__input js-publisher-search-input" autocomplete="off" role="textbox" data-test="search-input" name="query" type="text" value=""><div>
+                <button class="c-button" type="submit" data-test="search-submit-button">
+    <span class="u-visually-hidden">Search</span>
+    <svg class="c-icon" width="16" height="16" aria-hidden="true"><use xlink:href="#icon-search"></use></svg></button>
+
+
+            </div>
+        </div>
+        <input type="hidden" name="searchType" value="publisherSearch">
+</form>
+</div>
+
+            </div>
+        </div>
+    </div>
+</header><header class="c-journal-header c-journal-header--hereditas ctx-journal-header"><div class="u-container">
+                    <div class="c-journal-header__inner ">
+                        
+                        <div class="c-journal-title" id="journalTitle">
+                            <a href="/">
+    
+        
+    
+    <span class="c-journal-title__text ">Hereditas</span>
+    
+</a>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="c-navbar">
+                    <div class="u-container">
+                        
+                            <button type="button" class="c-navbar__link c-dropdown u-hidden-at-lg" data-toggle="collapse" data-test="journal-header-menu" data-toggle-linked="journal-header" data-target="journal-menu" aria-controls="journal-menu" aria-expanded="false">
+                                    <span class="c-dropdown__toggle">Menu</span>
+                            </button>
+                            <div class="c-navbar__content c-collapse" id="journal-menu">
+                                <nav class="c-navbar__nav"><ul class="c-navbar__nav c-navbar__nav--journal" role="menu" data-test="site-navigation">
+<li class="c-navbar__item" role="menuitem">
+                                                <a class="c-navbar__link" href="/">Home</a>
+                                            </li>
+                                        
+                                            <li class="c-navbar__item" role="menuitem">
+                                                <a class="c-navbar__link" href="/about">About</a>
+                                            </li>
+                                        
+                                            <li class="c-navbar__item" role="menuitem">
+                                                <a class="c-navbar__link c-navbar__link--is-shown" href="/articles">Articles</a>
+                                            </li>
+                                        
+                                            <li class="c-navbar__item" role="menuitem">
+                                                <a class="c-navbar__link" href="/submission-guidelines">Submission Guidelines</a>
+                                            </li>
+                                        
+                                    </ul></nav>
+</div>
+                        
+                    </div>
+                </div>
+                <div class="c-journal-header__identity c-journal-header__identity--ocean-light-blue">
+                    
+                </div>
+            </header><div class="u-container u-margin-top-xl u-margin-bottom-xl" id="main-content">
+            <div class="c-content-layout c-content-layout--fulltext" data-component="sticky-container">
+                <div class="c-content-layout__nav u-hidden-at-lt-xl">
+                    <nav xmlns="" xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:meta="http://www.springer.com/app/meta" id="ArticleNavigation" aria-labelledby="toc-menu-title" data-component="sticky"><h3 id="toc-menu-title" class="u-visually-hidden" data-test="toc-title">Table of Contents</h3>
+<ol class="c-nav c-nav--stacked" role="menu" id="tocMenu" aria-expanded="true" data-article-toc="">
+<li role="menuitem" class="c-nav__item"><a class="c-nav__link" href="#Abs1" data-track-category="Table of Contents" data-track="click" data-track-action="Link Clicked" data-track-label="Abstract" data-test="abstract-link">Abstract</a></li>
+<li role="menuitem" class="c-nav__item"><a class="c-nav__link" href="#Sec1" data-track-category="Table of Contents" data-track="click" data-track-action="Link Clicked" data-track-label="Background">Background</a></li>
+<li role="menuitem" class="c-nav__item"><a class="c-nav__link" href="#Sec2" data-track-category="Table of Contents" data-track="click" data-track-action="Link Clicked" data-track-label="Methods">Methods</a></li>
+<li role="menuitem" class="c-nav__item"><a class="c-nav__link" href="#Sec12" data-track-category="Table of Contents" data-track="click" data-track-action="Link Clicked" data-track-label="Results and Discussion">Results and Discussion</a></li>
+<li role="menuitem" class="c-nav__item"><a class="c-nav__link" href="#Sec17" data-track-category="Table of Contents" data-track="click" data-track-action="Link Clicked" data-track-label="Discussion">Discussion</a></li>
+<li role="menuitem" class="c-nav__item"><a class="c-nav__link" href="#Sec18" data-track-category="Table of Contents" data-track="click" data-track-action="Link Clicked" data-track-label="Conclusion">Conclusion</a></li>
+<li role="menuitem" class="c-nav__item"><a class="c-nav__link" href="#Decs" data-test="declarations-link" data-track-category="Table of Contents" data-track="click" data-track-action="Link Clicked" data-track-label="Declarations">
+                  Declarations
+                </a></li>
+<li role="menuitem" class="c-nav__item"><a class="c-nav__link" href="#Bib1" data-track-category="Table of Contents" data-track="click" data-track-action="Link Clicked" data-track-label="References">References</a></li>
+</ol></nav>
+</div>
+
+                <main class="c-content-layout__main"><article itemscope itemtype="http://schema.org/ScholarlyArticle"><div class="FulltextWrapper">
+        <ul class="c-article-identifiers u-reset-list">
+<li class="c-article-identifiers__item" data-test="article-category">Research</li>
+            <li class="c-article-identifiers__item" data-test="open-access">
+                <span class="u-text-open-access">Open Access</span>
+            </li>
+            
+            
+        </ul>
+</div>
+
+                        <div class="FulltextWrapper">
+<div xmlns="" xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:meta="http://www.springer.com/app/meta" class="MainTitleSection"><h1 xmlns="http://www.w3.org/1999/xhtml" class="ArticleTitle" itemprop="headline" lang="en">eRFSVM: a hybrid classifier to predict enhancers-integrating random forests with support vector machines</h1></div>
+<div xmlns="" xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:meta="http://www.springer.com/app/meta" class="AuthorNames" data-author-affiliations="true"><ul class="u-listReset">
+<li class="Author hasAffil" data-jumpto="Aff" data-test="author-name">
+<span xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" class="AuthorName" itemprop="author" itemscope="" itemtype="http://schema.org/Person">Fang Huang</span><sup><a href="#Aff1" class="AffiliationID">1</a></sup>, </li>
+<li class="Author hasAffil" data-jumpto="Aff" data-test="author-name">
+<span xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" class="AuthorName" itemprop="author" itemscope="" itemtype="http://schema.org/Person">Jiawei Shen</span><sup><a href="#Aff1" class="AffiliationID">1</a></sup>, </li>
+<li class="Author hasAffil" data-jumpto="Aff" data-test="author-name">
+<span xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" class="AuthorName" itemprop="author" itemscope="" itemtype="http://schema.org/Person">Qingli Guo</span><sup><a href="#Aff1" class="AffiliationID">1</a></sup> and </li>
+<li class="Author hasAffil" data-jumpto="Aff" data-test="author-name">
+<span xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" class="AuthorName" itemprop="author" itemscope="" itemtype="http://schema.org/Person">Yongyong Shi</span><sup><a href="#Aff1" class="AffiliationID">1</a>, <a href="#Aff2" class="AffiliationID">2</a>, <a href="#Aff3" class="AffiliationID">3</a>, <a href="#Aff4" class="AffiliationID">4</a></sup><a href="mailto:shiyongyong@gmail.com" class="EmailAuthor" title="Email author"><span class="ContactIcon" aria-hidden="true"></span><span class="u-srOnly">Email author</span></a>
+</li>
+</ul></div>
+<div xmlns="" xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:meta="http://www.springer.com/app/meta" class="ArticleContextInformation"><div class="ContextInformation">
+<div class="ContextInformationJournalTitles"><span class="ArticleCitation"><span itemscope="" itemtype="http://schema.org/Periodical" itemid="#periodical"><span xmlns="http://www.w3.org/1999/xhtml" class="JournalTitle">Hereditas</span></span><span class="ArticleCitation_Year">2016</span><span class="ArticleCitation_Volume"><strong itemprop="isPartOf" itemtype="http://schema.org/PublicationVolume"><link itemprop="isPartOf" href="#periodical">153</strong>:6</span></span></div>
+<p class="ArticleDOI"><a itemprop="sameAs" class="u-text-inherit" href="https://doi.org/10.1186/s41065-016-0012-2">https://doi.org/10.1186/s41065-016-0012-2</a></p>
+<p class="Copyright">©  The Author(s) 2016</p>
+</div></div>
+<ul class="ArticleHistory u-reset-list">
+<li class="History HistoryReceived">
+<strong>Received: </strong><span>15 May 2016</span>
+</li>
+<li class="History HistoryAccepted">
+<strong>Accepted: </strong><span>16 June 2016</span>
+</li>
+<li class="History HistoryOnlineDate">
+<strong>Published: </strong><span itemprop="datePublished">30 June 2016</span>
+</li>
+</ul>
+</div>
+                        
+                        
+                        
+    
+
+                        <div class="FulltextWrapper">
+<section xmlns="" xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:meta="http://www.springer.com/app/meta" class="Abstract Section1 RenderAsSection1 c-section" id="Abs1" lang="en"><h2 class="c-section__heading"><a href="#Abstract" data-test="abstract-heading" data-disable-click-event-default="">Abstract</a></h2>
+<div class="c-section__content" id="Abstract">
+<div xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" class="AbstractSection" id="ASec1">
+                <h3 xmlns="" class="Heading">Background</h3>
+                <p id="Par1" class="Para">Enhancers are tissue specific distal regulation elements, playing vital roles in gene regulation and expression. The prediction and identification of enhancers are important but challenging issues for bioinformatics studies. Existing computational methods, mostly single classifiers, can only predict the transcriptional coactivator EP300 based enhancers and show low generalization performance.</p>
+              </div>
+<div xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" class="AbstractSection" id="ASec2">
+                <h3 xmlns="" class="Heading">Results</h3>
+                <p id="Par2" class="Para">We built a hybrid classifier called eRFSVM in this study, using random forests as a base classifier, and support vector machines as a main classifier. eRFSVM integrated two components as eRFSVM-ENCODE and eRFSVM-FANTOM5 with diverse features and labels. The base classifier trained datasets from a single tissue or cell with random forests. The main classifier made the final decision by support vector machines algorithm, with the predicting results of base classifiers as inputs. For eRFSVM-ENCODE, we trained datasets from cell lines including Gm12878, Hep, H1-hesc and Huvec, using ChIP-Seq datasets as features and EP300 based enhancers as labels. We tested eRFSVM-ENCODE on K562 dataset, and resulted in a predicting precision of 83.69 %, which was much better than existing classifiers. For eRFSVM-FANTOM5, with enhancers identified by RNA in FANTOM5 project as labels, the precision, recall, F-score and accuracy were 86.17 %, 36.06 %, 50.84 % and 93.38 % using eRFSVM, increasing 23.24 % (69.92 %), 97.05 % (18.30 %), 76.90 % (28.74 %), 4.69 % (89.20 %) than the existing algorithm, respectively.</p>
+              </div>
+<div xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" class="AbstractSection" id="ASec3">
+                <h3 xmlns="" class="Heading">Conclusions</h3>
+                <p id="Par3" class="Para">All these results demonstrated that eRFSVM was a better classifier in predicting both EP300 based and FAMTOM5 RNAs based enhancers.</p>
+              </div>
+</div></section><section xmlns:func="http://oscar.fig.bmc.com" class="KeywordGroup Section1 RenderAsSection1 c-section" lang="en"><h2 xmlns="" xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:meta="http://www.springer.com/app/meta" class="Heading js-ToggleCollapseSection c-section__heading" data-sticky-update="true"><a href="#Keywords" data-toggle="collapse" data-toggle-disable-clickoff="" data-target="Keywords">Keywords</a></h2>
+<div class="js-CollapseSection CollapseSection c-section__content" data-test="collapse-section" id="Keywords"><ul class="c-keywords">
+<li class="c-keywords__item" itemprop="about">Enhancer</li>
+<li class="c-keywords__item" itemprop="about">Hybrid classifier</li>
+<li class="c-keywords__item" itemprop="about">Algorithm</li>
+</ul></div></section><section xmlns="" xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:meta="http://www.springer.com/app/meta" id="Sec1" class="Section1 RenderAsSection1 c-section"><h2 class="Heading js-ToggleCollapseSection c-section__heading" data-sticky-update="true"><a href="#Background" data-toggle="collapse" data-toggle-disable-clickoff="" data-target="Background">Background</a></h2>
+<div class="js-CollapseSection CollapseSection c-section__content" id="Background" data-test="collapse-section">
+<p xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" id="Par19" class="Para">Transcription regulation in human genes is a complex process. Systematic and precise identification of these regulatory DNA elements, especially enhancers [<span class="CitationRef"><a href="#CR17" data-toggle="citation">17</a></span>] is a prerequisite to understand gene expression in both healthy and diseased cells [<span class="CitationRef"><a href="#CR9" data-toggle="citation">9</a></span>]. More and more studies indicate that mutations in enhancers are associated with human diseases, such as cancers [<span class="CitationRef"><a href="#CR7" data-toggle="citation">7</a></span>, <span class="CitationRef"><a href="#CR15" data-toggle="citation">15</a></span>], cardiovascular diseases [<span class="CitationRef"><a href="#CR21" data-toggle="citation">21</a></span>] and immunological diseases [<span class="CitationRef"><a href="#CR27" data-toggle="citation">27</a></span>].</p>
+<p xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" id="Par20" class="Para">Enhancers increase the transcriptional output in cells manifesting distinct properties, which are summarized as follows: (a) enhancers are distal regulatory elements, which may locate 20kb or further away from transcription start sites, (b) they can activate gene transcription by recruiting transcription factors (TFs) and their complexes, (c) they may be enriched with chromatin modifications, such as monomethylation of histone H3 lysine 4 (H3K4me1) and the acetylation of histone H3 lysine 27 (H3K27ac), (d) they can initiate RNA polymerase II transcription, producing a new class of non-coding RNAs called enhancer RNAs (eRNAs) [<span class="CitationRef"><a href="#CR1" data-toggle="citation">1</a></span>], (e) they are tissue specific and merely conservative functioning in different spaces and stages. Thus, single experimental validation of them seems to be a time-consuming and costly task. Predicting enhancers based on conservation analysis of genomic sequences also doesn’t work well [<span class="CitationRef"><a href="#CR23" data-toggle="citation">23</a></span>]. With the development of high-throughput sequencing technologies, the advanced computational tools make this task possible in the big data era.</p>
+<p xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" id="Par21" class="Para">Machine learning algorithms [<span class="CitationRef"><a href="#CR31" data-toggle="citation">31</a></span>] were used to predict enhancers with chromatin immune precipitation sequencing (ChIP-Seq) datasets [<span class="CitationRef"><a href="#CR10" data-toggle="citation">10</a></span>, <span class="CitationRef"><a href="#CR30" data-toggle="citation">30</a></span>], such as the chromatin modification loci and the TF binding sites (TFBs) [<span class="CitationRef"><a href="#CR24" data-toggle="citation">24</a></span>, <span class="CitationRef"><a href="#CR31" data-toggle="citation">31</a></span>]. Single classifiers used supervised learning algorithms, e.g., CSI-ANN [<span class="CitationRef"><a href="#CR13" data-toggle="citation">13</a></span>] introduced an artificial neural network approach; RFECS [<span class="CitationRef"><a href="#CR25" data-toggle="citation">25</a></span>] identified enhancers with RF; ChromaGenSVM [<span class="CitationRef"><a href="#CR12" data-toggle="citation">12</a></span>] applied SVMs with a Genetic Algorithm (GA) to optimize the parameters of SVMs; EnhancerFinder [<span class="CitationRef"><a href="#CR11" data-toggle="citation">11</a></span>] used multi-kernel SVMs to predict enhancers in the eukaryotic genome; DEEP [<span class="CitationRef"><a href="#CR18" data-toggle="citation">18</a></span>] used an algorithm combined SVMs with ANN including the components of DEEP-ENCODE and DEEP-FANTOM5.</p>
+<p xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" id="Par22" class="Para">Some classifiers mentioned above, such as CSI-ANN, ChromaGenSVM, REFCS and EnhancerFinder used ChIP-Seq datasets as features, and were strongly relied on EP300, which was a transcriptional coactivator and could activate gene transcription by combining with TFs, considering EP300 binding sites as enhancers. However, EP300 binding sites are very possible enhancer sites, but not the 100 % real ones [<span class="CitationRef"><a href="#CR19" data-toggle="citation">19</a></span>]. DEEP used the same datasets in predicting EP300 based enhancers as the classifiers mentioned above. It firstly used FANTOM5 datasets as training enhancers, which were reconstructed from enhancer RNAs (eRNAs) datasets using Cap Analysis of Gene Expression (CAGE) [<span class="CitationRef"><a href="#CR14" data-toggle="citation">14</a></span>]. However, it used DNA sequence features as features not ChIP-Seq datasets in DEEP-FANTOM5. It used SVMs as base classifiers to train datasets from single tissues or cell lines and it used ANN as a main classifier to make the final decision combining the results of the base classifiers. It has been proved that getting the global optimum of ANN is a NP-hard problem. The simple implementing algorithm, back-propagation algorithm, is a heuristic algorithm, which is easy to trap in local optimal solution [<span class="CitationRef"><a href="#CR26" data-toggle="citation">26</a></span>]. Thus, the weakness of DEEP was obvious. In the layer of algorithm, the predicting result was not the global optimum; in the layer of datasets, it didn’t use effective features in predicting eRNAs based enhancers.</p>
+<p xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" id="Par23" class="Para">In this study, we built a hybrid classifier eRFSVM including eRFSVM-ENCODE and eRFSVM-FANTOM5. We used RF as base classifiers [<span class="CitationRef"><a href="#CR3" data-toggle="citation">3</a></span>, <span class="CitationRef"><a href="#CR4" data-toggle="citation">4</a></span>], which was a fast and easy- paralleled algorithm good at dealing with unbalanced datasets. For eRFSVM, we could get the global optimum when making the final decision for both RF and SVMs algorithms were P problems [<span class="CitationRef"><a href="#CR29" data-toggle="citation">29</a></span>].</p>
+<p xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" id="Par24" class="Para">In the process of data pre-processing, to reduce unbalanced ratio, we used a sub-sampling algorithm, and combined it with the k-means method, comprehensively considering the running time for the program and the loss of information in samples. The base classifiers trained datasets from single tissues or cell lines with the RF algorithm, which used 60 % of the datasets for training and the remaining 40 % for testing. With the testing results of base classifiers, we built the main classifier with SVMs. For eRFSVM-ENCODE, we trained datasets of cell lines like Gm12878, Hep, H1-hesc and Huvec, and then tested datasets of Hela and K562 cell lines, with enhancers identified by transcriptional coactivator EP300 binding sets as labels. For eRFSVM-FANTOM5, we trained on datasets of blood, lung, liver, kidney, and then tested on the datasets of adipose, with eRNAs based enhancers as labels.</p>
+</div></section><section xmlns="" xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:meta="http://www.springer.com/app/meta" id="Sec2" class="Section1 RenderAsSection1 SectionTypeMaterialsAndMethods c-section"><h2 class="Heading js-ToggleCollapseSection c-section__heading" data-sticky-update="true"><a href="#Methods" data-toggle="collapse" data-toggle-disable-clickoff="" data-target="Methods">Methods</a></h2>
+<div class="js-CollapseSection CollapseSection c-section__content" id="Methods" data-test="collapse-section">
+<section id="Sec3" class="Section2 RenderAsSection2"><h3 class="Heading">The ENCODE datasets</h3>
+                <p xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" id="Par25" class="Para">The National Human Genome Research Institute (NHGRI) launched a public research consortium named ENCODE, the Encyclopedia of DNA Elements [<span class="CitationRef"><a href="#CR6" data-toggle="citation">6</a></span>], in September 2003, to carry out a project to identify all functional elements in the human genome sequence. The datasets generated by next-generation sequencing technologies or software prediction in the project were available at <span class="ExternalRef"><a href="https://genome.ucsc.edu/ENCODE/" target="_blank" class="ext-link"><span class="RefSource">https://genome.ucsc.edu/ENCODE/</span></a></span>, including raw data, alignment data and peak calling data in different kinds of formats. The datasets were used for the studies, such as TF binding sites, histone modifications. In this study, we used the datasets for training and testing in the classifier of eRFSVM-ENCODE from ChIP-Seq experiments of different cell lines. The peak calling datasets of ChIP-Seq experiments from Gm12878, Hep, H1-hesc, Huvec, Hela and K562 in the form of broadpeak were used as features including eleven histone modifications, H2AFZ (Variant of H2A), H3K27ac (Detects of acetylation), H3K27me3 (Detects of trimethylation in Lysine 27), H3K36me3 (Marks of actively transcribed regions), H3K4me1 (Associated with enhancers), H3K4me2 (Marks of promoters and enhancers), H3K4me3 (Associated with active promoters), H3K79me2 (Marks of transcriptional transition regions), H3K9ac (Marks of promoters in chromatin regions), H3K9me3 (Associated with silenced chromatin) and H4K20me1 (Associated with active and accessible regions). Gm12878, Hep, H1-hesc, Huvec, Hela and K562 were cell lines from blood, liver, embryonic stem cell, blood vessel, cervical cancer and blood, respectively. The EP300 datasets were used as labels for the classifiers. The human genome sequences were downloaded from Ensembl (Homo_sapiens.GRCh38.dna).</p>
+              </section><section id="Sec4" class="Section2 RenderAsSection2"><h3 class="Heading">The FANTOM5 datasets</h3>
+                <p xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" id="Par26" class="Para">The sra or bed format of ChIP-Seq datasets of lung, blood, liver, kidney and adipose including H3K4me1, H3K4me3, H3K9ac, H3K9me3, H3K27ac, H3K27me3 and H3K36me3 from NIH Epigenome Roadmap [<span class="CitationRef"><a href="#CR2" data-toggle="citation">2</a></span>] were used as features for training. The ChIP-Seq of the same tissue were from different kinds of cells and different phases of life. Datasets of kidney were from fetal and adult; datasets of adipose were from mesenchyme and gland; datasets of lung were from left lung and right lung in the fetal; datasets of blood were from K562 and CD4+; datasets of liver were from adult. The FANTOM5 project [<span class="CitationRef"><a href="#CR1" data-toggle="citation">1</a></span>] examines how our genome encodes the fantastic diversity of cell types that make up a human. Using Cap Analysis of Gene Expression (CAGE), studies in FANTOM5 project had mapped the sets of transcripts, transcription factors, promoters and enhancers active in the majority of mammalian primary cell types and a series of cancer cell lines and tissues. Enhancer labels were obtained from FANTOM5 consortium publicly available at <span class="ExternalRef"><a href="http://enhancer.binf.ku.dk/Pre-definedtracks.html" target="_blank" class="ext-link"><span class="RefSource">http://enhancer.binf.ku.dk/Pre-definedtracks.html</span></a></span>.</p>
+              </section><section id="Sec5" class="Section2 RenderAsSection2"><h3 class="Heading">Data normalization for histone modifications</h3>
+                <p xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" id="Par27" class="Para">Firstly, to process datasets from NIH Epigenome Roadmap, we transformed data in the form of sra [<span class="CitationRef"><a href="#CR16" data-toggle="citation">16</a></span>] to fastq by a software from NCBI. With bwa, we transformed fastq data to sam data. With samtools, we transformed sam data to bed data. Secondly, we used MACS [<span class="CitationRef"><a href="#CR32" data-toggle="citation">32</a></span>] for sharp peak calling and SICER for broad peak calling [<span class="CitationRef"><a href="#CR22" data-toggle="citation">22</a></span>, <span class="CitationRef"><a href="#CR28" data-toggle="citation">28</a></span>]. ChIP-Seq peaks counted in a 200, 400, 600, 800, 1000-bp window were output.</p>
+                <div xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" id="Par28" class="Para">The resolution of preprocessed histone modification data was 200bp. We used the signal value and normalized it in the formula below to train the datasets.<div id="Equa" class="Equation EquationMathjax"><div class="EquationContent">$$ {x}_i=\frac{x_i-{x}_{\min }}{x_{\max }-{x}_{\min }} $$</div></div>
+                        </div>
+              </section><section id="Sec6" class="Section2 RenderAsSection2"><h3 class="Heading">Reduction of imbalanced data ratio</h3>
+                <p xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" id="Par29" class="Para">Unbalanced datasets will lead to machine learning bias that classification will tend to put a sample prediction for a majority class sample, which will lead to a lower recognition rate for minority class samples. According to the priori data, enhancers accounts for about 2 % of the genome data as a minority class [<span class="CitationRef"><a href="#CR19" data-toggle="citation">19</a></span>]. So the recognition of minority class samples is the key point of this issue. We used sub-sampling combined with the k-means to get negative samples from the whole genomes and made the ratio between positive and negative datasets as 1:10 [<span class="CitationRef"><a href="#CR12" data-toggle="citation">12</a></span>] to reduce the imbalanced ratio.</p>
+              </section><section id="Sec7" class="Section2 RenderAsSection2"><h3 class="Heading">Base classifier algorithm (The random forests algorithm)</h3>
+                <div xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" id="Par30" class="Para">RF [<span class="CitationRef"><a href="#CR3" data-toggle="citation">3</a></span>, <span class="CitationRef"><a href="#CR4" data-toggle="citation">4</a></span>] are ensemble of decision trees, which are based on information gain, the computation formula are presented as:<div id="Equb" class="Equation EquationMathjax"><div class="EquationContent">$$ \inf {o}_A(D)=-{\displaystyle \sum_{i=1}^m{p}_i{ \log}_2\left({p}_i\right)} $$</div></div>
+                           <div id="Equc" class="Equation EquationMathjax"><div class="EquationContent">$$ gain(A)= \inf o(D)- \inf {o}_A(D) $$</div></div>
+                        </div>
+                <div xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" id="Par31" class="Para">The step of RF can be represented as:<ol xmlns="" class="OrderedList">
+<li class="ListItem">
+<span xmlns="http://www.w3.org/1999/xhtml" class="ItemNumber">(a)</span><div xmlns="http://www.w3.org/1999/xhtml" class="ItemContent">
+                        <p id="Par32" class="Para">use bootstrap to extract k samples from the original training sets with N samples for k times,</p>
+                      </div>
+<div class="ClearBoth"> </div>
+</li>
+<li class="ListItem">
+<span xmlns="http://www.w3.org/1999/xhtml" class="ItemNumber">(b)</span><div xmlns="http://www.w3.org/1999/xhtml" class="ItemContent">
+                        <p id="Par33" class="Para">establish k decision trees,</p>
+                      </div>
+<div class="ClearBoth"> </div>
+</li>
+<li class="ListItem">
+<span xmlns="http://www.w3.org/1999/xhtml" class="ItemNumber">(c)</span><div xmlns="http://www.w3.org/1999/xhtml" class="ItemContent">
+                        <p id="Par34" class="Para">vote according to the classification results of all decision trees, the voting results called confidence-score can be described as:</p>
+                      </div>
+<div class="ClearBoth"> </div>
+</li>
+</ol>
+<div id="Equd" class="Equation EquationMathjax"><div class="EquationContent">$$ confidence- score=\frac{tree\_ number(positive)}{tree\_ number(total)} $$</div></div>
+                        </div>
+                <p xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" id="Par35" class="Para">RF overcomes the limitation of over-fitting of decision trees, with advantage of fast and simple, tolerance to noise and abnormal value. In this study, we used the signal values of histone modifications in each sample as features and computed confidence-score of all decision trees. The confidence-score was used as a feature for the main classifier.</p>
+              </section><section id="Sec8" class="Section2 RenderAsSection2"><h3 class="Heading">Main classifier algorithm (The support vector machines algorithm)</h3>
+                <div xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" id="Par36" class="Para">Recently, the support vector machines (SVMs) [<span class="CitationRef"><a href="#CR8" data-toggle="citation">8</a></span>] is an algorithm for classification or regression, which aims to separate the positive data and negative data through a hyperplane with datasets mapped to high dimensions with maximal margin. The algorithm tries to minimize structural risk and is less vulnerable to the over-fitting problem. Given training vectors x<sub>i</sub><span class="stix">∈</span> R<sup>n</sup>, i = 1,…, n, in two classes, and a vector of label y <span class="stix">∈</span> R<sup>m</sup> such that y<sub>i</sub><span class="stix">∈</span>(−1,1) [<span class="CitationRef"><a href="#CR20" data-toggle="citation">20</a></span>], SVMs solves a quadratic optimization problem by means of a kernel function like polynomial and radial basis function (RBF). The principle of SVMs can be described as follows:<div id="Eque" class="Equation EquationMathjax"><div class="EquationContent">$$ \min \frac{1}{2}\left|\right|w\left|\right|{}^2+C{\displaystyle \sum_{i=1}^n{\varepsilon}_i} $$</div></div>
+                           <div id="Equf" class="Equation EquationMathjax"><div class="EquationContent">$$ s.t.\kern1.6em {y}_i\left({w}^T\varPhi \left({x}_i\right)+b\right)\ge 1-{\varepsilon}_i,{\varepsilon}_i\ge 0 $$</div></div>
+                           <div id="Equg" class="Equation EquationMathjax"><div class="EquationContent">$$ {\xi}_i\ge 0,i=1,\dots, \kern0.1em m $$</div></div>
+                        </div>
+                <div xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" id="Par37" class="Para">For any testing instance x, the decision function (predictor) is described as follows:<div id="Equh" class="Equation EquationMathjax"><div class="EquationContent">$$ f(x)=\operatorname{sgn}\left({w}^T\phi (x)+b\right) $$</div></div>
+                        </div>
+                <div xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" id="Par38" class="Para">Practically, we need only <em xmlns="" class="EmphasisTypeItalic">k</em>(<em xmlns="" class="EmphasisTypeItalic">x</em>, <em xmlns="" class="EmphasisTypeItalic">x</em> ') = <em xmlns="" class="EmphasisTypeItalic">ϕ</em>(<em xmlns="" class="EmphasisTypeItalic">x</em>)<sup><em xmlns="" class="EmphasisTypeItalic">T</em>
+                  </sup><em xmlns="" class="EmphasisTypeItalic">ϕ</em>(<em xmlns="" class="EmphasisTypeItalic">x</em> '), the kernel function, to train with SVMs. The RBF kernel is used in our experiments:<div id="Equi" class="Equation EquationMathjax"><div class="EquationContent">$$ k\left(x,x\hbox{'}\right)= \exp \left(-\gamma \left|\right|x-x\hbox{'}\left|\right|{}^2\right) $$</div></div>
+                        </div>
+                <div xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" id="Par39" class="Para">With the RBF kernel, there are two parameters to be determined in the SVMs: C and γ. To get the good generalization ability, we conduct a validation process to decide parameters. The procedure is described as the following:<ol xmlns="" class="OrderedList">
+<li class="ListItem">
+<span xmlns="http://www.w3.org/1999/xhtml" class="ItemNumber">(a)</span><div xmlns="http://www.w3.org/1999/xhtml" class="ItemContent">
+                        <p id="Par40" class="Para">consider a grid space of (C, γ) with C <span class="stix">∈</span> {0,2,4,…,50} and γ<span class="stix">∈</span>{0,2,4,…,200},</p>
+                      </div>
+<div class="ClearBoth"> </div>
+</li>
+<li class="ListItem">
+<span xmlns="http://www.w3.org/1999/xhtml" class="ItemNumber">(b)</span><div xmlns="http://www.w3.org/1999/xhtml" class="ItemContent">
+                        <p id="Par41" class="Para">for each parameter pair (C, γ) in the search space, conduct 10-fold cross validation (CV) on the training sets,</p>
+                      </div>
+<div class="ClearBoth"> </div>
+</li>
+<li class="ListItem">
+<span xmlns="http://www.w3.org/1999/xhtml" class="ItemNumber">(c)</span><div xmlns="http://www.w3.org/1999/xhtml" class="ItemContent">
+                        <p id="Par42" class="Para">choose the parameter pair (C, γ) that leads to the lowest CV balanced error rate,</p>
+                      </div>
+<div class="ClearBoth"> </div>
+</li>
+<li class="ListItem">
+<span xmlns="http://www.w3.org/1999/xhtml" class="ItemNumber">(d)</span><div xmlns="http://www.w3.org/1999/xhtml" class="ItemContent">
+                        <p id="Par43" class="Para">use the best parameter pair to create a model as the predictor.</p>
+                      </div>
+<div class="ClearBoth"> </div>
+</li>
+</ol>
+</div>
+              </section><section id="Sec9" class="Section2 RenderAsSection2"><h3 class="Heading">Implementing eRFSVM-ENCODE</h3>
+                <p xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" id="Par44" class="Para">Firstly, with the normalized features from Gm12878, Hep, H1-hesc, Huvec, we built base classifiers with RF algorithm separately, using 60 % of each datasets for training and the rest 40 % for testing. RF was not sensitive to input parameters, thus, we just used the default parameters for each classifier. We calculated the precision, F-score of each base classifiers. With the results of base classifiers, we used SVMs to merge the testing results of the four single classifiers. With the confidence-score multiplying the F-score of each classifier as features of main classifier, we used 10-k fold cross-validation. SVMs was sensitive to the parameters, so we used the Gaussian kernel as default and searched for the best C and γ with the grid search algorithm. With base classifiers training on datasets from Gm12878, Hep, H1-hesc, Huvec, we tested them on K562 and hela datasets. The time complexities of RF and SVMs are <em xmlns="" class="EmphasisTypeItalic">O</em> (N<sub>features</sub>*M<sub>samples</sub>) [<span class="CitationRef"><a href="#CR8" data-toggle="citation">8</a></span>] and <em xmlns="" class="EmphasisTypeItalic">O</em> (N<sub>features</sub>*M<sup>3</sup><sub>samples</sub>) respectively, the whole complexity of eRFSVM is <em xmlns="" class="EmphasisTypeItalic">O</em> (N<sub>features</sub>*M<sup>3</sup><sub>samples)</sub>, which means the running time is proportional to the number of feature and the third power of sample. The computational time for base classifier training on specific cell line was 40 min and training on the four datasets merged with SVMs for 8 h and testing on K562 for 2 h in a server with 4 CPU cores and 48 GB RAM (Intel Xeon 2.4 GHz). The program can be downloaded in <span class="ExternalRef"><a href="http://analysis.bio-x.cn/SHEsisMain.htm" target="_blank" class="ext-link"><span class="RefSource">http://analysis.bio-x.cn/SHEsisMain.htm</span></a></span>.</p>
+              </section><section id="Sec10" class="Section2 RenderAsSection2"><h3 class="Heading">Implementing eRFSVM-FANTOM5</h3>
+                <div xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" id="Par45" class="Para">We trained the datasets from blood, lung, kidney, liver and tested them on the adipose as the same framework (Fig. <span class="InternalRef"><a href="#Fig1">1</a></span>) that eRFSVM-ENCODE used. The computational time for model training on a specific cell line was 10 min and training on the four datasets merged with SVMs for 1 h and testing on adipose for 5 min.<figure xmlns="" class="Figure" id="Fig1"><div xmlns="http://www.w3.org/1999/xhtml" class="MediaObject" id="MO1">
+                      <a target="_blank" rel="noopener" href="https://media.springernature.com/full/springer-static/image/art%3A10.1186%2Fs41065-016-0012-2/MediaObjects/41065_2016_12_Fig1_HTML.gif"><img class="c-lazy-image u-js-shown" src="https://media.springernature.com/lw5/springer-static/image/art%3A10.1186%2Fs41065-016-0012-2/MediaObjects/41065_2016_12_Fig1_HTML.gif" alt="Fig. 1" data-lazy-load="true" data-src="https://media.springernature.com/lw785/springer-static/image/art%3A10.1186%2Fs41065-016-0012-2/MediaObjects/41065_2016_12_Fig1_HTML.gif"><noscript><img src="https://media.springernature.com/lw785/springer-static/image/art%3A10.1186%2Fs41065-016-0012-2/MediaObjects/41065_2016_12_Fig1_HTML.gif" alt="Fig. 1"></noscript></a>
+                    </div>
+<figcaption class="Caption" lang="en"><div xmlns="http://www.w3.org/1999/xhtml" class="CaptionContent">
+<span class="CaptionNumber">Fig. 1</span>
+                        <p xmlns="" class="SimplePara">The overview of eRFSVM (Different RF classifiers are made as base classifiers and SVMs classifier is made as main classifier)</p>
+                      </div></figcaption></figure>
+</div>
+              </section><section id="Sec11" class="Section2 RenderAsSection2"><h3 class="Heading">Performance evaluation of classifiers</h3>
+                <div xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" id="Par46" class="Para">The trained classifiers return confidence scores between 0 and 1 for a combined histone modification profiles. These scores are then transformed to a binary state indicating ‘enhancer’ or ‘not enhancer’ by choosing a cut-off. For each combination of profiles, the existence of regulatory element is considered positive (P) or negative (N) otherwise. True (T) means that the predicted functional states are enhancers, and false (F) implies otherwise. The notations of TP, FP, TN and FN combined these labels to return the number of each class. The performance evaluation of classifiers is made according to the following formulas:<div id="Equj" class="Equation EquationMathjax"><div class="EquationContent">$$ \Pr ecison=\frac{TP}{TP+FP} $$</div></div>
+                           <div id="Equk" class="Equation EquationMathjax"><div class="EquationContent">$$ \mathrm{R}\mathrm{e} call=\frac{TP}{TP+FN} $$</div></div>
+                           <div id="Equl" class="Equation EquationMathjax"><div class="EquationContent">$$ Specificity=\frac{TN}{TN+FP} $$</div></div>
+                           <div id="Equm" class="Equation EquationMathjax"><div class="EquationContent">$$ Sensitivity=\frac{TP}{TP+FN} $$</div></div>
+                           <div id="Equn" class="Equation EquationMathjax"><div class="EquationContent">$$ F- score=\frac{2*\left( \Pr ecision*\mathrm{R}\mathrm{e} call\right)}{ \Pr ecision+\mathrm{R}\mathrm{e} call} $$</div></div>
+                           <div id="Equo" class="Equation EquationMathjax"><div class="EquationContent">$$ accuracy=\frac{TP+TN}{TP+TP+FP+FN} $$</div></div>
+                        </div>
+                <p xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" id="Par47" class="Para">The predicted confidence scores are transformed into binary predictions by using different cut-offs yielding sensitivity and specificity over the entire score range. ROC plots can well evaluate the performance of classifiers, which display the FP (1-specificity) values on the x-axis, and the TP (sensitivity) values on the y-axis. ROC plots show the direct relationship between the FP and TP rates. The total AUC (area under the curve) for the ROC plot is used to measure the prediction performance of this method.</p>
+              </section>
+</div></section><section xmlns="" xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:meta="http://www.springer.com/app/meta" id="Sec12" class="Section1 RenderAsSection1 c-section"><h2 class="Heading js-ToggleCollapseSection c-section__heading" data-sticky-update="true"><a href="#ResultsandDiscussion" data-toggle="collapse" data-toggle-disable-clickoff="" data-target="ResultsandDiscussion">Results and Discussion</a></h2>
+<div class="js-CollapseSection CollapseSection c-section__content" id="ResultsandDiscussion" data-test="collapse-section">
+<section id="Sec13" class="Section2 RenderAsSection2"><h3 class="Heading">Performance of eRFSVM-ENCODE</h3>
+                <p xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" id="Par48" class="Para">With the histone modification datasets and EP300 datasets of cultured cell lines in broadpeak format downloaded from ENCODE, we discretized the positive datasets with 200bp as a unit and used sub-sampling [<span class="CitationRef"><a href="#CR5" data-toggle="citation">5</a></span>] and k-means algorithms to get the negative datasets (Additional file <span class="InternalRef"><a href="#MOESM1">1</a></span>: Table S1).</p>
+                <p xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" id="Par49" class="Para">For the training steps, the best performed base classifier was hesc, with precision, recall and F-score of 84.53 %, 83.03 % and 83.78 %, respectively. For eRFSVM-ENCODE, we found that the precision, recall and F-score were 92.16 %, 90.70 % and 91.43 %, respectively, which meant that the hybrid classifier fitted better than the base classifiers (Additional file <span class="InternalRef"><a href="#MOESM1">1</a></span>: Table S2).</p>
+                <div xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" id="Par50" class="Para">When using the classifiers to test on K562 datasets (Table <span class="InternalRef"><a href="#Tab1">1</a></span>), among the base classifiers, GM12878 classifier showed the highest precision (84.39 %); huvec classifier showed the highest recall (6.34 %), F-score (11.76 %) and accuracy (69.79 %). When using classifiers to test on hela datasets, among the base classifiers, hep classifier showed the highest precision (30.24 %) and F-score (6.05 %); GM12878 showed the highest recall (5.47 %) and accuracy (99.33 %). For the hybrid classifier eRFSVM, when testing on K562 datasets, the precision, recall, F-score and accuracy were 83.69 %, 4.92 %, 9.29 % and 69.50 %, respectively, with precision higher than hep and huvec, recall higher than GM12878 and hesc, F-score higher than GM12878 and hesc, accuracy higher than GM12878 and hesc. When testing on hela datasets, the precision, recall and F-score of eRFSVM-ENCODE were 15.35 %, 0.38 % and 0.75 %, with precision higher than GM12878, hesc and huvec, recall higher than hep and huvec, F-score higher than hep and huvec. The ROC curves could comprehensively evaluate the performance of classifiers (Figs. <span class="InternalRef"><a href="#Fig2">2</a></span> and <span class="InternalRef"><a href="#Fig3">3</a></span>), with higher the AUC value, the better performance of the classifier. The AUC values of GM12878, hep, hesc, huvec and eRFSVM-ENCODE are 0.6049, 0.5369, 0.5385, 0.5444 and 0.6357 for K562 datasets, respectively; 0.4650, 0.6106, 0.5415, 0.5474 and 0.6165 for hela datasets, respectively. eRFSVM-ENCODE showed the highest AUC value in both K562 and hela datasets, which meant the hybrid classifier was of better performance.<figure xmlns="" id="Tab1" class="FigureTable"><figcaption class="Caption" lang="en"><div xmlns="http://www.w3.org/1999/xhtml" class="CaptionContent">
+<span class="CaptionNumber">Table 1</span>
+                        <p xmlns="" class="SimplePara">Classifiers testing on K562 and hela</p>
+                      </div></figcaption><div class="Table"><table xmlns="http://www.w3.org/1999/xhtml" border="1">
+<colgroup><col></colgroup>
+<colgroup><col></colgroup>
+<colgroup><col></colgroup>
+<colgroup><col></colgroup>
+<colgroup><col></colgroup>
+<colgroup><col></colgroup>
+<colgroup><col></colgroup>
+<colgroup><col></colgroup>
+<colgroup><col></colgroup>
+<thead>
+<tr class="header">
+<th rowspan="2"><p xmlns="" class="SimplePara">Classifiers</p></th>
+<th colspan="2"><p xmlns="" class="SimplePara">Precision</p></th>
+<th colspan="2"><p xmlns="" class="SimplePara">Recall</p></th>
+<th colspan="2"><p xmlns="" class="SimplePara">F-score</p></th>
+<th colspan="2"><p xmlns="" class="SimplePara">Accuracy</p></th>
+</tr>
+<tr class="header">
+<th><p xmlns="" class="SimplePara">K562</p></th>
+<th><p xmlns="" class="SimplePara">hela</p></th>
+<th><p xmlns="" class="SimplePara">K562</p></th>
+<th><p xmlns="" class="SimplePara">hela</p></th>
+<th><p xmlns="" class="SimplePara">K562</p></th>
+<th><p xmlns="" class="SimplePara">hela</p></th>
+<th><p xmlns="" class="SimplePara">K562</p></th>
+<th><p xmlns="" class="SimplePara">hela</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="noclass">
+<td><p xmlns="" class="SimplePara">Gm12878</p></td>
+<td><p xmlns="" class="SimplePara">84.39 %</p></td>
+<td><p xmlns="" class="SimplePara">13.22 %</p></td>
+<td><p xmlns="" class="SimplePara">0.88 %</p></td>
+<td><p xmlns="" class="SimplePara">3.92 %</p></td>
+<td><p xmlns="" class="SimplePara">1.75 %</p></td>
+<td><p xmlns="" class="SimplePara">6.05 %</p></td>
+<td><p xmlns="" class="SimplePara">68.47 %</p></td>
+<td><p xmlns="" class="SimplePara">99.18 %</p></td>
+</tr>
+<tr class="noclass">
+<td><p xmlns="" class="SimplePara">hep</p></td>
+<td><p xmlns="" class="SimplePara">83.00 %</p></td>
+<td><p xmlns="" class="SimplePara">30.24 %</p></td>
+<td><p xmlns="" class="SimplePara">5.04 %</p></td>
+<td><p xmlns="" class="SimplePara">0.31 %</p></td>
+<td><p xmlns="" class="SimplePara">9.50 %</p></td>
+<td><p xmlns="" class="SimplePara">0.62 %</p></td>
+<td><p xmlns="" class="SimplePara">69.52 %</p></td>
+<td><p xmlns="" class="SimplePara">99.33 %</p></td>
+</tr>
+<tr class="noclass">
+<td><p xmlns="" class="SimplePara">hesc</p></td>
+<td><p xmlns="" class="SimplePara">84.00 %</p></td>
+<td><p xmlns="" class="SimplePara">4.73 %</p></td>
+<td><p xmlns="" class="SimplePara">3.66 %</p></td>
+<td><p xmlns="" class="SimplePara">5.47 %</p></td>
+<td><p xmlns="" class="SimplePara">7.01 %</p></td>
+<td><p xmlns="" class="SimplePara">5.07 %</p></td>
+<td><p xmlns="" class="SimplePara">69.19 %</p></td>
+<td><p xmlns="" class="SimplePara">98.63 %</p></td>
+</tr>
+<tr class="noclass">
+<td><p xmlns="" class="SimplePara">huvec</p></td>
+<td><p xmlns="" class="SimplePara">81.25 %</p></td>
+<td><p xmlns="" class="SimplePara">7.44 %</p></td>
+<td><p xmlns="" class="SimplePara">6.34 %</p></td>
+<td><p xmlns="" class="SimplePara">0.35 %</p></td>
+<td><p xmlns="" class="SimplePara">11.76 %</p></td>
+<td><p xmlns="" class="SimplePara">0.66 %</p></td>
+<td><p xmlns="" class="SimplePara">69.79 %</p></td>
+<td><p xmlns="" class="SimplePara">99.30 %</p></td>
+</tr>
+<tr class="noclass">
+<td><p xmlns="" class="SimplePara">eRFSVM</p></td>
+<td><p xmlns="" class="SimplePara">83.69 %</p></td>
+<td><p xmlns="" class="SimplePara">15.35 %</p></td>
+<td><p xmlns="" class="SimplePara">4.92 %</p></td>
+<td><p xmlns="" class="SimplePara">0.38 %</p></td>
+<td><p xmlns="" class="SimplePara">9.29 %</p></td>
+<td><p xmlns="" class="SimplePara">0.75 %</p></td>
+<td><p xmlns="" class="SimplePara">69.50 %</p></td>
+<td><p xmlns="" class="SimplePara">99.28 %</p></td>
+</tr>
+</tbody>
+</table></div></figure><figure xmlns="" class="Figure" id="Fig2"><div xmlns="http://www.w3.org/1999/xhtml" class="MediaObject" id="MO2">
+                      <a target="_blank" rel="noopener" href="https://media.springernature.com/full/springer-static/image/art%3A10.1186%2Fs41065-016-0012-2/MediaObjects/41065_2016_12_Fig2_HTML.gif"><img class="c-lazy-image u-js-shown" src="https://media.springernature.com/lw5/springer-static/image/art%3A10.1186%2Fs41065-016-0012-2/MediaObjects/41065_2016_12_Fig2_HTML.gif" alt="Fig. 2" data-lazy-load="true" data-src="https://media.springernature.com/lw785/springer-static/image/art%3A10.1186%2Fs41065-016-0012-2/MediaObjects/41065_2016_12_Fig2_HTML.gif"><noscript><img src="https://media.springernature.com/lw785/springer-static/image/art%3A10.1186%2Fs41065-016-0012-2/MediaObjects/41065_2016_12_Fig2_HTML.gif" alt="Fig. 2"></noscript></a>
+                    </div>
+<figcaption class="Caption" lang="en"><div xmlns="http://www.w3.org/1999/xhtml" class="CaptionContent">
+<span class="CaptionNumber">Fig. 2</span>
+                        <p xmlns="" class="SimplePara">ROC curve for classifier test on K562 (Cross-validation ROC plot of the optimum classifier to predict enhancers in K562 cells)</p>
+                      </div></figcaption></figure><figure xmlns="" class="Figure" id="Fig3"><div xmlns="http://www.w3.org/1999/xhtml" class="MediaObject" id="MO3">
+                      <a target="_blank" rel="noopener" href="https://media.springernature.com/full/springer-static/image/art%3A10.1186%2Fs41065-016-0012-2/MediaObjects/41065_2016_12_Fig3_HTML.gif"><img class="c-lazy-image u-js-shown" src="https://media.springernature.com/lw5/springer-static/image/art%3A10.1186%2Fs41065-016-0012-2/MediaObjects/41065_2016_12_Fig3_HTML.gif" alt="Fig. 3" data-lazy-load="true" data-src="https://media.springernature.com/lw785/springer-static/image/art%3A10.1186%2Fs41065-016-0012-2/MediaObjects/41065_2016_12_Fig3_HTML.gif"><noscript><img src="https://media.springernature.com/lw785/springer-static/image/art%3A10.1186%2Fs41065-016-0012-2/MediaObjects/41065_2016_12_Fig3_HTML.gif" alt="Fig. 3"></noscript></a>
+                    </div>
+<figcaption class="Caption" lang="en"><div xmlns="http://www.w3.org/1999/xhtml" class="CaptionContent">
+<span class="CaptionNumber">Fig. 3</span>
+                        <p xmlns="" class="SimplePara">ROC curve for classifier test on hela (Cross-validation ROC plot of the optimum classifier to predict enhancers in hela cells)</p>
+                      </div></figcaption></figure>
+</div>
+              </section><section id="Sec14" class="Section2 RenderAsSection2"><h3 class="Heading">Performance of eRFSVM-FANTOM5</h3>
+                <p xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" id="Par51" class="Para">The datasets from NIH Epigenome Roadmap were of different formats. With softwares (see <span class="InternalRef"><a href="#Sec2">Materials and Methods</a></span>), we made the peak datasets of different tissues (Additional file <span class="InternalRef"><a href="#MOESM1">1</a></span>: Table S3), positive and negative datasets for training of these classifiers (Additional file <span class="InternalRef"><a href="#MOESM1">1</a></span>: Table S4).</p>
+                <p xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" id="Par52" class="Para">For the training steps, the best performed base classifier was liver. The mean values of precision, recall and F-score of these base classifiers were 75.42 %, 53.90 % and 61.79 %, respectively. For eRFSVM, we found that the precision, recall and F-score were 90.59 %, 48.16 % and 62.22 %, respectively (Additional file <span class="InternalRef"><a href="#MOESM1">1</a></span>: Table S5). The F-score of eRFSVM was higher than that of blood, lung and kidney, which meant eRFSVM fitted better than these base classifiers.</p>
+                <div xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" id="Par53" class="Para">When using the classifiers to test on adipose datasets (Table <span class="InternalRef"><a href="#Tab2">2</a></span>), among the base classifiers, lung classifier showed the highest precision (83.72 %); kidney classifier showed the highest recall (47.31 %), F-score (57.41 %) and accuracy (93.55 %). For the hybrid classifier eRFSVM, when testing on adipose datasets, the precision, recall, F-score and accuracy were 86.17 %, 36.06 %, 50.84 % and 93.38 %, respectively, with precision higher than all the base classifiers, recall higher than blood, liver and lung, F-score higher than blood, liver and lung, accuracy higher than blood, liver and lung.<figure xmlns="" id="Tab2" class="FigureTable"><figcaption class="Caption" lang="en"><div xmlns="http://www.w3.org/1999/xhtml" class="CaptionContent">
+<span class="CaptionNumber">Table 2</span>
+                        <p xmlns="" class="SimplePara">Results testing on adipose with ChIP-Seq datasets</p>
+                      </div></figcaption><div class="Table"><table xmlns="http://www.w3.org/1999/xhtml" border="1">
+<colgroup><col></colgroup>
+<colgroup><col></colgroup>
+<colgroup><col></colgroup>
+<colgroup><col></colgroup>
+<colgroup><col></colgroup>
+<thead><tr class="header">
+<th><p xmlns="" class="SimplePara">Classifiers</p></th>
+<th><p xmlns="" class="SimplePara">Precision</p></th>
+<th><p xmlns="" class="SimplePara">Recall</p></th>
+<th><p xmlns="" class="SimplePara">F-score</p></th>
+<th><p xmlns="" class="SimplePara">Accuracy</p></th>
+</tr></thead>
+<tbody>
+<tr class="noclass">
+<td><p xmlns="" class="SimplePara">blood</p></td>
+<td><p xmlns="" class="SimplePara">55.80 %</p></td>
+<td><p xmlns="" class="SimplePara">31.56 %</p></td>
+<td><p xmlns="" class="SimplePara">40.32 %</p></td>
+<td><p xmlns="" class="SimplePara">91.51 %</p></td>
+</tr>
+<tr class="noclass">
+<td><p xmlns="" class="SimplePara">liver</p></td>
+<td><p xmlns="" class="SimplePara">80.73 %</p></td>
+<td><p xmlns="" class="SimplePara">27.50 %</p></td>
+<td><p xmlns="" class="SimplePara">41.03 %</p></td>
+<td><p xmlns="" class="SimplePara">92.81 %</p></td>
+</tr>
+<tr class="noclass">
+<td><p xmlns="" class="SimplePara">lung</p></td>
+<td><p xmlns="" class="SimplePara">83.72 %</p></td>
+<td><p xmlns="" class="SimplePara">11.25 %</p></td>
+<td><p xmlns="" class="SimplePara">19.83 %</p></td>
+<td><p xmlns="" class="SimplePara">91.73 %</p></td>
+</tr>
+<tr class="noclass">
+<td><p xmlns="" class="SimplePara">kidney</p></td>
+<td><p xmlns="" class="SimplePara">71.83 %</p></td>
+<td><p xmlns="" class="SimplePara">47.81 %</p></td>
+<td><p xmlns="" class="SimplePara">57.41 %</p></td>
+<td><p xmlns="" class="SimplePara">93.55 %</p></td>
+</tr>
+<tr class="noclass">
+<td><p xmlns="" class="SimplePara">eRFSVM-FANTOM5</p></td>
+<td><p xmlns="" class="SimplePara">86.17 %</p></td>
+<td><p xmlns="" class="SimplePara">36.06 %</p></td>
+<td><p xmlns="" class="SimplePara">50.84 %</p></td>
+<td><p xmlns="" class="SimplePara">93.38 %</p></td>
+</tr>
+<tr class="noclass">
+<td><p xmlns="" class="SimplePara">SVMs-ANN</p></td>
+<td><p xmlns="" class="SimplePara">65.30 %</p></td>
+<td><p xmlns="" class="SimplePara">28.07 %</p></td>
+<td><p xmlns="" class="SimplePara">39.26 %</p></td>
+<td><p xmlns="" class="SimplePara">92.58 %</p></td>
+</tr>
+</tbody>
+</table></div></figure>
+</div>
+                <div xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" id="Par54" class="Para">The AUC value of blood, liver, lung, kidney and eRFSVM-FANTOM5 are 0.6026, 0.5808, 0.5707, 0.5411 and 0.6344 for adipose datasets, respectively. eRFSVM-FANTOM5 showed the highest AUC value with better performance than base classifiers (Fig. <span class="InternalRef"><a href="#Fig4">4</a></span>).<figure xmlns="" class="Figure" id="Fig4"><div xmlns="http://www.w3.org/1999/xhtml" class="MediaObject" id="MO4">
+                      <a target="_blank" rel="noopener" href="https://media.springernature.com/full/springer-static/image/art%3A10.1186%2Fs41065-016-0012-2/MediaObjects/41065_2016_12_Fig4_HTML.gif"><img class="c-lazy-image u-js-shown" src="https://media.springernature.com/lw5/springer-static/image/art%3A10.1186%2Fs41065-016-0012-2/MediaObjects/41065_2016_12_Fig4_HTML.gif" alt="Fig. 4" data-lazy-load="true" data-src="https://media.springernature.com/lw785/springer-static/image/art%3A10.1186%2Fs41065-016-0012-2/MediaObjects/41065_2016_12_Fig4_HTML.gif"><noscript><img src="https://media.springernature.com/lw785/springer-static/image/art%3A10.1186%2Fs41065-016-0012-2/MediaObjects/41065_2016_12_Fig4_HTML.gif" alt="Fig. 4"></noscript></a>
+                    </div>
+<figcaption class="Caption" lang="en"><div xmlns="http://www.w3.org/1999/xhtml" class="CaptionContent">
+<span class="CaptionNumber">Fig. 4</span>
+                        <p xmlns="" class="SimplePara">ROC curve for eRFSVM test on adipose (Cross-validation ROC plot of the optimum classifier to predict enhancers on adipose)</p>
+                      </div></figcaption></figure>
+</div>
+              </section><section id="Sec15" class="Section2 RenderAsSection2"><h3 class="Heading">Performance camparision of eRFSVM-ENCODE with existing methods</h3>
+                <div xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" id="Par55" class="Para">To access the capability of eRFSVM-ENCODE to predict effectively enhancers, we used K562 cell line for testing in a genome wide manner. We compared it with other classifiers, such as CSI-ANN, RFECS and DEEP-ENCODE (Table <span class="InternalRef"><a href="#Tab3">3</a></span>). For K562 cell line, RFECS predicted 130,723,329bp (4.22 %) enhancers; CSI-ANN predicted 34,635,309bp (1.12 %) enhancers; DEEP-ENCODE predicted 28,238,758bp (0.91 %) enhancers; eRFSVM-ENCOE predicted 120,670,200bp (3.89 %) enhancers. eRFSVM-ENCODE and DEEP-ENCODE were hybrid classifiers, having the highest precisions comparing with other methods. eRVSVM-ENCODE had the highest precision of 83.69 % and DEEP-ENCODE had the second highest precision of 83.56 %. The recall and F-score of eRFSVM-ENCODE were both higher than DEEP-ENCODE.<figure xmlns="" id="Tab3" class="FigureTable"><figcaption class="Caption" lang="en"><div xmlns="http://www.w3.org/1999/xhtml" class="CaptionContent">
+<span class="CaptionNumber">Table 3</span>
+                        <p xmlns="" class="SimplePara">Comparative performance analysis of the enhancer predictions in K562</p>
+                      </div></figcaption><div class="Table"><table xmlns="http://www.w3.org/1999/xhtml" border="1">
+<colgroup><col></colgroup>
+<colgroup><col></colgroup>
+<colgroup><col></colgroup>
+<colgroup><col></colgroup>
+<colgroup><col></colgroup>
+<thead><tr class="header">
+<th><p xmlns="" class="SimplePara">Classifiers</p></th>
+<th><p xmlns="" class="SimplePara">Precision</p></th>
+<th><p xmlns="" class="SimplePara">Recall</p></th>
+<th><p xmlns="" class="SimplePara">F-score</p></th>
+<th><p xmlns="" class="SimplePara">Number of predicted enhancer bases (Portion in whole genome)</p></th>
+</tr></thead>
+<tbody>
+<tr class="noclass">
+<td><p xmlns="" class="SimplePara">RFSVM-ENCOE</p></td>
+<td><p xmlns="" class="SimplePara">83.69 %</p></td>
+<td><p xmlns="" class="SimplePara">4.92 %</p></td>
+<td><p xmlns="" class="SimplePara">9.29 %</p></td>
+<td><p xmlns="" class="SimplePara">120,670,200(3.89 %)</p></td>
+</tr>
+<tr class="noclass">
+<td><p xmlns="" class="SimplePara">CSI_ANN</p></td>
+<td><p xmlns="" class="SimplePara">67.36 %</p></td>
+<td><p xmlns="" class="SimplePara">9.05 %</p></td>
+<td><p xmlns="" class="SimplePara">15.96 %</p></td>
+<td><p xmlns="" class="SimplePara">34,635,309(1.12 %)</p></td>
+</tr>
+<tr class="noclass">
+<td><p xmlns="" class="SimplePara">RFECS</p></td>
+<td><p xmlns="" class="SimplePara">69.56 %</p></td>
+<td><p xmlns="" class="SimplePara">10.16 %</p></td>
+<td><p xmlns="" class="SimplePara">17.74 %</p></td>
+<td><p xmlns="" class="SimplePara">130,723,329(4.22 %)</p></td>
+</tr>
+<tr class="noclass">
+<td><p xmlns="" class="SimplePara">DEEP-ENCODE</p></td>
+<td><p xmlns="" class="SimplePara">83.56 %</p></td>
+<td><p xmlns="" class="SimplePara">3.45 %</p></td>
+<td><p xmlns="" class="SimplePara">6.62 %</p></td>
+<td><p xmlns="" class="SimplePara">28,238,758(0.91 %)</p></td>
+</tr>
+</tbody>
+</table></div></figure>
+</div>
+              </section><section id="Sec16" class="Section2 RenderAsSection2"><h3 class="Heading">Performance comparison with DEEP-FANTOM5</h3>
+                <p xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" id="Par56" class="Para">DEEP-FANTOM5 used SVMs combined ANN (SVMs-ANN) algorithms with DNA sequence features. The precision, recall, F-score and accuracy were 86.17 %, 36.06 %, 50.84 % and 93.38 % using eRFSVM, increasing 23.24 % (69.92 %), 97.05 % (18.30 %), 76.90 % (28.74 %), 4.69 % (89.20 %) using DEEP-FANTOM5, respectively. To compare the features and algorithms in the function of classifiers with eRFSVM-FANTOM5 separately, we built two classifiers in the following.</p>
+                <div xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" id="Par57" class="Para">To compare the effects of different features for classifiers, we used the same algorithm (RF-SVMs) for the classifiers (Tables <span class="InternalRef"><a href="#Tab2">2</a></span> and <span class="InternalRef"><a href="#Tab4">4</a></span>). DNA sequence features, such as the frequencies of di-nucleotide, tri-nucleotide, tetra-nucleotide, single base were used to make the feature matrix (Additional file <span class="InternalRef"><a href="#MOESM1">1</a></span>: Table S6). For the base classifiers, the mean values of precision, recall, F-score were 73.02 %, 29.53 % and 39.65 %, using ChIP-Seq features, respectively; increasing 65.84 % (44.03 %), 8.01 % (27.34 %), 30.0 % (30.50 %) comparing with classifiers using DNA sequence features, respectively (Additional file <span class="InternalRef"><a href="#MOESM1">1</a></span>: Table S7). For the hybrid classifiers, the precision, F-score and accuracy were 86.17 %, 50.84 % and 93.38 % using ChIP-Seq features, increasing 2.7 fold (23.61 %), 57.35 % (32.31 %), 6.68 % (87.53 %) comparing with using DNA sequence features, respectively.<figure xmlns="" id="Tab4" class="FigureTable"><figcaption class="Caption" lang="en"><div xmlns="http://www.w3.org/1999/xhtml" class="CaptionContent">
+<span class="CaptionNumber">Table 4</span>
+                        <p xmlns="" class="SimplePara">Results tesing on adipose with DNA sequence features</p>
+                      </div></figcaption><div class="Table"><table xmlns="http://www.w3.org/1999/xhtml" border="1">
+<colgroup><col></colgroup>
+<colgroup><col></colgroup>
+<colgroup><col></colgroup>
+<colgroup><col></colgroup>
+<colgroup><col></colgroup>
+<thead><tr class="header">
+<th><p xmlns="" class="SimplePara">Classifiers</p></th>
+<th><p xmlns="" class="SimplePara">Precision</p></th>
+<th><p xmlns="" class="SimplePara">Recall</p></th>
+<th><p xmlns="" class="SimplePara">F-score</p></th>
+<th><p xmlns="" class="SimplePara">Accuracy</p></th>
+</tr></thead>
+<tbody>
+<tr class="noclass">
+<td><p xmlns="" class="SimplePara">blood</p></td>
+<td><p xmlns="" class="SimplePara">20.77 %</p></td>
+<td><p xmlns="" class="SimplePara">33.75 %</p></td>
+<td><p xmlns="" class="SimplePara">25.71 %</p></td>
+<td><p xmlns="" class="SimplePara">82.27 %</p></td>
+</tr>
+<tr class="noclass">
+<td><p xmlns="" class="SimplePara">liver</p></td>
+<td><p xmlns="" class="SimplePara">61.84 %</p></td>
+<td><p xmlns="" class="SimplePara">14.69 %</p></td>
+<td><p xmlns="" class="SimplePara">23.74 %</p></td>
+<td><p xmlns="" class="SimplePara">91.42 %</p></td>
+</tr>
+<tr class="noclass">
+<td><p xmlns="" class="SimplePara">lung</p></td>
+<td><p xmlns="" class="SimplePara">40.07 %</p></td>
+<td><p xmlns="" class="SimplePara">34.06 %</p></td>
+<td><p xmlns="" class="SimplePara">36.82 %</p></td>
+<td><p xmlns="" class="SimplePara">89.38 %</p></td>
+</tr>
+<tr class="noclass">
+<td><p xmlns="" class="SimplePara">kidney</p></td>
+<td><p xmlns="" class="SimplePara">53.42 %</p></td>
+<td><p xmlns="" class="SimplePara">26.87 %</p></td>
+<td><p xmlns="" class="SimplePara">35.76 %</p></td>
+<td><p xmlns="" class="SimplePara">91.22 %</p></td>
+</tr>
+<tr class="noclass">
+<td><p xmlns="" class="SimplePara">RF-SVMs</p></td>
+<td><p xmlns="" class="SimplePara">23.61 %</p></td>
+<td><p xmlns="" class="SimplePara">51.25 %</p></td>
+<td><p xmlns="" class="SimplePara">32.31 %</p></td>
+<td><p xmlns="" class="SimplePara">87.53 %</p></td>
+</tr>
+<tr class="noclass">
+<td><p xmlns="" class="SimplePara">DEEP-FANTOM5</p></td>
+<td><p xmlns="" class="SimplePara">69.92 %</p></td>
+<td><p xmlns="" class="SimplePara">18.30 %</p></td>
+<td><p xmlns="" class="SimplePara">28.74 %</p></td>
+<td><p xmlns="" class="SimplePara">89.20 %</p></td>
+</tr>
+</tbody>
+</table></div></figure>
+</div>
+                <p xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" id="Par58" class="Para">To compare the effects of different algorithms for classifiers, we used the same features (ChIP-Seq datasets) for the classifiers (Tables <span class="InternalRef"><a href="#Tab2">2</a></span> and <span class="InternalRef"><a href="#Tab4">4</a></span>). The precision, recall, F-score and accuracy were 86.17 %, 36.06 %, 50.84 % and 93.38 % using RF-SVMs, increasing 31.96 % (65.30 %), 7.09 % (28.07 %), 29.59 % (39.26 %), 0.86 % (92.58 %) using SVMs-ANN, respectively.</p>
+              </section>
+</div></section><section xmlns="" xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:meta="http://www.springer.com/app/meta" id="Sec17" class="Section1 RenderAsSection1 c-section"><h2 class="Heading js-ToggleCollapseSection c-section__heading" data-sticky-update="true"><a href="#Discussion" data-toggle="collapse" data-toggle-disable-clickoff="" data-target="Discussion">Discussion</a></h2>
+<div class="js-CollapseSection CollapseSection c-section__content" id="Discussion" data-test="collapse-section">
+<p xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" id="Par59" class="Para">Previous studies [<span class="CitationRef"><a href="#CR29" data-toggle="citation">29</a></span>] demonstrated that hybrid algorithms could well improve the performance of classifiers, which could be well interpreted in the layer of statistics. A learning algorithm could be considered to search the best performed parameters in the hypothesis space (H), which was near to the real whole space (f). However, the training datasets were not sufficient to the whole real space. Thus, the optimum found in the hypothesis space was very likely not the best in the whole space. The algorithms were easy to trap in local optimum. By combining these hypothesis using hybrid algorithms, classifiers could average these results, leading to much more close to the optimum in the whole real space. In our study, with AUC values to evaluate the performance of classifiers, when testing on the K562, hela and adipsoe datasets, the values of hybrid classifier were 0.6357, 0.6165 and 0.6344, higher than all the base classifiers, verifying that hybrid classifiers were performing better than single classifiers.</p>
+<p xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" id="Par60" class="Para">The previous methods used EP300 datasets as criteria of enhancers. For eRFSVM-ENCODE, the performance in predicting K562 was better than that in hela. Hela was generated from cervical cancers, much more different from Gm12878 (blood), Hep (liver), H1-hesc (embryonic stem cell) and Huvec (blood vessel), but K562 was from blood, of the same tissue of Gm12878. With more similar cell lines, it would have the better predicting performance. Thus, combining cell lines from much more kinds of tissues would strengthen the predicting performance. We found that F-score of these classifiers was nearly 80 %. However, when testing on other cells, the average F-score of these algorithms was just about 10 %, indicating that the generalization performance of the classifiers were poor. EP300 and enhancers were associated but the relevance was not the same in different tissues, which was one of the reasons leading to the previous classifiers with low generalization performance.</p>
+<p xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" id="Par61" class="Para">Interpreting enhancers in a variety of angles with biological meaning was an important clue and basis for predicting enhancers with compute methods [<span class="CitationRef"><a href="#CR19" data-toggle="citation">19</a></span>]. Therefore, from a biological perspective, looking for labels with stronger relevance with enhancers was important to build the effective classifiers. FANTOM5 consortium identified enhancers in different tissues and organs in transcription levels. DEEP-FANTOM5 used FANTOM5 enhancers as labels to predict new enhancers. However, DEEP-FANTON5 only used gene sequence features, such as CpG islands, G + C content to create feature matrixes. The average precision of the classifiers was only about 30 % (Additional file <span class="InternalRef"><a href="#MOESM1">1</a></span>: Table S8). In this study, we used the ChIP-Seq datasets of different tissues and organs from NIH Epigenome Roadmap as feature matrixes, the average precision rate was about 70 % (Additional file <span class="InternalRef"><a href="#MOESM1">1</a></span>: Table S5), which was 2.1 times that of DEEP-FANTOM5. When using eRFSVM-FANTOM5 to predict the adipose datasets, the F-score was 50.84 %, which was close to the F-scores training in blood, kidney and lung. These classifiers performed better compared with classifiers using EP300 datasets as labels.</p>
+<p xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" id="Par62" class="Para">There are some shortcomings of eRFSVM. Firstly, in the FANTOM5 datasets, only part of the tissues and organs had ChIP-Seq datasets in Roadmap database, therefore, eRFSVM-FANTOM can only predict enhancers in part of tissues and organs. Classifiers suitable for more tissues and cell lines with better generalization performance still need to be developed. Secondly, our knowledge of eRNAs was limited and not all enhancers generate eRNA, thus, enhancers not generating eRNAs may be missed in eRFSVM-FANTOM5. Thirdly, a web based user-friendly tool should be developed in the future.</p>
+</div></section><section xmlns="" xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:meta="http://www.springer.com/app/meta" id="Sec18" class="Section1 RenderAsSection1 c-section"><h2 class="Heading js-ToggleCollapseSection c-section__heading" data-sticky-update="true"><a href="#Conclusion" data-toggle="collapse" data-toggle-disable-clickoff="" data-target="Conclusion">Conclusion</a></h2>
+<div class="js-CollapseSection CollapseSection c-section__content" id="Conclusion" data-test="collapse-section">
+<p xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" id="Par63" class="Para">In this study, we made a new hybrid classifier eRFSVM using RF combined with SVMs (RF-SVMs) to predict new enhancers in other cell lines or tissues. eRFSVM is more robust than single classifiers with RF with the value of AUC higher than the single classifiers. By training on ENCODE datasets, eRFSVM-ENCOE made 120,670,200bp enhancer predictions covering 3.89 % of the genome. Comparing with state-of-art programs training on ENCODE datasets, eRFSVM-ENCODE made the highest precision of 83.69 % testing on K562 datasets.</p>
+<p xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" id="Par64" class="Para">For eRFSVM-FANTOM5, with enhancers identified by RNA in FANTOM5 project as labels, we trained datasets on blood, lung, liver and kidney. The best training result of classifiers was liver with a precision of 82.73 %, increasing 2.7 fold compared with DEEP-FANTOM5.</p>
+<p xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" id="Par65" class="Para">Algorithm RF-SVMs performed better than SVMs-ANN when we used the same features (ChIP-Seq datasets). The precision, recall, F-score and accuracy were 86.17 %, 36.06 %, 50.84 % and 93.38 % using RF-SVMs, increasing 31.96 % (65.30 %), 7.09 % (28.07 %), 29.59 % (39.26 %), 0.86 % (92.58 %) using SVMs-ANN, respectively</p>
+<p xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" id="Par66" class="Para">ChIP-Seq datasets were better features of classifiers in predicting FANTOM5 enhancers. When using the the same algorithm (RF-SVMs), the precision, F-score and accuracy were 86.17 %, 50.84 % and 93.38 % using ChIP-Seq features, increasing 2.7 fold (23.61 %), 57.35 % (32.31 %), 6.68 % (87.53 %) comparing with using DNA sequence features, respectively.</p>
+<p xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" id="Par67" class="Para">In conclusion, we provided a better classifier eRFSVM with higher generalization performance both in ENCODE datasets and FANTOM5 datasets comparing with DEEP and other state-of-art classifiers. However, in the FANTOM5 datasets, only part of the tissues and organs had ChIP-Seq datasets in Roadmap, therefore, eRFSVM-FANTOM can only predict enhancers in part of tissues and organs. Classifiers suitable for more tissues and cell lines with better generalization performance still need to be developed.</p>
+</div></section><section xmlns="" xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:meta="http://www.springer.com/app/meta" class="AbbreviationGroup Section1 RenderAsSection1 c-section"><h2 class="Heading js-ToggleCollapseSection c-section__heading" data-sticky-update="true"><a href="#Abbreviations" data-toggle="collapse" data-toggle-disable-clickoff="" data-target="Abbreviations">Abbreviations</a></h2>
+<div class="js-CollapseSection CollapseSection c-section__content" data-test="collapse-section" id="Abbreviations"><div class="DefinitionList">
+                <dl class="DefinitionListEntry">
+<dt class="Term"><dfn>TFs: </dfn></dt>
+<dd class="Description">
+                    <p xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" id="Par4" class="Para">Transcription factors</p>
+                  </dd>
+</dl>
+<dl class="DefinitionListEntry">
+<dt class="Term"><dfn>eRNAs: </dfn></dt>
+<dd class="Description">
+                    <p xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" id="Par5" class="Para">Enhancer RNAs</p>
+                  </dd>
+</dl>
+<dl class="DefinitionListEntry">
+<dt class="Term"><dfn>SVMs: </dfn></dt>
+<dd class="Description">
+                    <p xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" id="Par6" class="Para">Support vector machines</p>
+                  </dd>
+</dl>
+<dl class="DefinitionListEntry">
+<dt class="Term"><dfn>RF: </dfn></dt>
+<dd class="Description">
+                    <p xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" id="Par7" class="Para">Random forests</p>
+                  </dd>
+</dl>
+<dl class="DefinitionListEntry">
+<dt class="Term"><dfn>ANN: </dfn></dt>
+<dd class="Description">
+                    <p xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" id="Par8" class="Para">Artificial neural network</p>
+                  </dd>
+</dl>
+<dl class="DefinitionListEntry">
+<dt class="Term"><dfn>CV: </dfn></dt>
+<dd class="Description">
+                    <p xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" id="Par9" class="Para">Cross validation</p>
+                  </dd>
+</dl>
+<dl class="DefinitionListEntry">
+<dt class="Term"><dfn>CAGE: </dfn></dt>
+<dd class="Description">
+                    <p xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" id="Par10" class="Para">Cap analysis of gene expression</p>
+                  </dd>
+</dl>
+<dl class="DefinitionListEntry">
+<dt class="Term"><dfn>ROC: </dfn></dt>
+<dd class="Description">
+                    <p xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" id="Par11" class="Para">Receiver operating characteristic</p>
+                  </dd>
+</dl>
+<dl class="DefinitionListEntry">
+<dt class="Term"><dfn>AUC: </dfn></dt>
+<dd class="Description">
+                    <p xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" id="Par12" class="Para">Area under roc curve</p>
+                  </dd>
+</dl>
+<dl class="DefinitionListEntry">
+<dt class="Term"><dfn>TP: </dfn></dt>
+<dd class="Description">
+                    <p xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" id="Par13" class="Para">True positive</p>
+                  </dd>
+</dl>
+<dl class="DefinitionListEntry">
+<dt class="Term"><dfn>FP: </dfn></dt>
+<dd class="Description">
+                    <p xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" id="Par14" class="Para">False positive</p>
+                  </dd>
+</dl>
+<dl class="DefinitionListEntry">
+<dt class="Term"><dfn>TN: </dfn></dt>
+<dd class="Description">
+                    <p xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" id="Par15" class="Para">True negative</p>
+                  </dd>
+</dl>
+<dl class="DefinitionListEntry">
+<dt class="Term"><dfn>FN: </dfn></dt>
+<dd class="Description">
+                    <p xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" id="Par16" class="Para">False negative</p>
+                  </dd>
+</dl>
+<dl class="DefinitionListEntry">
+<dt class="Term"><dfn>TPR: </dfn></dt>
+<dd class="Description">
+                    <p xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" id="Par17" class="Para">True positive rate</p>
+                  </dd>
+</dl>
+<dl class="DefinitionListEntry">
+<dt class="Term"><dfn>FPR: </dfn></dt>
+<dd class="Description">
+                    <p xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" id="Par18" class="Para">False positive rate</p>
+                  </dd>
+</dl>
+</div></div></section><section xmlns="" xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:meta="http://www.springer.com/app/meta" class="Section1 RenderAsSection1 c-section" data-test="declarations-section" id="Decs"><h2 class="Heading js-ToggleCollapseSection c-section__heading" data-sticky-update="true"><a href="#Declarations" data-toggle="collapse" data-toggle-disable-clickoff="" data-target="Declarations">Declarations</a></h2>
+<div class="js-CollapseSection CollapseSection c-section__content" data-test="collapse-section" id="Declarations">
+<div xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" class="Acknowledgments">
+<h3 xmlns="" class="Heading">Acknowledgements</h3>
+<p xmlns="" class="SimplePara">This work is supported by the 973 Program (2015CB559100), the 863 project (2012AA02A515), the Natural Science Foundation of China (31325014, 81130022, 81272302, 81421061), the National High Technology Research and Development Program of China (2012AA021802), the Program of Shanghai Academic Research</p>
+<p xmlns="" class="SimplePara">Leader (15XD1502200), National Program for Support of Top-Notch Young Professionals, Shanghai Key Laboratory of Psychotic Disorders (13dz2260500), “Shu Guang” project supported by Shanghai Municipal Education Commission and Shanghai Education Development Foundation (12SG17).</p>
+<div id="FPar1" class="FormalPara FormalParaRenderingStyle1">
+                <h3 xmlns="" class="Heading">Authors’ contributions</h3>
+                <p id="Par68" class="Para">YS conceived the study and supervised the whole project. FH drafted the main manuscript text, proposed the algorithms, built the programs and made the main data analysis. JS guided the programming. QG guided data analysis. All authors read and approved the final manuscript.</p>
+              </div>
+<div id="FPar2" class="FormalPara FormalParaRenderingStyle1">
+                <h3 xmlns="" class="Heading">Competing interests</h3>
+                <p id="Par69" class="Para">The authors declare that they have no competing interests.</p>
+              </div>
+</div>
+<div xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" class="License">
+                <p xmlns="" class="SimplePara">
+                           <strong class="EmphasisTypeBold">Open Access</strong>This article is distributed under the terms of the Creative Commons Attribution 4.0 International License (<span xmlns="http://www.w3.org/1999/xhtml" class="ExternalRef"><a href="http://creativecommons.org/licenses/by/4.0/" target="_blank" class="ext-link"><span class="RefSource">http://creativecommons.org/licenses/by/4.0/</span></a></span>), which permits unrestricted use, distribution, and reproduction in any medium, provided you give appropriate credit to the original author(s) and the source, provide a link to the Creative Commons license, and indicate if changes were made. The Creative Commons Public Domain Dedication waiver (<span xmlns="http://www.w3.org/1999/xhtml" class="ExternalRef"><a href="http://creativecommons.org/publicdomain/zero/1.0/" target="_blank" class="ext-link"><span class="RefSource">http://creativecommons.org/publicdomain/zero/1.0/</span></a></span>) applies to the data made available in this article, unless otherwise stated.</p>
+              </div>
+<aside class="Appendix" id="App1"><h3 class="Heading">Additional files</h3>
+<div id="widgetContainer" data-test="figshare-container"></div>
+                <div xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" id="Par70" class="Para">
+                  <div class="MediaObject" id="MOESM1">
+                    <div xmlns="" class="esm-item "><div xmlns="http://www.w3.org/1999/xhtml" class="caption-container">
+<a href="https://static-content.springer.com/esm/art%3A10.1186%2Fs41065-016-0012-2/MediaObjects/41065_2016_12_MOESM1_ESM.docx"><span class="caption-number">Additional file 1: Table S1.</span></a>
+                          <span xmlns="" class="SimplePara">The datasets for training of cell lines from ENCODE. <strong class="EmphasisTypeBold">Table S2.</strong> Results training on four cell lines. <strong class="EmphasisTypeBold">Table S3.</strong> The peaks of different tissues from Roadmaps. <strong class="EmphasisTypeBold">Table S4.</strong> The datasets for training of different tissues from Roadmap. <strong class="EmphasisTypeBold">Table S5.</strong> Results training on different tissues with ChIP-Seq datasets. <strong class="EmphasisTypeBold">Table S6.</strong> Results training on tissues with DEEP-FANTOM5. <strong class="EmphasisTypeBold">Table S7.</strong> Results training on tissues with sequence features. <strong class="EmphasisTypeBold">Table S8.</strong> Results training on tissues with DEEP-FANTOM5. (DOCX 20 kb)</span>
+                        </div></div>
+                  </div>
+                </div>
+              
+            </aside>
+</div></section>
+</div>
+                        <div class="FulltextWrapper"><section xmlns="" xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:meta="http://www.springer.com/app/meta" class="Section1 RenderAsSection1 c-section Affiliations" id="Aff"><h2 class="Heading js-ToggleCollapseSection c-section__heading" data-sticky-update="true"><a href="#Author-Affiliations" data-toggle="collapse" data-toggle-disable-clickoff="" data-target="Author-Affiliations">Authors’ Affiliations</a></h2>
+<div class="js-CollapseSection CollapseSection c-section__content c-section__content" data-test="collapse-section" id="Author-Affiliations">
+<div xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" class="Affiliation" id="Aff1">
+<span class="AffiliationNumber">(1)</span><div class="AffiliationText">Bio-X Institutes, Key Laboratory for the Genetics of Developmental and Neuropsychiatric Disorders (Ministry of Education) and the Collaborative Innovation Center for Brain Science, Shanghai Jiao Tong University, Shanghai, 200030, People’s Republic of China</div>
+</div>
+<div xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" class="Affiliation" id="Aff2">
+<span class="AffiliationNumber">(2)</span><div class="AffiliationText">Shanghai Changning Mental Health Center, Shanghai, 200042, People’s Republic of China</div>
+</div>
+<div xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" class="Affiliation" id="Aff3">
+<span class="AffiliationNumber">(3)</span><div class="AffiliationText">Department of Psychiatry, The First Teaching Hospital of Xinjiang Medical University, Urumqi, 830054, People’s Republic of China</div>
+</div>
+<div xmlns:func="http://oscar.fig.bmc.com" xmlns="http://www.w3.org/1999/xhtml" class="Affiliation" id="Aff4">
+<span class="AffiliationNumber">(4)</span><div class="AffiliationText">The Bio-X Little White Building, Shanghai Jiao Tong University, No.55 Guang Yuan Xi Road, Shanghai, 200030, China</div>
+</div>
+</div></section></div>
+                        <div class="FulltextWrapper">
+<section xmlns="" xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:meta="http://www.springer.com/app/meta" class="Section1 RenderAsSection1 c-section SectionTypeMaterialsAndMethods" id="Bib1"><h2 class="Heading js-ToggleCollapseSection c-section__heading" data-sticky-update="true"><a href="#References" data-toggle="collapse" data-toggle-disable-clickoff="" data-target="References">References</a></h2>
+<div class="js-CollapseSection CollapseSection c-section__content" data-test="collapse-section" id="References"><ol class="BibliographyWrapper">
+<li class="Citation"><cite class="CitationContent" id="CR1" itemprop="citation" itemscope="" itemtype="http://schema.org/ScholarlyArticle"><span itemprop="headline">Andersson R, Gebhard C, Miguel-Escalada I, Hoof I, Bornholdt J, Boyd M, et al. An atlas of active enhancers across human cell types and tissues. Nature. 2014;507:455–61.</span><span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a target="_blank" rel="noopener" href="https://doi.org/10.1038/nature12787"><span><span>View Article</span></span></a></span><span class="Occurrence OccurrencePID"><a target="_blank" rel="noopener nofollow" href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;dopt=Abstract&amp;list_uids=24670763"><span><span>PubMed</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" href="http://scholar.google.com/scholar_lookup?title=An%20atlas%20of%20active%20enhancers%20across%20human%20cell%20types%20and%20tissues&amp;author=R.%20Andersson&amp;author=C.%20Gebhard&amp;author=I.%20Miguel-Escalada&amp;author=I.%20Hoof&amp;author=J.%20Bornholdt&amp;author=M.%20Boyd&amp;author=Y.%20Chen&amp;author=X.%20Zhao&amp;author=C.%20Schmidl&amp;author=T.%20Suzuki&amp;journal=Nature&amp;volume=507&amp;pages=455-61&amp;publication_year=2014"><span><span>Google Scholar</span></span></a></span></span></cite></li>
+<li class="Citation"><cite class="CitationContent" id="CR2" itemprop="citation" itemscope="" itemtype="http://schema.org/ScholarlyArticle"><span itemprop="headline">Bernstein BE, Stamatoyannopoulos JA, Costello JF, Ren B, Milosavljevic A, Meissner A, et al. The NIH Roadmap Epigenomics Mapping Consortium. Nat Biotechnol. 2010;28:1045–8.</span><span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a target="_blank" rel="noopener" href="https://doi.org/10.1038/nbt1010-1045"><span><span>View Article</span></span></a></span><span class="Occurrence OccurrencePID"><a target="_blank" rel="noopener nofollow" href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;dopt=Abstract&amp;list_uids=20944595"><span><span>PubMed</span></span></a></span><span class="Occurrence OccurrencePMCID"><a target="_blank" rel="noopener nofollow" href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3607281"><span><span>PubMed Central</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" href="http://scholar.google.com/scholar_lookup?title=The%20NIH%20Roadmap%20Epigenomics%20Mapping%20Consortium&amp;author=BE.%20Bernstein&amp;author=JA.%20Stamatoyannopoulos&amp;author=JF.%20Costello&amp;author=B.%20Ren&amp;author=A.%20Milosavljevic&amp;author=A.%20Meissner&amp;author=M.%20Kellis&amp;author=MA.%20Marra&amp;author=AL.%20Beaudet&amp;author=JR.%20Ecker&amp;journal=Nat%20Biotechnol&amp;volume=28&amp;pages=1045-8&amp;publication_year=2010"><span><span>Google Scholar</span></span></a></span></span></cite></li>
+<li class="Citation"><cite class="CitationContent" id="CR3" itemprop="citation" itemscope="" itemtype="http://schema.org/ScholarlyArticle"><span itemprop="headline">Breiman L. Random Forests. Mach Learn. 2001;45:5–32.</span><span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a target="_blank" rel="noopener" href="https://doi.org/10.1023/A%3A1010933404324"><span><span>View Article</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" href="http://scholar.google.com/scholar_lookup?title=Random%20Forests&amp;author=L.%20Breiman&amp;journal=Mach%20Learn&amp;volume=45&amp;pages=5-32&amp;publication_year=2001"><span><span>Google Scholar</span></span></a></span></span></cite></li>
+<li class="Citation"><cite class="CitationContent" id="CR4" itemprop="citation" itemscope="" itemtype="http://schema.org/ScholarlyArticle"><span itemprop="headline">Bylander T. Estimating generalization error on two-class datasets using out-of-bag estimates. Mach Learn. 2002;48:287–97.</span><span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a target="_blank" rel="noopener" href="https://doi.org/10.1023/A%3A1013964023376"><span><span>View Article</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" href="http://scholar.google.com/scholar_lookup?title=Estimating%20generalization%20error%20on%20two-class%20datasets%20using%20out-of-bag%20estimates&amp;author=T.%20Bylander&amp;journal=Mach%20Learn&amp;volume=48&amp;pages=287-97&amp;publication_year=2002"><span><span>Google Scholar</span></span></a></span></span></cite></li>
+<li class="Citation"><cite class="CitationContent" id="CR5" itemprop="citation" itemscope="" itemtype="http://schema.org/ScholarlyArticle"><span itemprop="headline">Cho BR, Park C. Robust design modeling and optimization with unbalanced data. Comput Ind Eng. 2005;48:173–80.</span><span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a target="_blank" rel="noopener" href="https://doi.org/10.1016/j.cie.2005.01.004"><span><span>View Article</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" href="http://scholar.google.com/scholar_lookup?title=Robust%20design%20modeling%20and%20optimization%20with%20unbalanced%20data&amp;author=BR.%20Cho&amp;author=C.%20Park&amp;journal=Comput%20Ind%20Eng&amp;volume=48&amp;pages=173-80&amp;publication_year=2005"><span><span>Google Scholar</span></span></a></span></span></cite></li>
+<li class="Citation"><cite class="CitationContent" id="CR6" itemprop="citation" itemscope="" itemtype="http://schema.org/ScholarlyArticle"><span itemprop="headline">Consortium EP. An integrated encyclopedia of DNA elements in the human genome. Nature. 2012;489:57–74.</span><span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a target="_blank" rel="noopener" href="https://doi.org/10.1038/nature11247"><span><span>View Article</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" href="http://scholar.google.com/scholar_lookup?title=An%20integrated%20encyclopedia%20of%20DNA%20elements%20in%20the%20human%20genome&amp;author=EP.%20Consortium&amp;journal=Nature&amp;volume=489&amp;pages=57-74&amp;publication_year=2012"><span><span>Google Scholar</span></span></a></span></span></cite></li>
+<li class="Citation"><cite class="CitationContent" id="CR7" itemprop="citation" itemscope="" itemtype="http://schema.org/ScholarlyArticle"><span itemprop="headline">Consortium F the RP Clst, Forrest AR, Kawaji H, Rehli M, Baillie JK, de Hoon MJ, et al. A promoter-level mammalian expression atlas. Nature. 2014;507:462–70.</span><span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a target="_blank" rel="noopener" href="https://doi.org/10.1038/nature13182"><span><span>View Article</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" href="http://scholar.google.com/scholar_lookup?title=A%20promoter-level%20mammalian%20expression%20atlas&amp;author=AR.%20Forrest&amp;author=H.%20Kawaji&amp;author=M.%20Rehli&amp;author=JK.%20Baillie&amp;author=MJ.%20Hoon&amp;author=V.%20Haberle&amp;author=T.%20Lassman&amp;journal=Nature&amp;volume=507&amp;pages=462-70&amp;publication_year=2014"><span><span>Google Scholar</span></span></a></span></span></cite></li>
+<li class="Citation"><cite class="CitationContent" id="CR8" itemprop="citation" itemscope="" itemtype="http://schema.org/ScholarlyArticle"><span itemprop="headline">Cortes C, Vapnik V. Support-vector networks. Mach Learn. 1995;20:273–97.</span><span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" href="http://scholar.google.com/scholar_lookup?title=Support-vector%20networks&amp;author=C.%20Cortes&amp;author=V.%20Vapnik&amp;journal=Mach%20Learn&amp;volume=20&amp;pages=273-97&amp;publication_year=1995"><span><span>Google Scholar</span></span></a></span></span></cite></li>
+<li class="Citation"><cite class="CitationContent" id="CR9" itemprop="citation" itemscope="" itemtype="http://schema.org/ScholarlyArticle"><span itemprop="headline">Dawson MA, Kouzarides T. Cancer epigenetics: from mechanism to therapy. Cell. 2012;150:12–27.</span><span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a target="_blank" rel="noopener" href="https://doi.org/10.1016/j.cell.2012.06.013"><span><span>View Article</span></span></a></span><span class="Occurrence OccurrencePID"><a target="_blank" rel="noopener nofollow" href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;dopt=Abstract&amp;list_uids=22770212"><span><span>PubMed</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" href="http://scholar.google.com/scholar_lookup?title=Cancer%20epigenetics%3A%20from%20mechanism%20to%20therapy&amp;author=MA.%20Dawson&amp;author=T.%20Kouzarides&amp;journal=Cell&amp;volume=150&amp;pages=12-27&amp;publication_year=2012"><span><span>Google Scholar</span></span></a></span></span></cite></li>
+<li class="Citation"><cite class="CitationContent" id="CR10" itemprop="citation" itemscope="" itemtype="http://schema.org/ScholarlyArticle"><span itemprop="headline">Ernst J, Kellis M. Large-scale imputation of epigenomic datasets for systematic annotation of diverse human tissues. Nat Biotechnol. 2015;33:364–76.</span><span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a target="_blank" rel="noopener" href="https://doi.org/10.1038/nbt.3157"><span><span>View Article</span></span></a></span><span class="Occurrence OccurrencePID"><a target="_blank" rel="noopener nofollow" href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;dopt=Abstract&amp;list_uids=25690853"><span><span>PubMed</span></span></a></span><span class="Occurrence OccurrencePMCID"><a target="_blank" rel="noopener nofollow" href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC4512306"><span><span>PubMed Central</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" href="http://scholar.google.com/scholar_lookup?title=Large-scale%20imputation%20of%20epigenomic%20datasets%20for%20systematic%20annotation%20of%20diverse%20human%20tissues&amp;author=J.%20Ernst&amp;author=M.%20Kellis&amp;journal=Nat%20Biotechnol&amp;volume=33&amp;pages=364-76&amp;publication_year=2015"><span><span>Google Scholar</span></span></a></span></span></cite></li>
+<li class="Citation"><cite class="CitationContent" id="CR11" itemprop="citation" itemscope="" itemtype="http://schema.org/ScholarlyArticle"><span itemprop="headline">Erwin GD, Oksenberg N, Truty RM, Kostka D, Murphy KK, Ahituv N, et al. Integrating diverse datasets improves developmental enhancer prediction. PLoS Comput Biol. 2014;10:e1003677.</span><span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a target="_blank" rel="noopener" href="https://doi.org/10.1371/journal.pcbi.1003677"><span><span>View Article</span></span></a></span><span class="Occurrence OccurrencePID"><a target="_blank" rel="noopener nofollow" href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;dopt=Abstract&amp;list_uids=24967590"><span><span>PubMed</span></span></a></span><span class="Occurrence OccurrencePMCID"><a target="_blank" rel="noopener nofollow" href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC4072507"><span><span>PubMed Central</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" href="http://scholar.google.com/scholar_lookup?title=Integrating%20diverse%20datasets%20improves%20developmental%20enhancer%20prediction&amp;author=GD.%20Erwin&amp;author=N.%20Oksenberg&amp;author=RM.%20Truty&amp;author=D.%20Kostka&amp;author=KK.%20Murphy&amp;author=N.%20Ahituv&amp;author=KS.%20Pollard&amp;author=JA.%20Capra&amp;journal=PLoS%20Comput%20Biol&amp;volume=10&amp;pages=e1003677&amp;publication_year=2014"><span><span>Google Scholar</span></span></a></span></span></cite></li>
+<li class="Citation"><cite class="CitationContent" id="CR12" itemprop="citation" itemscope="" itemtype="http://schema.org/ScholarlyArticle"><span itemprop="headline">Fernandez M, Miranda-Saavedra D. Genome-wide enhancer prediction from epigenetic signatures using genetic algorithm-optimized support vector machines. Nucleic Acids Res. 2012;40:e77.</span><span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a target="_blank" rel="noopener" href="https://doi.org/10.1093/nar/gks149"><span><span>View Article</span></span></a></span><span class="Occurrence OccurrencePID"><a target="_blank" rel="noopener nofollow" href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;dopt=Abstract&amp;list_uids=22328731"><span><span>PubMed</span></span></a></span><span class="Occurrence OccurrencePMCID"><a target="_blank" rel="noopener nofollow" href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3378905"><span><span>PubMed Central</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" href="http://scholar.google.com/scholar_lookup?title=Genome-wide%20enhancer%20prediction%20from%20epigenetic%20signatures%20using%20genetic%20algorithm-optimized%20support%20vector%20machines&amp;author=M.%20Fernandez&amp;author=D.%20Miranda-Saavedra&amp;journal=Nucleic%20Acids%20Res&amp;volume=40&amp;pages=e77&amp;publication_year=2012"><span><span>Google Scholar</span></span></a></span></span></cite></li>
+<li class="Citation"><cite class="CitationContent" id="CR13" itemprop="citation" itemscope="" itemtype="http://schema.org/ScholarlyArticle"><span itemprop="headline">Firpi HA, Ucar D, Tan K. Discover regulatory DNA elements using chromatin signatures and artificial neural network. Bioinformatics. 2010;26:1579–86.</span><span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a target="_blank" rel="noopener" href="https://doi.org/10.1093/bioinformatics/btq248"><span><span>View Article</span></span></a></span><span class="Occurrence OccurrencePID"><a target="_blank" rel="noopener nofollow" href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;dopt=Abstract&amp;list_uids=20453004"><span><span>PubMed</span></span></a></span><span class="Occurrence OccurrencePMCID"><a target="_blank" rel="noopener nofollow" href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2887052"><span><span>PubMed Central</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" href="http://scholar.google.com/scholar_lookup?title=Discover%20regulatory%20DNA%20elements%20using%20chromatin%20signatures%20and%20artificial%20neural%20network&amp;author=HA.%20Firpi&amp;author=D.%20Ucar&amp;author=K.%20Tan&amp;journal=Bioinformatics&amp;volume=26&amp;pages=1579-86&amp;publication_year=2010"><span><span>Google Scholar</span></span></a></span></span></cite></li>
+<li class="Citation"><cite class="CitationContent" id="CR14" itemprop="citation" itemscope="" itemtype="http://schema.org/ScholarlyArticle"><span itemprop="headline">Hardison RC. Discovering enhancers directly by activity. Nat Methods. 2014;11:491–2.</span><span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a target="_blank" rel="noopener" href="https://doi.org/10.1038/nmeth.2933"><span><span>View Article</span></span></a></span><span class="Occurrence OccurrencePID"><a target="_blank" rel="noopener nofollow" href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;dopt=Abstract&amp;list_uids=24781321"><span><span>PubMed</span></span></a></span><span class="Occurrence OccurrencePMCID"><a target="_blank" rel="noopener nofollow" href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC4487868"><span><span>PubMed Central</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" href="http://scholar.google.com/scholar_lookup?title=Discovering%20enhancers%20directly%20by%20activity&amp;author=RC.%20Hardison&amp;journal=Nat%20Methods&amp;volume=11&amp;pages=491-2&amp;publication_year=2014"><span><span>Google Scholar</span></span></a></span></span></cite></li>
+<li class="Citation"><cite class="CitationContent" id="CR15" itemprop="citation" itemscope="" itemtype="http://schema.org/ScholarlyArticle"><span itemprop="headline">Herz HM, Hu D, Shilatifard A. Enhancer malfunction in cancer. Mol Cell. 2014;53:859–66.</span><span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a target="_blank" rel="noopener" href="https://doi.org/10.1016/j.molcel.2014.02.033"><span><span>View Article</span></span></a></span><span class="Occurrence OccurrencePID"><a target="_blank" rel="noopener nofollow" href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;dopt=Abstract&amp;list_uids=24656127"><span><span>PubMed</span></span></a></span><span class="Occurrence OccurrencePMCID"><a target="_blank" rel="noopener nofollow" href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC4049186"><span><span>PubMed Central</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" href="http://scholar.google.com/scholar_lookup?title=Enhancer%20malfunction%20in%20cancer&amp;author=HM.%20Herz&amp;author=D.%20Hu&amp;author=A.%20Shilatifard&amp;journal=Mol%20Cell&amp;volume=53&amp;pages=859-66&amp;publication_year=2014"><span><span>Google Scholar</span></span></a></span></span></cite></li>
+<li class="Citation"><cite class="CitationContent" id="CR16" itemprop="citation" itemscope="" itemtype="http://schema.org/ScholarlyArticle"><span itemprop="headline">Hoffman MM, Buske OJ, Noble WS. The Genomedata format for storing large-scale functional genomics data. Bioinformatics. 2010;26:1458–9.</span><span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a target="_blank" rel="noopener" href="https://doi.org/10.1093/bioinformatics/btq164"><span><span>View Article</span></span></a></span><span class="Occurrence OccurrencePID"><a target="_blank" rel="noopener nofollow" href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;dopt=Abstract&amp;list_uids=20435580"><span><span>PubMed</span></span></a></span><span class="Occurrence OccurrencePMCID"><a target="_blank" rel="noopener nofollow" href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2872006"><span><span>PubMed Central</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" href="http://scholar.google.com/scholar_lookup?title=The%20Genomedata%20format%20for%20storing%20large-scale%20functional%20genomics%20data&amp;author=MM.%20Hoffman&amp;author=OJ.%20Buske&amp;author=WS.%20Noble&amp;journal=Bioinformatics&amp;volume=26&amp;pages=1458-9&amp;publication_year=2010"><span><span>Google Scholar</span></span></a></span></span></cite></li>
+<li class="Citation"><cite class="CitationContent" id="CR17" itemprop="citation" itemscope="" itemtype="http://schema.org/ScholarlyArticle"><span itemprop="headline">Hwang Y, Lin C, Valladares O, Malamon J, Kuksa PP, Zheng Q, et al. HIPPIE: a high-throughput identification pipeline for promoter interacting enhancer elements. Bioinformatics. 2014;29:233–42.</span><span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" href="http://scholar.google.com/scholar_lookup?title=HIPPIE%3A%20a%20high-throughput%20identification%20pipeline%20for%20promoter%20interacting%20enhancer%20elements&amp;author=Y.%20Hwang&amp;author=C.%20Lin&amp;author=O.%20Valladares&amp;author=J.%20Malamon&amp;author=PP.%20Kuksa&amp;author=Q.%20Zheng&amp;author=BD.%20Gregory&amp;author=L.%20Wang&amp;journal=Bioinformatics&amp;volume=29&amp;pages=233-42&amp;publication_year=2014"><span><span>Google Scholar</span></span></a></span></span></cite></li>
+<li class="Citation"><cite class="CitationContent" id="CR18" itemprop="citation" itemscope="" itemtype="http://schema.org/ScholarlyArticle"><span itemprop="headline">Kleftogiannis D, Kalnis P, Bajic VB. DEEP: a general computational framework for predicting enhancers. Nucleic Acids Res. 2015;43:e6.</span><span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a target="_blank" rel="noopener" href="https://doi.org/10.1093/nar/gku1058"><span><span>View Article</span></span></a></span><span class="Occurrence OccurrencePID"><a target="_blank" rel="noopener nofollow" href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;dopt=Abstract&amp;list_uids=25378307"><span><span>PubMed</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" href="http://scholar.google.com/scholar_lookup?title=DEEP%3A%20a%20general%20computational%20framework%20for%20predicting%20enhancers&amp;author=D.%20Kleftogiannis&amp;author=P.%20Kalnis&amp;author=VB.%20Bajic&amp;journal=Nucleic%20Acids%20Res&amp;volume=43&amp;pages=e6&amp;publication_year=2015"><span><span>Google Scholar</span></span></a></span></span></cite></li>
+<li class="Citation"><cite class="CitationContent" id="CR19" itemprop="citation" itemscope="" itemtype="http://schema.org/ScholarlyArticle"><span itemprop="headline">Kleftogiannis D, Kalnis P, Bajic VB. Progress and challenges in bioinformatics approaches for enhancer identification. Brief Bioinform. 2015;1:1–13.</span><span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" href="http://scholar.google.com/scholar_lookup?title=Progress%20and%20challenges%20in%20bioinformatics%20approaches%20for%20enhancer%20identification&amp;author=D.%20Kleftogiannis&amp;author=P.%20Kalnis&amp;author=VB.%20Bajic&amp;journal=Brief%20Bioinform&amp;volume=1&amp;pages=1-13&amp;publication_year=2015"><span><span>Google Scholar</span></span></a></span></span></cite></li>
+<li class="Citation"><cite class="CitationContent" id="CR20" itemprop="citation" itemscope="" itemtype="http://schema.org/ScholarlyArticle"><span itemprop="headline">Lee D, Karchin R, Beer MA. Discriminative prediction of mammalian enhancers from DNA sequence. Genome Res. 2011;21:2167–80.</span><span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a target="_blank" rel="noopener" href="https://doi.org/10.1101/gr.121905.111"><span><span>View Article</span></span></a></span><span class="Occurrence OccurrencePID"><a target="_blank" rel="noopener nofollow" href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;dopt=Abstract&amp;list_uids=21875935"><span><span>PubMed</span></span></a></span><span class="Occurrence OccurrencePMCID"><a target="_blank" rel="noopener nofollow" href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3227105"><span><span>PubMed Central</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" href="http://scholar.google.com/scholar_lookup?title=Discriminative%20prediction%20of%20mammalian%20enhancers%20from%20DNA%20sequence&amp;author=D.%20Lee&amp;author=R.%20Karchin&amp;author=MA.%20Beer&amp;journal=Genome%20Res&amp;volume=21&amp;pages=2167-80&amp;publication_year=2011"><span><span>Google Scholar</span></span></a></span></span></cite></li>
+<li class="Citation"><cite class="CitationContent" id="CR21" itemprop="citation" itemscope="" itemtype="http://schema.org/ScholarlyArticle"><span itemprop="headline">Ounzain S, Pedrazzini T. Super-enhancer lncs to cardiovascular development and disease. Biochim Biophys Acta. 2015;19:103–12.</span><span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" href="http://scholar.google.com/scholar_lookup?title=Super-enhancer%20lncs%20to%20cardiovascular%20development%20and%20disease&amp;author=S.%20Ounzain&amp;author=T.%20Pedrazzini&amp;journal=Biochim%20Biophys%20Acta&amp;volume=19&amp;pages=103-12&amp;publication_year=2015"><span><span>Google Scholar</span></span></a></span></span></cite></li>
+<li class="Citation"><cite class="CitationContent" id="CR22" itemprop="citation" itemscope="" itemtype="http://schema.org/ScholarlyArticle"><span itemprop="headline">Park PJ. ChIP-seq: advantages and challenges of a maturing technology. -Nature reviews. Genetics. 2009;10:669–80.</span><span class="Occurrences"><span class="Occurrence OccurrencePID"><a target="_blank" rel="noopener nofollow" href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;dopt=Abstract&amp;list_uids=19736561"><span><span>PubMed</span></span></a></span><span class="Occurrence OccurrencePMCID"><a target="_blank" rel="noopener nofollow" href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3191340"><span><span>PubMed Central</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" href="http://scholar.google.com/scholar_lookup?title=ChIP-seq%3A%20advantages%20and%20challenges%20of%20a%20maturing%20technology.%20-Nature%20reviews&amp;author=PJ.%20Park&amp;journal=Genetics&amp;volume=10&amp;pages=669-80&amp;publication_year=2009"><span><span>Google Scholar</span></span></a></span></span></cite></li>
+<li class="Citation"><cite class="CitationContent" id="CR23" itemprop="citation" itemscope="" itemtype="http://schema.org/ScholarlyArticle"><span itemprop="headline">Pennacchio LA, Loots GG, Nobrega MA, Ovcharenko I. Predicting tissue-specific enhancers in the human genome. Genome Res. 2007;17:201–11.</span><span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a target="_blank" rel="noopener" href="https://doi.org/10.1101/gr.5972507"><span><span>View Article</span></span></a></span><span class="Occurrence OccurrencePID"><a target="_blank" rel="noopener nofollow" href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;dopt=Abstract&amp;list_uids=17210927"><span><span>PubMed</span></span></a></span><span class="Occurrence OccurrencePMCID"><a target="_blank" rel="noopener nofollow" href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC1781352"><span><span>PubMed Central</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" href="http://scholar.google.com/scholar_lookup?title=Predicting%20tissue-specific%20enhancers%20in%20the%20human%20genome&amp;author=LA.%20Pennacchio&amp;author=GG.%20Loots&amp;author=MA.%20Nobrega&amp;author=I.%20Ovcharenko&amp;journal=Genome%20Res&amp;volume=17&amp;pages=201-11&amp;publication_year=2007"><span><span>Google Scholar</span></span></a></span></span></cite></li>
+<li class="Citation"><cite class="CitationContent" id="CR24" itemprop="citation" itemscope="" itemtype="http://schema.org/ScholarlyArticle"><span itemprop="headline">Perner J, Lasserre J, Kinkley S, Vingron M, Chung HR. Inference of interactions between chromatin modifiers and histone modifications: from ChIP-Seq data to chromatin-signaling. Nucleic Acids Res. 2014;42:13689–95.</span><span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a target="_blank" rel="noopener" href="https://doi.org/10.1093/nar/gku1234"><span><span>View Article</span></span></a></span><span class="Occurrence OccurrencePID"><a target="_blank" rel="noopener nofollow" href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;dopt=Abstract&amp;list_uids=25414326"><span><span>PubMed</span></span></a></span><span class="Occurrence OccurrencePMCID"><a target="_blank" rel="noopener nofollow" href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC4267652"><span><span>PubMed Central</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" href="http://scholar.google.com/scholar_lookup?title=Inference%20of%20interactions%20between%20chromatin%20modifiers%20and%20histone%20modifications%3A%20from%20ChIP-Seq%20data%20to%20chromatin-signaling&amp;author=J.%20Perner&amp;author=J.%20Lasserre&amp;author=S.%20Kinkley&amp;author=M.%20Vingron&amp;author=HR.%20Chung&amp;journal=Nucleic%20Acids%20Res&amp;volume=42&amp;pages=13689-95&amp;publication_year=2014"><span><span>Google Scholar</span></span></a></span></span></cite></li>
+<li class="Citation"><cite class="CitationContent" id="CR25" itemprop="citation" itemscope="" itemtype="http://schema.org/ScholarlyArticle"><span itemprop="headline">Rajagopal N, Xie W, Li Y, Wagner U, Wang W, Stamatoyannopoulos J, et al. RFECS: a random-forest based algorithm for enhancer identification from chromatin state. PLoS Comput Biol. 2013;9:e1002968.</span><span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a target="_blank" rel="noopener" href="https://doi.org/10.1371/journal.pcbi.1002968"><span><span>View Article</span></span></a></span><span class="Occurrence OccurrencePID"><a target="_blank" rel="noopener nofollow" href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;dopt=Abstract&amp;list_uids=23526891"><span><span>PubMed</span></span></a></span><span class="Occurrence OccurrencePMCID"><a target="_blank" rel="noopener nofollow" href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3597546"><span><span>PubMed Central</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" href="http://scholar.google.com/scholar_lookup?title=RFECS%3A%20a%20random-forest%20based%20algorithm%20for%20enhancer%20identification%20from%20chromatin%20state&amp;author=N.%20Rajagopal&amp;author=W.%20Xie&amp;author=Y.%20Li&amp;author=U.%20Wagner&amp;author=W.%20Wang&amp;author=J.%20Stamatoyannopoulos&amp;author=J.%20Ernst&amp;author=M.%20Kellis&amp;author=B.%20Ren&amp;journal=PLoS%20Comput%20Biol&amp;volume=9&amp;pages=e1002968&amp;publication_year=2013"><span><span>Google Scholar</span></span></a></span></span></cite></li>
+<li class="Citation"><cite class="CitationContent" id="CR26" itemprop="citation" itemscope="" itemtype="http://schema.org/ScholarlyArticle"><span itemprop="headline">Schmidhuber J. Deep learning in neural networks: an overview. Neural Netw. 2015;61:85–117.</span><span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a target="_blank" rel="noopener" href="https://doi.org/10.1016/j.neunet.2014.09.003"><span><span>View Article</span></span></a></span><span class="Occurrence OccurrencePID"><a target="_blank" rel="noopener nofollow" href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;dopt=Abstract&amp;list_uids=25462637"><span><span>PubMed</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" href="http://scholar.google.com/scholar_lookup?title=Deep%20learning%20in%20neural%20networks%3A%20an%20overview&amp;author=J.%20Schmidhuber&amp;journal=Neural%20Netw&amp;volume=61&amp;pages=85-117&amp;publication_year=2015"><span><span>Google Scholar</span></span></a></span></span></cite></li>
+<li class="Citation"><cite class="CitationContent" id="CR27" itemprop="citation" itemscope="" itemtype="http://schema.org/ScholarlyArticle"><span itemprop="headline">Sjogren MH. Thymalfasin: an immune system enhancer for the treatment of liver disease. - Journal of Gastroenterology and. Hepatology. 2004;30:103–11.</span><span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" href="http://scholar.google.com/scholar_lookup?title=Thymalfasin%3A%20an%20immune%20system%20enhancer%20for%20the%20treatment%20of%20liver%20disease.%20-%20Journal%20of%20Gastroenterology%20and&amp;author=MH.%20Sjogren&amp;journal=Hepatology&amp;volume=30&amp;pages=103-11&amp;publication_year=2004"><span><span>Google Scholar</span></span></a></span></span></cite></li>
+<li class="Citation"><cite class="CitationContent" id="CR28" itemprop="citation" itemscope="" itemtype="http://schema.org/ScholarlyArticle"><span itemprop="headline">Steinhauser S, Kurzawa N, Eils R, Herrmann C. A comprehensive comparison of tools for differential ChIP-seq analysis. Brief Bioinform. 2016;1:1–13.</span><span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" href="http://scholar.google.com/scholar_lookup?title=A%20comprehensive%20comparison%20of%20tools%20for%20differential%20ChIP-seq%20analysis&amp;author=S.%20Steinhauser&amp;author=N.%20Kurzawa&amp;author=R.%20Eils&amp;author=C.%20Herrmann&amp;journal=Brief%20Bioinform&amp;volume=1&amp;pages=1-13&amp;publication_year=2016"><span><span>Google Scholar</span></span></a></span></span></cite></li>
+<li class="Citation"><cite class="CitationContent" id="CR29" itemprop="citation" itemscope="" itemtype="http://schema.org/ScholarlyArticle"><span itemprop="headline">Tarun Rao TVR. A-hybrid-Random-Forest-based-Support-Vector. - Global Journal of Computer Science and. Technology. 2014;14:43–54.</span><span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" href="http://scholar.google.com/scholar_lookup?title=A-hybrid-Random-Forest-based-Support-Vector.%20-%20Global%20Journal%20of%20Computer%20Science%20and&amp;author=TVR.%20Tarun%20Rao&amp;journal=Technology&amp;volume=14&amp;pages=43-54&amp;publication_year=2014"><span><span>Google Scholar</span></span></a></span></span></cite></li>
+<li class="Citation"><cite class="CitationContent" id="CR30" itemprop="citation" itemscope="" itemtype="http://schema.org/ScholarlyArticle"><span itemprop="headline">Wang D, Rendon A, Wernisch L. Transcription factor and chromatin features predict genes associated with eQTLs. Nucleic Acids Res. 2013;41:1450–63.</span><span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a target="_blank" rel="noopener" href="https://doi.org/10.1093/nar/gks1339"><span><span>View Article</span></span></a></span><span class="Occurrence OccurrencePID"><a target="_blank" rel="noopener nofollow" href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;dopt=Abstract&amp;list_uids=23275551"><span><span>PubMed</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" href="http://scholar.google.com/scholar_lookup?title=Transcription%20factor%20and%20chromatin%20features%20predict%20genes%20associated%20with%20eQTLs&amp;author=D.%20Wang&amp;author=A.%20Rendon&amp;author=L.%20Wernisch&amp;journal=Nucleic%20Acids%20Res&amp;volume=41&amp;pages=1450-63&amp;publication_year=2013"><span><span>Google Scholar</span></span></a></span></span></cite></li>
+<li class="Citation"><cite class="CitationContent" id="CR31" itemprop="citation" itemscope="" itemtype="http://schema.org/ScholarlyArticle"><span itemprop="headline">Yen A, Kellis M. Systematic chromatin state comparison of epigenomes associated with diverse properties including sex and tissue type. Nat Commun. 2015;6:73–83.</span><span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a target="_blank" rel="noopener" href="https://doi.org/10.1038/ncomms8973"><span><span>View Article</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" href="http://scholar.google.com/scholar_lookup?title=Systematic%20chromatin%20state%20comparison%20of%20epigenomes%20associated%20with%20diverse%20properties%20including%20sex%20and%20tissue%20type&amp;author=A.%20Yen&amp;author=M.%20Kellis&amp;journal=Nat%20Commun&amp;volume=6&amp;pages=73-83&amp;publication_year=2015"><span><span>Google Scholar</span></span></a></span></span></cite></li>
+<li class="Citation"><cite class="CitationContent" id="CR32" itemprop="citation" itemscope="" itemtype="http://schema.org/ScholarlyArticle"><span itemprop="headline">Zhang Y, Liu T, Meyer CA, Eeckhoute J, Johnson DS, Bernstein BE, et al. Model-based analysis of ChIP-Seq (MACS). Genome Biol. 2008;9:R137.</span><span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a target="_blank" rel="noopener" href="https://doi.org/10.1186/gb-2008-9-9-r137"><span><span>View Article</span></span></a></span><span class="Occurrence OccurrencePID"><a target="_blank" rel="noopener nofollow" href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;dopt=Abstract&amp;list_uids=18798982"><span><span>PubMed</span></span></a></span><span class="Occurrence OccurrencePMCID"><a target="_blank" rel="noopener nofollow" href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2592715"><span><span>PubMed Central</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" href="http://scholar.google.com/scholar_lookup?title=Model-based%20analysis%20of%20ChIP-Seq%20%28MACS%29&amp;author=Y.%20Zhang&amp;author=T.%20Liu&amp;author=CA.%20Meyer&amp;author=J.%20Eeckhoute&amp;author=DS.%20Johnson&amp;author=BE.%20Bernstein&amp;author=C.%20Nusbaum&amp;author=RM.%20Myers&amp;author=M.%20Brown&amp;author=W.%20Li&amp;journal=Genome%20Biol&amp;volume=9&amp;pages=R137&amp;publication_year=2008"><span><span>Google Scholar</span></span></a></span></span></cite></li>
+</ol></div></section><section xmlns="" xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:meta="http://www.springer.com/app/meta" class="Section1 RenderAsSection1 c-section" id="CopyrightMessage"><h2 class="Heading js-ToggleCollapseSection c-section__heading" data-sticky-update="true"><a href="#TheAuthors" data-toggle="collapse" data-toggle-disable-clickoff="" data-target="TheAuthors">Copyright</a></h2>
+<div class="js-CollapseSection CollapseSection c-section__content" data-test="collapse-section" id="TheAuthors"><div xmlns="http://www.w3.org/1999/xhtml" class="ArticleCopyright">© The Author(s) 2016</div></div></section>
+</div>
+                        
+
+
+                    </article></main><div class="c-content-layout__side u-text-sm">
+                    <aside><div class="p-separator">
+                            
+        <p class="u-margin-bottom-sm">
+            <a id="articlePdf" data-test="download-pdf" class="c-button c-button--primary c-button--full-width" target="_blank" rel="noopener" href="//hereditasjournal.biomedcentral.com/track/pdf/10.1186/s41065-016-0012-2" data-track="click" data-track-category="PDF Download" data-track-action="Click download article PDF" data-track-label="10.1186/s41065-016-0012-2">Download PDF</a>
+        </p>
+    
+                            
+                            
+    <button type="button" class="c-button c-button--expandable" data-toggle="collapse" data-target="export-citations" data-test="export-citations-button" data-sticky-update="true" aria-controls="export-citations" aria-expanded="false">
+        <span class="c-dropdown__toggle">Export citations</span>
+    </button>
+    <div id="export-citations" class="c-export-citations" data-test="export-citations-content">
+        <div class="c-export-citations__section">
+            <h4 class="c-export-citations__title">Papers, Zotero, Reference Manager, RefWorks (<strong>.RIS</strong>)</h4>
+            <ul class="c-export-citations__list" id="articleReferences">
+<li><a data-track="click" data-track-category="Article Page" data-track-action="Download Papers, Zotero, Reference Manager, RefWorks article citations" data-track-label="10.1186/s41065-016-0012-2" href="http://citation-needed.springer.com/v2/references/10.1186/s41065-016-0012-2?format=refman&amp;flavour=citation">
+                    <svg class="c-export-citations__icon" width="12" height="12" aria-hidden="true"><use xlink:href="#icon-download"></use></svg><span class="u-visually-hidden">Download </span>Citations
+                </a></li>
+                <li><a data-track="click" data-track-category="Article Page" data-track-action="Download Papers, Zotero, Reference Manager, RefWorks references" data-track-label="10.1186/s41065-016-0012-2" href="http://citation-needed.springer.com/v2/references/10.1186/s41065-016-0012-2?format=refman&amp;flavour=references">
+                    <svg class="c-export-citations__icon" width="12" height="12" aria-hidden="true"><use xlink:href="#icon-download"></use></svg><span class="u-visually-hidden">Download </span>References
+                </a></li>
+                <li><a data-track="click" data-track-category="Article Page" data-track-action="Download Papers, Zotero, Reference Manager, RefWorks citations and references" data-track-label="10.1186/s41065-016-0012-2" href="http://citation-needed.springer.com/v2/references/10.1186/s41065-016-0012-2?format=refman&amp;flavour=full">
+                    <svg class="c-export-citations__icon" width="12" height="12" aria-hidden="true"><use xlink:href="#icon-download"></use></svg><span class="u-visually-hidden">Download </span>Both
+                </a></li>
+            </ul>
+</div>
+        <div class="c-export-citations__section">
+            <h4 class="c-export-citations__title">EndNote (<strong>.ENW</strong>)</h4>
+            <ul class="c-export-citations__list">
+<li><a data-track="click" data-track-category="Article Page" data-track-action="Download EndNote article citations" data-track-label="10.1186/s41065-016-0012-2" href="http://citation-needed.springer.com/v2/references/10.1186/s41065-016-0012-2?format=endnote&amp;flavour=citation">
+                    <svg class="c-export-citations__icon" width="12" height="12" aria-hidden="true"><use xlink:href="#icon-download"></use></svg><span class="u-visually-hidden">Download </span>Citations
+                </a></li>
+                <li><a data-track="click" data-track-category="Article Page" data-track-action="Download EndNote references" data-track-label="10.1186/s41065-016-0012-2" href="http://citation-needed.springer.com/v2/references/10.1186/s41065-016-0012-2?format=endnote&amp;flavour=references">
+                    <svg class="c-export-citations__icon" width="12" height="12" aria-hidden="true"><use xlink:href="#icon-download"></use></svg><span class="u-visually-hidden">Download </span>References
+                </a></li>
+                <li><a data-track="click" data-track-category="Article Page" data-track-action="Download EndNote citations and references" data-track-label="10.1186/s41065-016-0012-2" href="http://citation-needed.springer.com/v2/references/10.1186/s41065-016-0012-2?format=endnote&amp;flavour=full">
+                    <svg class="c-export-citations__icon" width="12" height="12" aria-hidden="true"><use xlink:href="#icon-download"></use></svg><span class="u-visually-hidden">Download </span>Both
+                </a></li>
+            </ul>
+</div>
+        <div class="c-export-citations__section">
+            <h4 class="c-export-citations__title">Mendeley, JabRef (<strong>.BIB</strong>)</h4>
+            <ul class="c-export-citations__list">
+<li><a data-track="click" data-track-category="Article Page" data-track-action="Download Mendeley, JabRef article citations" data-track-label="10.1186/s41065-016-0012-2" href="http://citation-needed.springer.com/v2/references/10.1186/s41065-016-0012-2?format=bibtex&amp;flavour=citation">
+                    <svg class="c-export-citations__icon" width="12" height="12" aria-hidden="true"><use xlink:href="#icon-download"></use></svg><span class="u-visually-hidden">Download </span>Citations
+                </a></li>
+                <li><a data-track="click" data-track-category="Article Page" data-track-action="Download Mendeley, JabRef references" data-track-label="10.1186/s41065-016-0012-2" href="http://citation-needed.springer.com/v2/references/10.1186/s41065-016-0012-2?format=bibtex&amp;flavour=references">
+                    <svg class="c-export-citations__icon" width="12" height="12" aria-hidden="true"><use xlink:href="#icon-download"></use></svg><span class="u-visually-hidden">Download </span>References
+                </a></li>
+                <li><a data-track="click" data-track-category="Article Page" data-track-action="Download Mendeley, JabRef citations and references" data-track-label="10.1186/s41065-016-0012-2" href="http://citation-needed.springer.com/v2/references/10.1186/s41065-016-0012-2?format=bibtex&amp;flavour=full">
+                    <svg class="c-export-citations__icon" width="12" height="12" aria-hidden="true"><use xlink:href="#icon-download"></use></svg><span class="u-visually-hidden">Download </span>Both
+                </a></li>
+            </ul>
+</div>
+    </div>
+
+                        </div>
+                        
+    
+ 
+                        
+    
+ 
+                        <div class="p-separator">
+                            <h3 class="p-section-title">Metrics</h3>
+                            <ul class="c-list-group c-list-group--md">
+<div id="article-access-count-loader" class="placeholder" data-replace="true" data-placeholder="/placeholder/v1/article/access-count/10.1186/s41065-016-0012-2 #accessCount-container"></div>
+                                <div id="citation-count-loader" class="placeholder" data-replace="true" data-placeholder="/placeholder/v1/article/citation-count/10.1186/s41065-016-0012-2 #count-container"></div>
+                                <div id="altmetric-loader" class="placeholder" data-replace="true" data-placeholder="/placeholder/v1/article/altmetric/10.1186/s41065-016-0012-2 #altmetric-container"></div>
+                            </ul>
+</div>
+                        
+    <div class="c-separator">
+        <div class="js-shown">
+            <h3 class="p-section-title">Share this article</h3>
+            <ul data-test="social-media-share-buttons" class="c-social-links">
+<li class="c-social-links__item">
+                    <button id="shareOnTwitter" class="js-btnShareOnTwitter" data-track="click" data-track-category="Article Page" data-track-action="Share Twitter" data-track-label="10.1186/s41065-016-0012-2">
+                        <span class="u-visually-hidden" data-track="click" data-track-category="Article Page" data-track-action="Share Twitter" data-track-label="10.1186/s41065-016-0012-2">Share on Twitter</span>
+                        <svg class="c-icon c-social-links__icon" width="24" height="24" aria-hidden="true" data-track="click" data-track-category="Article Page" data-track-action="Share Twitter" data-track-label="10.1186/s41065-016-0012-2"><use xlink:href="#icon-twitter"></use></svg></button>
+                </li>
+                <li class="c-social-links__item">
+                    <button id="shareOnFacebook" class="js-btnShareOnFacebook" data-track="click" data-track-category="Article Page" data-track-action="Share Facebook" data-track-label="10.1186/s41065-016-0012-2">
+                        <span class="u-visually-hidden" data-track="click" data-track-category="Article Page" data-track-action="Share Facebook" data-track-label="10.1186/s41065-016-0012-2">Share on Facebook</span>
+                        <svg class="c-icon c-social-links__icon" width="24" height="24" aria-hidden="true" data-track="click" data-track-category="Article Page" data-track-action="Share Facebook" data-track-label="10.1186/s41065-016-0012-2"><use xlink:href="#icon-facebook"></use></svg></button>
+                </li>
+                <li class="c-social-links__item">
+                    <button id="shareOnLinkedIn" class="js-btnShareOnLinkedIn" data-track="click" data-track-category="Article Page" data-track-action="Share LinkedIn" data-track-label="10.1186/s41065-016-0012-2">
+                        <span class="u-visually-hidden" data-track="click" data-track-category="Article Page" data-track-action="Share LinkedIn" data-track-label="10.1186/s41065-016-0012-2">Share on LinkedIn</span>
+                        <svg class="c-icon c-social-links__icon" width="24" height="24" aria-hidden="true" data-track="click" data-track-category="Article Page" data-track-action="Share LinkedIn" data-track-label="10.1186/s41065-016-0012-2"><use xlink:href="#icon-linkedin"></use></svg></button>
+                </li>
+                <li class="c-social-links__item">
+                    <button id="shareOnWeibo" class="js-btnShareOnWeibo" data-track="click" data-track-category="Article Page" data-track-action="Share Weibo" data-track-label="10.1186/s41065-016-0012-2">
+                        <span class="u-visually-hidden" data-track="click" data-track-category="Article Page" data-track-action="Share Weibo" data-track-label="10.1186/s41065-016-0012-2">Share on Weibo</span>
+                        <svg class="c-icon c-social-links__icon" width="24" height="24" aria-hidden="true" data-track="click" data-track-category="Article Page" data-track-action="Share Weibo" data-track-label="10.1186/s41065-016-0012-2"><use xlink:href="#icon-weibo"></use></svg></button>
+                </li>
+                <li class="c-social-links__item">
+                    <button id="shareOnReddit" class="js-btnShareOnReddit" data-track="click" data-track-category="Article Page" data-track-action="Share Reddit" data-track-label="10.1186/s41065-016-0012-2">
+                        <span class="u-visually-hidden" data-track="click" data-track-category="Article Page" data-track-action="Share Reddit" data-track-label="10.1186/s41065-016-0012-2">Share on Reddit</span>
+                        <svg class="c-icon c-social-links__icon" width="24" height="24" aria-hidden="true" data-track="click" data-track-category="Article Page" data-track-action="Share Reddit" data-track-label="10.1186/s41065-016-0012-2"><use xlink:href="#icon-reddit"></use></svg></button>
+                </li>
+            </ul>
+</div>
+        
+            <div data-sharedit="container">
+                <a class="c-button u-margin-top-sm" href="/articles/10.1186/s41065-016-0012-2/sharedit" rel="nofollow" data-sharedit="button" data-track="click" data-track-category="sharedit" data-track-action="click article sharedit button" data-track-label="10.1186/s41065-016-0012-2">Get shareable link</a>
+            </div>
+        
+    </div>
+ 
+                        
+    
+        <div class="c-separator u-js-shown">
+            <h3 class="p-section-title">See updates</h3>
+            <button class="c-crossmark-button" data-target="crossmark" data-test="crossmark" data-track="click" data-track-category="Article Page" data-track-action="Click CrossMark" data-track-label="10.1186/s41065-016-0012-2">
+                <img id="crossmark-icon" src="https://crossmark-cdn.crossref.org/widget/v2.0/logos/CROSSMARK_Color_horizontal.svg" alt="Crossmark logo"></button>
+        </div>
+    
+ 
+                        <div class="p-separator">
+                            <h3 class="p-section-title">Other Actions</h3>
+                            <ul class="c-list-group c-list-group--bordered c-list-group c-list-group--md">
+<li class="c-list-group__item">
+                                    
+    <a data-track="click" data-track-category="Article Page" data-track-action="Order article reprints" data-track-label="10.1186/s41065-016-0012-2" href="https://www.odysseypress.com/onlinehost/reprint_order.php?type=A&amp;page=0&amp;journal=738&amp;doi=10.1186%2Fs41065-016-0012-2&amp;volume=153&amp;issue=1&amp;title=eRFSVM%3A+a+hybrid+classifier+to+predict+enhancers-integrating+random+forests+with+support+vector+machines&amp;author_name=Fang+Huang&amp;start_page=1&amp;end_page=11">Order reprint</a>
+
+                                </li>
+                            </ul>
+</div>
+                    </aside><div id="FulltextAd" class="adsbox c-ad c-ad--skyscraper">
+        <div class="c-ad__inner" data-component="sticky" data-test="fulltext-ad">
+            <p class="c-ad__label">Advertisement</p>
+            <div class="c-ad__content">
+                <span id="pbgrd-43415139"></span>
+            </div>
+        </div>
+    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        
+            <div class="c-journal-footer">
+                <div class="c-journal-footer__inner">
+                    <div class="c-journal-footer__summary">
+                        <h4 class="c-journal-title c-journal-title--footer">
+                            
+                            <span class="c-journal-title__text">Hereditas</span>
+                        </h4>
+                         <p class="c-journal-footer__issn">ISSN: 1601-5223</p>
+                    </div>
+                    
+                        <div class="c-journal-footer__contact">
+                            <h4 class="c-journal-footer__contact-title ">Contact us</h4>
+                            <ul class="c-journal-footer__contact-list">
+<li class="c-journal-footer__contact-item">Submission enquiries: <a href="https://www.editorialmanager.com/here/" target="_blank">Access here and click Contact Us</a>
+</li>
+                                
+                                
+                                    <li class="c-journal-footer__contact-item">General enquiries: <a href="mailto:info@biomedcentral.com">info@biomedcentral.com</a>
+</li>
+                                
+                            </ul>
+</div>
+                    
+                </div>
+            </div>
+        
+        
+    <img rel="nofollow" class="tracker" style="display:none" src="/track/article/10.1186/s41065-016-0012-2" alt=""><footer><div class="c-publisher-footer" data-test="publisher-footer">
+    <div class="u-container">
+        
+        <div class="c-flex c-flex--wrap c-flex--space-between" role="navigation" data-test="publisher-footer-menu">
+            <div class="c-flex" aria-label="Publisher footer links">
+                
+                    
+                        <ul class="c-list-group c-list-group--sm u-margin-right-lg u-margin-bottom-md">
+<li class="c-list-group__item">
+                                    <a class="u-gray-link" href="http://blogs.biomedcentral.com/">Read more on our blogs</a>
+                                </li>
+                            
+                                <li class="c-list-group__item">
+                                    <a class="u-gray-link" href="//www.biomedcentral.com/login">Receive BMC newsletters</a>
+                                </li>
+                            
+                                <li class="c-list-group__item">
+                                    <a class="u-gray-link" href="//www.biomedcentral.com/account">Manage article alerts</a>
+                                </li>
+                            
+                                <li class="c-list-group__item">
+                                    <a class="u-gray-link" href="https://authorservices.springernature.com/go/10BMC">Language editing for authors</a>
+                                </li>
+                            
+                                <li class="c-list-group__item">
+                                    <a class="u-gray-link" href="http://authorservices.springernature.com/scientific-editing/">Scientific editing for authors</a>
+                                </li>
+                            
+                        </ul>
+<ul class="c-list-group c-list-group--sm u-margin-right-lg u-margin-bottom-md">
+<li class="c-list-group__item">
+                                    <a class="u-gray-link" href="//www.biomedcentral.com/about/policies">Policies</a>
+                                </li>
+                            
+                                <li class="c-list-group__item">
+                                    <a class="u-gray-link" href="//www.biomedcentral.com/accessibility">Accessibility</a>
+                                </li>
+                            
+                                <li class="c-list-group__item">
+                                    <a class="u-gray-link" href="//www.biomedcentral.com/about/press-centre">Press center</a>
+                                </li>
+                            
+                        </ul>
+<ul class="c-list-group c-list-group--sm u-margin-right-lg u-margin-bottom-md">
+<li class="c-list-group__item">
+                                    <a class="u-gray-link" href="//www.biomedcentral.com/about/contact-us">Support and Contact</a>
+                                </li>
+                            
+                                <li class="c-list-group__item">
+                                    <a class="u-gray-link" href="https://biomedcentral.typeform.com/to/VLXboo">Leave feedback</a>
+                                </li>
+                            
+                                <li class="c-list-group__item">
+                                    <a class="u-gray-link" href="//www.biomedcentral.com/about/jobs">Careers</a>
+                                </li>
+                            
+                        </ul>
+</div>
+            <div class="u-margin-bottom-lg">
+                <h3 id="social-menu" class="u-text-sm u-reset-margin u-text-normal">Follow BMC</h3>
+                <ul class="c-flex u-reset-list" data-test="footer-social-links">
+<li class="u-margin-top-xs u-margin-right-xs">
+                            <a href="https://twitter.com/biomedcentral" class="u-gray-link">
+                                <span class="u-visually-hidden">BMC Twitter page</span>
+                                <svg class="c-icon" width="24" height="24" aria-hidden="true"><use xlink:href="#icon-twitter-bordered"></use></svg></a>
+                        </li>
+                    
+                        <li class="u-margin-top-xs u-margin-right-xs">
+                            <a href="https://www.facebook.com/BioMedCentral" class="u-gray-link">
+                                <span class="u-visually-hidden">BMC Facebook page</span>
+                                <svg class="c-icon" width="24" height="24" aria-hidden="true"><use xlink:href="#icon-facebook-bordered"></use></svg></a>
+                        </li>
+                    
+                        <li class="u-margin-top-xs u-margin-right-xs">
+                            <a href="http://www.weibo.com/biomedcentral" class="u-gray-link">
+                                <span class="u-visually-hidden">BMC Weibo page</span>
+                                <svg class="c-icon" width="24" height="24" aria-hidden="true"><use xlink:href="#icon-weibo-bordered"></use></svg></a>
+                        </li>
+                    
+                </ul>
+</div>
+        </div>
+        <p class="u-reset-margin">
+            By using this website, you agree to our
+            <a class="u-gray-link" href="//www.biomedcentral.com/terms-and-conditions">Terms and Conditions</a>,
+            <a class="u-gray-link" href="//www.biomedcentral.com/privacy-statement">Privacy
+                statement</a> and
+            <a class="u-gray-link" href="//www.biomedcentral.com/cookies" data-test="cookie-link">Cookies</a> policy.
+            
+                <a class="optanon-toggle-display u-gray-link" href="javascript:void(0);">Manage the cookies</a> we use in the preference centre.
+            
+        </p>
+    </div>
+</div>
+
+        <div class="c-sn-footer c-sn-footer--neutral">
+    <div class="u-container">
+        <img src="/static/images/bmc/logos/logo-springernature-8bd4e8d82f.svg" class="c-sn-footer__logo" alt="Springer Nature Logo" itemprop="logo"><p data-test="copyright">© 2019 BioMed Central Ltd unless otherwise stated. Part of
+            <a href="http://www.springernature.com" itemscope itemtype="http://schema.org/Organization" itemid="#parentOrganization">Springer Nature</a>.
+        </p>
+    </div>
+</div>
+
+    </footer>
+</div>
+
+    
+    <script type="text/javascript" src="//cdn.pbgrd.com/bmc.js" async="async"></script><noscript>
+	<img hidden src="https://verify.nature.com/verify/nature.png" border="0" width="0" height="0" style="display: none">
+</noscript>
+
+        
+<script>
+    (function() {
+        if (window.config && window.config.mustardcut) {
+            var appScript = document.createElement('script');
+            appScript.src = '/static/js/app-bundle-9819d71f7a.js';
+            appScript.async = false;
+            document.body.appendChild(appScript);
+        }
+    })();
+</script>
+</body>
+</html>
